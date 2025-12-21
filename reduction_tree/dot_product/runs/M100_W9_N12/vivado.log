@@ -1,0 +1,811 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  6 17:55:59 2025
+# Process ID: 3556201
+# Current directory: /mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12
+# Command line: vivado -mode batch -source /mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/run.tcl
+# Log file: /mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/vivado.log
+# Journal file: /mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/vivado.jou
+# Running On: en4228283l, OS: Linux, CPU Frequency: 2999.993 MHz, CPU Physical cores: 32, Host memory: 269992 MB
+#-----------------------------------------------------------
+source /mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/run.tcl
+# read_verilog -sv /mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/design.sv
+# read_xdc /mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/design.xdc
+# synth_design -top dotprod -part xczu7ev-ffvc1156-2-e
+Command: synth_design -top dotprod -part xczu7ev-ffvc1156-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3556329
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/mnt/vault1/kmhatre/Software/AMD/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 3039.234 ; gain = 241.801 ; free physical = 91487 ; free virtual = 201883
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.645; parent = 2372.440; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4012.320; parent = 3039.238; children = 973.082
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'dotprod' [/mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/design.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'dotprod' (0#1) [/mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/design.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3112.203 ; gain = 314.770 ; free physical = 91436 ; free virtual = 201833
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.645; parent = 2372.440; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4085.289; parent = 3112.207; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3130.016 ; gain = 332.582 ; free physical = 91436 ; free virtual = 201833
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.645; parent = 2372.440; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4103.102; parent = 3130.020; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3130.016 ; gain = 332.582 ; free physical = 91442 ; free virtual = 201839
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.645; parent = 2372.440; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4103.102; parent = 3130.020; children = 973.082
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3130.016 ; gain = 0.000 ; free physical = 91442 ; free virtual = 201839
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/design.xdc]
+Finished Parsing XDC File [/mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/design.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3297.734 ; gain = 0.000 ; free physical = 91525 ; free virtual = 201923
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3297.734 ; gain = 0.000 ; free physical = 91533 ; free virtual = 201930
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/mnt/vault1/kmhatre/Software/AMD/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3297.734 ; gain = 500.301 ; free physical = 91588 ; free virtual = 201985
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2638.918; parent = 2384.714; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4238.805; parent = 3265.723; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3297.734 ; gain = 500.301 ; free physical = 91594 ; free virtual = 201992
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2638.918; parent = 2384.714; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4238.805; parent = 3265.723; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3297.734 ; gain = 500.301 ; free physical = 91602 ; free virtual = 201999
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2638.918; parent = 2384.714; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4238.805; parent = 3265.723; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 3297.734 ; gain = 500.301 ; free physical = 91616 ; free virtual = 202014
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2638.918; parent = 2384.714; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4238.805; parent = 3265.723; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   28 Bit       Adders := 49    
++---Registers : 
+	               28 Bit    Registers := 52    
+	               22 Bit    Registers := 50    
+	                1 Bit    Registers := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP prods[98], operation Mode is: A*B.
+DSP Report: operator prods[98] is absorbed into DSP prods[98].
+DSP Report: Generating DSP stage1_reg[49], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[49] is absorbed into DSP stage1_reg[49].
+DSP Report: operator p_0_in is absorbed into DSP stage1_reg[49].
+DSP Report: operator prods[99] is absorbed into DSP stage1_reg[49].
+DSP Report: Generating DSP prods[96], operation Mode is: A*B.
+DSP Report: operator prods[96] is absorbed into DSP prods[96].
+DSP Report: Generating DSP stage1_reg[48], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[48] is absorbed into DSP stage1_reg[48].
+DSP Report: operator p_1_in is absorbed into DSP stage1_reg[48].
+DSP Report: operator prods[97] is absorbed into DSP stage1_reg[48].
+DSP Report: Generating DSP prods[94], operation Mode is: A*B.
+DSP Report: operator prods[94] is absorbed into DSP prods[94].
+DSP Report: Generating DSP stage1_reg[47], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[47] is absorbed into DSP stage1_reg[47].
+DSP Report: operator p_2_in is absorbed into DSP stage1_reg[47].
+DSP Report: operator prods[95] is absorbed into DSP stage1_reg[47].
+DSP Report: Generating DSP prods[92], operation Mode is: A*B.
+DSP Report: operator prods[92] is absorbed into DSP prods[92].
+DSP Report: Generating DSP stage1_reg[46], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[46] is absorbed into DSP stage1_reg[46].
+DSP Report: operator p_3_in is absorbed into DSP stage1_reg[46].
+DSP Report: operator prods[93] is absorbed into DSP stage1_reg[46].
+DSP Report: Generating DSP prods[90], operation Mode is: A*B.
+DSP Report: operator prods[90] is absorbed into DSP prods[90].
+DSP Report: Generating DSP stage1_reg[45], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[45] is absorbed into DSP stage1_reg[45].
+DSP Report: operator p_4_in is absorbed into DSP stage1_reg[45].
+DSP Report: operator prods[91] is absorbed into DSP stage1_reg[45].
+DSP Report: Generating DSP prods[88], operation Mode is: A*B.
+DSP Report: operator prods[88] is absorbed into DSP prods[88].
+DSP Report: Generating DSP stage1_reg[44], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[44] is absorbed into DSP stage1_reg[44].
+DSP Report: operator p_5_in is absorbed into DSP stage1_reg[44].
+DSP Report: operator prods[89] is absorbed into DSP stage1_reg[44].
+DSP Report: Generating DSP prods[86], operation Mode is: A*B.
+DSP Report: operator prods[86] is absorbed into DSP prods[86].
+DSP Report: Generating DSP stage1_reg[43], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[43] is absorbed into DSP stage1_reg[43].
+DSP Report: operator p_6_in is absorbed into DSP stage1_reg[43].
+DSP Report: operator prods[87] is absorbed into DSP stage1_reg[43].
+DSP Report: Generating DSP prods[84], operation Mode is: A*B.
+DSP Report: operator prods[84] is absorbed into DSP prods[84].
+DSP Report: Generating DSP stage1_reg[42], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[42] is absorbed into DSP stage1_reg[42].
+DSP Report: operator p_7_in is absorbed into DSP stage1_reg[42].
+DSP Report: operator prods[85] is absorbed into DSP stage1_reg[42].
+DSP Report: Generating DSP prods[82], operation Mode is: A*B.
+DSP Report: operator prods[82] is absorbed into DSP prods[82].
+DSP Report: Generating DSP stage1_reg[41], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[41] is absorbed into DSP stage1_reg[41].
+DSP Report: operator p_8_in is absorbed into DSP stage1_reg[41].
+DSP Report: operator prods[83] is absorbed into DSP stage1_reg[41].
+DSP Report: Generating DSP prods[80], operation Mode is: A*B.
+DSP Report: operator prods[80] is absorbed into DSP prods[80].
+DSP Report: Generating DSP stage1_reg[40], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[40] is absorbed into DSP stage1_reg[40].
+DSP Report: operator p_9_in is absorbed into DSP stage1_reg[40].
+DSP Report: operator prods[81] is absorbed into DSP stage1_reg[40].
+DSP Report: Generating DSP prods[78], operation Mode is: A*B.
+DSP Report: operator prods[78] is absorbed into DSP prods[78].
+DSP Report: Generating DSP stage1_reg[39], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[39] is absorbed into DSP stage1_reg[39].
+DSP Report: operator p_10_in is absorbed into DSP stage1_reg[39].
+DSP Report: operator prods[79] is absorbed into DSP stage1_reg[39].
+DSP Report: Generating DSP prods[76], operation Mode is: A*B.
+DSP Report: operator prods[76] is absorbed into DSP prods[76].
+DSP Report: Generating DSP stage1_reg[38], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[38] is absorbed into DSP stage1_reg[38].
+DSP Report: operator p_11_in is absorbed into DSP stage1_reg[38].
+DSP Report: operator prods[77] is absorbed into DSP stage1_reg[38].
+DSP Report: Generating DSP prods[74], operation Mode is: A*B.
+DSP Report: operator prods[74] is absorbed into DSP prods[74].
+DSP Report: Generating DSP stage1_reg[37], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[37] is absorbed into DSP stage1_reg[37].
+DSP Report: operator p_12_in is absorbed into DSP stage1_reg[37].
+DSP Report: operator prods[75] is absorbed into DSP stage1_reg[37].
+DSP Report: Generating DSP prods[72], operation Mode is: A*B.
+DSP Report: operator prods[72] is absorbed into DSP prods[72].
+DSP Report: Generating DSP stage1_reg[36], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[36] is absorbed into DSP stage1_reg[36].
+DSP Report: operator p_13_in is absorbed into DSP stage1_reg[36].
+DSP Report: operator prods[73] is absorbed into DSP stage1_reg[36].
+DSP Report: Generating DSP prods[70], operation Mode is: A*B.
+DSP Report: operator prods[70] is absorbed into DSP prods[70].
+DSP Report: Generating DSP stage1_reg[35], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[35] is absorbed into DSP stage1_reg[35].
+DSP Report: operator p_14_in is absorbed into DSP stage1_reg[35].
+DSP Report: operator prods[71] is absorbed into DSP stage1_reg[35].
+DSP Report: Generating DSP prods[68], operation Mode is: A*B.
+DSP Report: operator prods[68] is absorbed into DSP prods[68].
+DSP Report: Generating DSP stage1_reg[34], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[34] is absorbed into DSP stage1_reg[34].
+DSP Report: operator p_15_in is absorbed into DSP stage1_reg[34].
+DSP Report: operator prods[69] is absorbed into DSP stage1_reg[34].
+DSP Report: Generating DSP prods[66], operation Mode is: A*B.
+DSP Report: operator prods[66] is absorbed into DSP prods[66].
+DSP Report: Generating DSP stage1_reg[33], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[33] is absorbed into DSP stage1_reg[33].
+DSP Report: operator p_16_in is absorbed into DSP stage1_reg[33].
+DSP Report: operator prods[67] is absorbed into DSP stage1_reg[33].
+DSP Report: Generating DSP prods[64], operation Mode is: A*B.
+DSP Report: operator prods[64] is absorbed into DSP prods[64].
+DSP Report: Generating DSP stage1_reg[32], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[32] is absorbed into DSP stage1_reg[32].
+DSP Report: operator p_17_in is absorbed into DSP stage1_reg[32].
+DSP Report: operator prods[65] is absorbed into DSP stage1_reg[32].
+DSP Report: Generating DSP prods[62], operation Mode is: A*B.
+DSP Report: operator prods[62] is absorbed into DSP prods[62].
+DSP Report: Generating DSP stage1_reg[31], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[31] is absorbed into DSP stage1_reg[31].
+DSP Report: operator p_18_in is absorbed into DSP stage1_reg[31].
+DSP Report: operator prods[63] is absorbed into DSP stage1_reg[31].
+DSP Report: Generating DSP prods[60], operation Mode is: A*B.
+DSP Report: operator prods[60] is absorbed into DSP prods[60].
+DSP Report: Generating DSP stage1_reg[30], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[30] is absorbed into DSP stage1_reg[30].
+DSP Report: operator p_19_in is absorbed into DSP stage1_reg[30].
+DSP Report: operator prods[61] is absorbed into DSP stage1_reg[30].
+DSP Report: Generating DSP prods[58], operation Mode is: A*B.
+DSP Report: operator prods[58] is absorbed into DSP prods[58].
+DSP Report: Generating DSP stage1_reg[29], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[29] is absorbed into DSP stage1_reg[29].
+DSP Report: operator p_20_in is absorbed into DSP stage1_reg[29].
+DSP Report: operator prods[59] is absorbed into DSP stage1_reg[29].
+DSP Report: Generating DSP prods[56], operation Mode is: A*B.
+DSP Report: operator prods[56] is absorbed into DSP prods[56].
+DSP Report: Generating DSP stage1_reg[28], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[28] is absorbed into DSP stage1_reg[28].
+DSP Report: operator p_21_in is absorbed into DSP stage1_reg[28].
+DSP Report: operator prods[57] is absorbed into DSP stage1_reg[28].
+DSP Report: Generating DSP prods[54], operation Mode is: A*B.
+DSP Report: operator prods[54] is absorbed into DSP prods[54].
+DSP Report: Generating DSP stage1_reg[27], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[27] is absorbed into DSP stage1_reg[27].
+DSP Report: operator p_22_in is absorbed into DSP stage1_reg[27].
+DSP Report: operator prods[55] is absorbed into DSP stage1_reg[27].
+DSP Report: Generating DSP prods[52], operation Mode is: A*B.
+DSP Report: operator prods[52] is absorbed into DSP prods[52].
+DSP Report: Generating DSP stage1_reg[26], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[26] is absorbed into DSP stage1_reg[26].
+DSP Report: operator p_23_in is absorbed into DSP stage1_reg[26].
+DSP Report: operator prods[53] is absorbed into DSP stage1_reg[26].
+DSP Report: Generating DSP prods[50], operation Mode is: A*B.
+DSP Report: operator prods[50] is absorbed into DSP prods[50].
+DSP Report: Generating DSP stage1_reg[25], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[25] is absorbed into DSP stage1_reg[25].
+DSP Report: operator p_24_in is absorbed into DSP stage1_reg[25].
+DSP Report: operator prods[51] is absorbed into DSP stage1_reg[25].
+DSP Report: Generating DSP prods[48], operation Mode is: A*B.
+DSP Report: operator prods[48] is absorbed into DSP prods[48].
+DSP Report: Generating DSP stage1_reg[24], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[24] is absorbed into DSP stage1_reg[24].
+DSP Report: operator p_25_in is absorbed into DSP stage1_reg[24].
+DSP Report: operator prods[49] is absorbed into DSP stage1_reg[24].
+DSP Report: Generating DSP prods[46], operation Mode is: A*B.
+DSP Report: operator prods[46] is absorbed into DSP prods[46].
+DSP Report: Generating DSP stage1_reg[23], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[23] is absorbed into DSP stage1_reg[23].
+DSP Report: operator p_26_in is absorbed into DSP stage1_reg[23].
+DSP Report: operator prods[47] is absorbed into DSP stage1_reg[23].
+DSP Report: Generating DSP prods[44], operation Mode is: A*B.
+DSP Report: operator prods[44] is absorbed into DSP prods[44].
+DSP Report: Generating DSP stage1_reg[22], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[22] is absorbed into DSP stage1_reg[22].
+DSP Report: operator p_27_in is absorbed into DSP stage1_reg[22].
+DSP Report: operator prods[45] is absorbed into DSP stage1_reg[22].
+DSP Report: Generating DSP prods[42], operation Mode is: A*B.
+DSP Report: operator prods[42] is absorbed into DSP prods[42].
+DSP Report: Generating DSP stage1_reg[21], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[21] is absorbed into DSP stage1_reg[21].
+DSP Report: operator p_28_in is absorbed into DSP stage1_reg[21].
+DSP Report: operator prods[43] is absorbed into DSP stage1_reg[21].
+DSP Report: Generating DSP prods[40], operation Mode is: A*B.
+DSP Report: operator prods[40] is absorbed into DSP prods[40].
+DSP Report: Generating DSP stage1_reg[20], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[20] is absorbed into DSP stage1_reg[20].
+DSP Report: operator p_29_in is absorbed into DSP stage1_reg[20].
+DSP Report: operator prods[41] is absorbed into DSP stage1_reg[20].
+DSP Report: Generating DSP prods[38], operation Mode is: A*B.
+DSP Report: operator prods[38] is absorbed into DSP prods[38].
+DSP Report: Generating DSP stage1_reg[19], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[19] is absorbed into DSP stage1_reg[19].
+DSP Report: operator p_30_in is absorbed into DSP stage1_reg[19].
+DSP Report: operator prods[39] is absorbed into DSP stage1_reg[19].
+DSP Report: Generating DSP prods[36], operation Mode is: A*B.
+DSP Report: operator prods[36] is absorbed into DSP prods[36].
+DSP Report: Generating DSP stage1_reg[18], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[18] is absorbed into DSP stage1_reg[18].
+DSP Report: operator p_31_in is absorbed into DSP stage1_reg[18].
+DSP Report: operator prods[37] is absorbed into DSP stage1_reg[18].
+DSP Report: Generating DSP prods[34], operation Mode is: A*B.
+DSP Report: operator prods[34] is absorbed into DSP prods[34].
+DSP Report: Generating DSP stage1_reg[17], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[17] is absorbed into DSP stage1_reg[17].
+DSP Report: operator p_32_in is absorbed into DSP stage1_reg[17].
+DSP Report: operator prods[35] is absorbed into DSP stage1_reg[17].
+DSP Report: Generating DSP prods[32], operation Mode is: A*B.
+DSP Report: operator prods[32] is absorbed into DSP prods[32].
+DSP Report: Generating DSP stage1_reg[16], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[16] is absorbed into DSP stage1_reg[16].
+DSP Report: operator p_33_in is absorbed into DSP stage1_reg[16].
+DSP Report: operator prods[33] is absorbed into DSP stage1_reg[16].
+DSP Report: Generating DSP prods[30], operation Mode is: A*B.
+DSP Report: operator prods[30] is absorbed into DSP prods[30].
+DSP Report: Generating DSP stage1_reg[15], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[15] is absorbed into DSP stage1_reg[15].
+DSP Report: operator p_34_in is absorbed into DSP stage1_reg[15].
+DSP Report: operator prods[31] is absorbed into DSP stage1_reg[15].
+DSP Report: Generating DSP prods[28], operation Mode is: A*B.
+DSP Report: operator prods[28] is absorbed into DSP prods[28].
+DSP Report: Generating DSP stage1_reg[14], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[14] is absorbed into DSP stage1_reg[14].
+DSP Report: operator p_35_in is absorbed into DSP stage1_reg[14].
+DSP Report: operator prods[29] is absorbed into DSP stage1_reg[14].
+DSP Report: Generating DSP prods[26], operation Mode is: A*B.
+DSP Report: operator prods[26] is absorbed into DSP prods[26].
+DSP Report: Generating DSP stage1_reg[13], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[13] is absorbed into DSP stage1_reg[13].
+DSP Report: operator p_36_in is absorbed into DSP stage1_reg[13].
+DSP Report: operator prods[27] is absorbed into DSP stage1_reg[13].
+DSP Report: Generating DSP prods[24], operation Mode is: A*B.
+DSP Report: operator prods[24] is absorbed into DSP prods[24].
+DSP Report: Generating DSP stage1_reg[12], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[12] is absorbed into DSP stage1_reg[12].
+DSP Report: operator p_37_in is absorbed into DSP stage1_reg[12].
+DSP Report: operator prods[25] is absorbed into DSP stage1_reg[12].
+DSP Report: Generating DSP prods[22], operation Mode is: A*B.
+DSP Report: operator prods[22] is absorbed into DSP prods[22].
+DSP Report: Generating DSP stage1_reg[11], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[11] is absorbed into DSP stage1_reg[11].
+DSP Report: operator p_38_in is absorbed into DSP stage1_reg[11].
+DSP Report: operator prods[23] is absorbed into DSP stage1_reg[11].
+DSP Report: Generating DSP prods[20], operation Mode is: A*B.
+DSP Report: operator prods[20] is absorbed into DSP prods[20].
+DSP Report: Generating DSP stage1_reg[10], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[10] is absorbed into DSP stage1_reg[10].
+DSP Report: operator p_39_in is absorbed into DSP stage1_reg[10].
+DSP Report: operator prods[21] is absorbed into DSP stage1_reg[10].
+DSP Report: Generating DSP prods[18], operation Mode is: A*B.
+DSP Report: operator prods[18] is absorbed into DSP prods[18].
+DSP Report: Generating DSP stage1_reg[9], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[9] is absorbed into DSP stage1_reg[9].
+DSP Report: operator p_40_in is absorbed into DSP stage1_reg[9].
+DSP Report: operator prods[19] is absorbed into DSP stage1_reg[9].
+DSP Report: Generating DSP prods[16], operation Mode is: A*B.
+DSP Report: operator prods[16] is absorbed into DSP prods[16].
+DSP Report: Generating DSP stage1_reg[8], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[8] is absorbed into DSP stage1_reg[8].
+DSP Report: operator p_41_in is absorbed into DSP stage1_reg[8].
+DSP Report: operator prods[17] is absorbed into DSP stage1_reg[8].
+DSP Report: Generating DSP prods[14], operation Mode is: A*B.
+DSP Report: operator prods[14] is absorbed into DSP prods[14].
+DSP Report: Generating DSP stage1_reg[7], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[7] is absorbed into DSP stage1_reg[7].
+DSP Report: operator p_42_in is absorbed into DSP stage1_reg[7].
+DSP Report: operator prods[15] is absorbed into DSP stage1_reg[7].
+DSP Report: Generating DSP prods[12], operation Mode is: A*B.
+DSP Report: operator prods[12] is absorbed into DSP prods[12].
+DSP Report: Generating DSP stage1_reg[6], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[6] is absorbed into DSP stage1_reg[6].
+DSP Report: operator p_43_in is absorbed into DSP stage1_reg[6].
+DSP Report: operator prods[13] is absorbed into DSP stage1_reg[6].
+DSP Report: Generating DSP prods[10], operation Mode is: A*B.
+DSP Report: operator prods[10] is absorbed into DSP prods[10].
+DSP Report: Generating DSP stage1_reg[5], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[5] is absorbed into DSP stage1_reg[5].
+DSP Report: operator p_44_in is absorbed into DSP stage1_reg[5].
+DSP Report: operator prods[11] is absorbed into DSP stage1_reg[5].
+DSP Report: Generating DSP prods[8], operation Mode is: A*B.
+DSP Report: operator prods[8] is absorbed into DSP prods[8].
+DSP Report: Generating DSP stage1_reg[4], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[4] is absorbed into DSP stage1_reg[4].
+DSP Report: operator p_45_in is absorbed into DSP stage1_reg[4].
+DSP Report: operator prods[9] is absorbed into DSP stage1_reg[4].
+DSP Report: Generating DSP prods[6], operation Mode is: A*B.
+DSP Report: operator prods[6] is absorbed into DSP prods[6].
+DSP Report: Generating DSP stage1_reg[3], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[3] is absorbed into DSP stage1_reg[3].
+DSP Report: operator p_46_in is absorbed into DSP stage1_reg[3].
+DSP Report: operator prods[7] is absorbed into DSP stage1_reg[3].
+DSP Report: Generating DSP prods[4], operation Mode is: A*B.
+DSP Report: operator prods[4] is absorbed into DSP prods[4].
+DSP Report: Generating DSP stage1_reg[2], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[2] is absorbed into DSP stage1_reg[2].
+DSP Report: operator p_47_in is absorbed into DSP stage1_reg[2].
+DSP Report: operator prods[5] is absorbed into DSP stage1_reg[2].
+DSP Report: Generating DSP prods[2], operation Mode is: A*B.
+DSP Report: operator prods[2] is absorbed into DSP prods[2].
+DSP Report: Generating DSP stage1_reg[1], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[1] is absorbed into DSP stage1_reg[1].
+DSP Report: operator p_48_in is absorbed into DSP stage1_reg[1].
+DSP Report: operator prods[3] is absorbed into DSP stage1_reg[1].
+DSP Report: Generating DSP prods[0], operation Mode is: A*B.
+DSP Report: operator prods[0] is absorbed into DSP prods[0].
+DSP Report: Generating DSP stage1_reg[0], operation Mode is: (PCIN+A*B)'.
+DSP Report: register stage1_reg[0] is absorbed into DSP stage1_reg[0].
+DSP Report: operator p_49_in is absorbed into DSP stage1_reg[0].
+DSP Report: operator prods[1] is absorbed into DSP stage1_reg[0].
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 3297.734 ; gain = 500.301 ; free physical = 91640 ; free virtual = 202046
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2638.918; parent = 2384.714; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4238.805; parent = 3265.723; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 3708.891 ; gain = 911.457 ; free physical = 91171 ; free virtual = 201576
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3237.516; parent = 2983.343; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4681.977; parent = 3708.895; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 3736.031 ; gain = 938.598 ; free physical = 91156 ; free virtual = 201562
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3264.367; parent = 3010.194; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4709.117; parent = 3736.035; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 3761.062 ; gain = 963.629 ; free physical = 91133 ; free virtual = 201538
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3269.258; parent = 3015.085; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4734.148; parent = 3761.066; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 3769.000 ; gain = 971.566 ; free physical = 91175 ; free virtual = 201577
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3271.738; parent = 3017.565; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4742.086; parent = 3769.004; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 3769.000 ; gain = 971.566 ; free physical = 91175 ; free virtual = 201576
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3271.754; parent = 3017.581; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4742.086; parent = 3769.004; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 3769.000 ; gain = 971.566 ; free physical = 91179 ; free virtual = 201581
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3273.523; parent = 3019.351; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4742.086; parent = 3769.004; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 3769.000 ; gain = 971.566 ; free physical = 91188 ; free virtual = 201589
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3273.586; parent = 3019.413; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4742.086; parent = 3769.004; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 3769.000 ; gain = 971.566 ; free physical = 91180 ; free virtual = 201582
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3273.586; parent = 3019.413; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4742.086; parent = 3769.004; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 3769.000 ; gain = 971.566 ; free physical = 91178 ; free virtual = 201579
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3273.586; parent = 3019.413; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4742.086; parent = 3769.004; children = 973.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|dotprod     | stage5_reg[3][22] | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|dotprod     | vld_layer7_reg    | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+-------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dotprod     | A*B         | 12     | 9      | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dotprod     | (PCIN+A*B)' | 12     | 9      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |BUFG            |     1|
+|2     |CARRY8          |   159|
+|3     |DSP_ALU         |   100|
+|4     |DSP_A_B_DATA    |   100|
+|5     |DSP_C_DATA      |   100|
+|6     |DSP_MULTIPLIER  |   100|
+|7     |DSP_M_DATA      |   100|
+|8     |DSP_OUTPUT      |   100|
+|10    |DSP_PREADD      |   100|
+|11    |DSP_PREADD_DATA |   100|
+|12    |LUT2            |  1145|
+|13    |SRL16E          |    24|
+|14    |FDRE            |  1204|
+|15    |IBUF            |  2103|
+|16    |OBUF            |    29|
++------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 3769.000 ; gain = 971.566 ; free physical = 91178 ; free virtual = 201579
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3273.586; parent = 3019.413; children = 254.204
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4742.086; parent = 3769.004; children = 973.082
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 3769.000 ; gain = 803.848 ; free physical = 91202 ; free virtual = 201603
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:32 . Memory (MB): peak = 3769.008 ; gain = 971.566 ; free physical = 91204 ; free virtual = 201605
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3780.969 ; gain = 0.000 ; free physical = 91319 ; free virtual = 201720
+INFO: [Netlist 29-17] Analyzing 2363 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'dotprod' is not ideal for floorplanning, since the cellview 'dotprod' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/design.xdc]
+Finished Parsing XDC File [/mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/design.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3852.438 ; gain = 0.000 ; free physical = 91252 ; free virtual = 201654
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2204 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 100 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 2103 instances
+
+Synth Design complete, checksum: dd011269
+INFO: [Common 17-83] Releasing license: Synthesis
+19 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:43 . Memory (MB): peak = 3852.438 ; gain = 2147.824 ; free physical = 91416 ; free virtual = 201817
+# report_utilization -file /mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/util.rpt
+# report_timing_summary -file /mnt/vault1/mfaroo19/reduction_tree/dot_product/runs/M100_W9_N12/timing.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_timing_summary: Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 4593.395 ; gain = 740.957 ; free physical = 90738 ; free virtual = 201140
+# exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  6 17:57:06 2025...

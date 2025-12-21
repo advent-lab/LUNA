@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Sep 24 19:33:00 2025
+# Process ID: 272121
+# Current directory: /mnt/vault1/mfaroo19/reduction_tree/dot_product/vivado_runs/M8_W6_N16
+# Command line: vivado -mode batch -source /mnt/vault1/mfaroo19/reduction_tree/dot_product/vivado_runs/M8_W6_N16/run.tcl
+# Log file: /mnt/vault1/mfaroo19/reduction_tree/dot_product/vivado_runs/M8_W6_N16/vivado.log
+# Journal file: /mnt/vault1/mfaroo19/reduction_tree/dot_product/vivado_runs/M8_W6_N16/vivado.jou
+# Running On: en4228283l, OS: Linux, CPU Frequency: 2999.996 MHz, CPU Physical cores: 32, Host memory: 269992 MB
+#-----------------------------------------------------------
+source /mnt/vault1/mfaroo19/reduction_tree/dot_product/vivado_runs/M8_W6_N16/run.tcl

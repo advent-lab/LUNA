@@ -1,0 +1,92 @@
+FROM ubuntu:18.04
+
+# Install locales and generate en_US.UTF-8
+RUN apt-get -qq update && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install locales && \
+    locale-gen en_US.UTF-8 && \
+    update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
+
+WORKDIR /workspace
+
+ARG GID
+ARG GNAME
+ARG UNAME
+ARG UID
+
+# Install system prerequisites
+RUN apt-get -qq update && apt-get -qq -y install curl bzip2 \
+    && apt-get autoclean \
+    && rm -rf /var/lib/apt/lists/* /var/log/dpkg.log
+
+RUN apt-get -qq update && apt-get -qq -y install verilator build-essential libx11-6 git \
+    && apt-get autoclean \
+    && rm -rf /var/lib/apt/lists/* /var/log/dpkg.log
+
+# Clone dependencies
+RUN git clone https://bitbucket.org/maltanar/oh-my-xilinx.git
+ENV OHMYXILINX=/workspace/oh-my-xilinx
+
+RUN git clone https://github.com/dirjud/Nitro-Parts-lib-Xilinx.git
+ENV NITROPARTSLIB=/workspace/Nitro-Parts-lib-Xilinx
+
+# Create user
+RUN groupadd -g $GID $GNAME
+RUN useradd -m -u $UID $UNAME -g $GNAME
+ENV UNAME_HOME=/home/$UNAME
+USER $UNAME
+ENV USER=$UNAME
+ENV HOME=/home/$UNAME
+
+# Install Miniconda and mamba
+ENV CONDA_ROOT=$HOME/.local/miniconda3
+RUN mkdir -p $CONDA_ROOT
+ENV PATH=$CONDA_ROOT/bin:$PATH
+RUN curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64.sh -o /tmp/miniconda.sh \
+    && bash /tmp/miniconda.sh -bfp $CONDA_ROOT \
+    && rm -rf /tmp/miniconda.sh \
+    && conda install -y python=3.8 \
+    && conda update -y conda \
+    && conda install -y -c conda-forge mamba \
+    && conda install -y -c conda-forge mamba \
+    && conda clean --all --yes
+
+# Install libstdc++ runtime to avoid GLIBCXX errors
+RUN mamba install -y -c conda-forge libstdcxx-ng
+
+# Install PyTorch (CPU-only) via pip
+RUN pip install torch==1.5.1+cpu torchvision==0.6.1+cpu \
+    -f https://download.pytorch.org/whl/torch_stable.html
+
+# Install conda-based dependencies via mamba
+RUN mamba install -y -c conda-forge \
+    "numpy<=1.19.5" \
+    "scipy<=1.5.4" \
+    "scikit-learn<=0.24.2" \
+    "pandas<=1.1.5" \
+    "protobuf<3.19" \
+    "tensorboard<=2.6" \
+    pillow \
+    packaging \
+    pyparsing \
+    docrep \
+    zsh \
+    h5py \
+    pyyaml=5.4.1 && \
+    conda clean -ya
+    
+# Install pip-based dependencies
+RUN pip install --no-cache-dir git+https://github.com/Xilinx/brevitas.git@67be9b58c1c63d3923cac430ade2552d0db67ba5
+RUN pip install --no-cache-dir pyverilator
+
+# Setup entrypoint
+ENV LOCAL_PATH=$HOME/.local/bin
+RUN mkdir -p $LOCAL_PATH
+COPY docker/entry-point.sh $LOCAL_PATH
+ENV PATH=$LOCAL_PATH:$PATH
+ENTRYPOINT ["entry-point.sh"]
+CMD ["bash"]
+

@@ -1,0 +1,291 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source runs/M100_W4/run.tcl
+# read_verilog -sv runs/M100_W4/sum_signed.sv
+# read_xdc runs/M100_W4/sum_signed.xdc
+# synth_design -top sum_signed -part xczu7ev-ffvc1156-2-e
+Command: synth_design -top sum_signed -part xczu7ev-ffvc1156-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2564018
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/mnt/vault1/kmhatre/Software/AMD/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 3039.172 ; gain = 241.801 ; free physical = 138289 ; free virtual = 209585
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.857; parent = 2372.671; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4012.254; parent = 3039.176; children = 973.078
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'sum_signed' [/mnt/vault1/mfaroo19/reduction_tree/integrator/runs/M100_W4/sum_signed.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'sum_signed' (0#1) [/mnt/vault1/mfaroo19/reduction_tree/integrator/runs/M100_W4/sum_signed.sv:7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3110.141 ; gain = 312.770 ; free physical = 138248 ; free virtual = 209545
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.857; parent = 2372.671; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4083.223; parent = 3110.145; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3127.953 ; gain = 330.582 ; free physical = 138248 ; free virtual = 209545
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.857; parent = 2372.671; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4101.035; parent = 3127.957; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3127.953 ; gain = 330.582 ; free physical = 138247 ; free virtual = 209545
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.857; parent = 2372.671; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4101.035; parent = 3127.957; children = 973.078
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3127.953 ; gain = 0.000 ; free physical = 138253 ; free virtual = 209550
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/mnt/vault1/mfaroo19/reduction_tree/integrator/runs/M100_W4/sum_signed.xdc]
+Finished Parsing XDC File [/mnt/vault1/mfaroo19/reduction_tree/integrator/runs/M100_W4/sum_signed.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3291.672 ; gain = 0.000 ; free physical = 138330 ; free virtual = 209627
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3291.672 ; gain = 0.000 ; free physical = 138332 ; free virtual = 209629
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/mnt/vault1/kmhatre/Software/AMD/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3291.672 ; gain = 494.301 ; free physical = 138387 ; free virtual = 209682
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.857; parent = 2372.671; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4232.738; parent = 3259.660; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3291.672 ; gain = 494.301 ; free physical = 138387 ; free virtual = 209682
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.857; parent = 2372.671; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4232.738; parent = 3259.660; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3291.672 ; gain = 494.301 ; free physical = 138387 ; free virtual = 209683
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.857; parent = 2372.671; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4232.738; parent = 3259.660; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3291.672 ; gain = 494.301 ; free physical = 138398 ; free virtual = 209696
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.857; parent = 2372.671; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4232.738; parent = 3259.660; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 6     
+	   2 Input    7 Bit       Adders := 12    
+	   2 Input    6 Bit       Adders := 25    
+	   2 Input    5 Bit       Adders := 50    
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 6     
+	                7 Bit    Registers := 12    
+	                6 Bit    Registers := 28    
+	                5 Bit    Registers := 50    
+	                1 Bit    Registers := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 3291.672 ; gain = 494.301 ; free physical = 138691 ; free virtual = 209995
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2626.857; parent = 2372.671; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4232.738; parent = 3259.660; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 3670.047 ; gain = 872.676 ; free physical = 138317 ; free virtual = 209623
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3208.670; parent = 2954.515; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4643.129; parent = 3670.051; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 3673.047 ; gain = 875.676 ; free physical = 138309 ; free virtual = 209615
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3210.994; parent = 2956.839; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4646.129; parent = 3673.051; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 3692.078 ; gain = 894.707 ; free physical = 138293 ; free virtual = 209599
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3216.029; parent = 2961.874; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4665.160; parent = 3692.082; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 3704.953 ; gain = 907.582 ; free physical = 138297 ; free virtual = 209603
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3216.443; parent = 2962.288; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4678.035; parent = 3704.957; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 3704.953 ; gain = 907.582 ; free physical = 138298 ; free virtual = 209605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3216.443; parent = 2962.288; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4678.035; parent = 3704.957; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 3704.953 ; gain = 907.582 ; free physical = 138299 ; free virtual = 209605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3216.490; parent = 2962.335; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4678.035; parent = 3704.957; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 3704.953 ; gain = 907.582 ; free physical = 138299 ; free virtual = 209605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3216.553; parent = 2962.397; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4678.035; parent = 3704.957; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 3704.953 ; gain = 907.582 ; free physical = 138299 ; free virtual = 209605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3216.576; parent = 2962.421; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4678.035; parent = 3704.957; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 3704.953 ; gain = 907.582 ; free physical = 138299 ; free virtual = 209605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3216.592; parent = 2962.437; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4678.035; parent = 3704.957; children = 973.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-----------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name              | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|sum_signed  | vld_layer7_reg        | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|sum_signed  | reduce_layer53_reg[5] | 4      | 6     | YES          | NO                 | YES               | 6      | 0       | 
++------------+-----------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY8 |    30|
+|3     |LUT1   |    24|
+|4     |LUT2   |   248|
+|5     |LUT3   |   125|
+|6     |LUT4   |    75|
+|7     |LUT5   |    50|
+|8     |LUT6   |   150|
+|9     |SRL16E |     7|
+|10    |FDRE   |   604|
+|11    |IBUF   |   403|
+|12    |OBUF   |    12|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 3704.953 ; gain = 907.582 ; free physical = 138299 ; free virtual = 209605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3216.607; parent = 2962.452; children = 254.187
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4678.035; parent = 3704.957; children = 973.078
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 3704.953 ; gain = 743.863 ; free physical = 138290 ; free virtual = 209596
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 3704.961 ; gain = 907.582 ; free physical = 138277 ; free virtual = 209583
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3718.891 ; gain = 0.000 ; free physical = 138396 ; free virtual = 209702
+INFO: [Netlist 29-17] Analyzing 434 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'sum_signed' is not ideal for floorplanning, since the cellview 'sum_signed' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/mnt/vault1/mfaroo19/reduction_tree/integrator/runs/M100_W4/sum_signed.xdc]
+Finished Parsing XDC File [/mnt/vault1/mfaroo19/reduction_tree/integrator/runs/M100_W4/sum_signed.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3784.496 ; gain = 0.000 ; free physical = 138377 ; free virtual = 209683
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 404 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 403 instances
+
+Synth Design complete, checksum: 79f299cc
+INFO: [Common 17-83] Releasing license: Synthesis
+19 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:41 . Memory (MB): peak = 3784.496 ; gain = 2079.945 ; free physical = 138434 ; free virtual = 209740
+# report_utilization -file runs/M100_W4/util.rpt
+# report_timing_summary -file runs/M100_W4/timing.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_timing_summary: Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 4752.211 ; gain = 967.715 ; free physical = 137624 ; free virtual = 208979
+# exit
+INFO: [Common 17-206] Exiting Vivado at Tue Nov  4 17:25:00 2025...
