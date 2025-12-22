@@ -49,7 +49,7 @@ from joblib import Parallel, delayed
 
 
 # Configure PyTorch threading (per-process)
-torch.set_num_threads(5)
+torch.set_num_threads(3)
 torch.set_num_interop_threads(2)
 
 # -----------------------
@@ -85,6 +85,17 @@ END_WINDOW = 770
 SAMPLE_RESHAPE = (90, 2, 5000, 770, 2)  # training reshape
 TEST_RESHAPE = (10, 2, 5000, 770, 2)    # test reshape
 SIGNAL_LEN = 750
+
+PREPROC_GOOD_FNAME = None #"/home/mfaroo19/Desktop/quantum/pruned_configs/pruned_decoupled_beta_parallel_fixed_preproc_prefiltered.jsonl"   # adjust path
+LOGIC_GOOD_FNAME = None #"/home/mfaroo19/Desktop/quantum/pruned_configs/pruned_decoupled_beta_parallel_fixed_logicnet_points.jsonl" 
+
+AREA_THRESHOLD = 20000.0     # default: LUT units (tweak)
+LATENCY_THRESHOLD = 14.0     # default: ns or cycles depending on your stored metric (tweak)
+MAX_INVALID_RETRIES = 500    # attempts to draw a valid replacement before giving up
+
+# global containers (populated by load_good_configs)
+GOOD_PREPROC_DICT = None
+GOOD_LOGIC_DICT = None
 
 # Memmap-backed dataset loader
 # ----------------------
@@ -128,6 +139,169 @@ def load_and_verify_data(skip_md5=False):
         print("[MAIN] Checksums OK.")
     else:
         print("[MAIN] Skipping checksums per request.")
+        
+#good config helpers:
+
+def _preproc_key_from(d):
+    # canonical key for preproc: (sig_start, sig_length, num_filter, filt_type, n, shift)
+    return (int(d.get("sig_start", 0)),
+            int(d.get("sig_length", 0)),
+            int(d.get("num_filter", 0)),
+            int(d.get("filt_type", 0)),
+            int(d.get("n", 0)),
+            int(d.get("shift", 0)))
+
+def _logic_key_from(d):
+    """
+    Canonical key for logic configuration.
+    Includes all decoupled beta/gamma fields.
+    (layers, beta, beta_i, beta_o, gamma_i, gamma, gamma_o)
+    """
+    layers = tuple(d.get("layers", []))
+
+    beta   = int(d.get("beta", 1))
+    beta_i = int(d.get("beta_i", beta))
+    beta_o = int(d.get("beta_o", beta))
+
+    gamma_i = int(d.get("gamma_i", 6))
+    gamma   = int(d.get("gamma", 6))
+    gamma_o = int(d.get("gamma_o", gamma))
+
+    return (layers, beta, beta_i, beta_o, gamma_i, gamma, gamma_o)
+
+def load_good_configs(preproc_fname=PREPROC_GOOD_FNAME, logic_fname=LOGIC_GOOD_FNAME):
+    """Load JSONL files into dicts keyed by canonical tuples (quick lookups)."""
+    global GOOD_PREPROC_DICT, GOOD_LOGIC_DICT
+    GOOD_PREPROC_DICT = {}
+    GOOD_LOGIC_DICT = {}
+
+    # load preproc list
+    try:
+        with open(preproc_fname, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line: 
+                    continue
+                j = json.loads(line)
+                k = _preproc_key_from(j)
+                GOOD_PREPROC_DICT[k] = j
+    except FileNotFoundError:
+        print(f"[WARN] Good preproc file not found: {preproc_fname}. Disabling preproc-checks.")
+        GOOD_PREPROC_DICT = None
+
+    # load logic list
+    try:
+        with open(logic_fname, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                j = json.loads(line)
+                k = _logic_key_from(j)
+                GOOD_LOGIC_DICT[k] = j
+    except FileNotFoundError:
+        print(f"[WARN] Good logic file not found: {logic_fname}. Disabling logic-checks.")
+        GOOD_LOGIC_DICT = None
+
+    loaded = (len(GOOD_PREPROC_DICT) if GOOD_PREPROC_DICT else 0, len(GOOD_LOGIC_DICT) if GOOD_LOGIC_DICT else 0)
+    print(f"[LOAD_GOOD_CONFIGS] loaded preproc={loaded[0]} logic={loaded[1]}")
+    return GOOD_PREPROC_DICT, GOOD_LOGIC_DICT
+    
+# ---------- NEW: check function ----------
+def _compute_pair_area_latency(pre_meta, logic_meta):
+    """Compute area and latency from metadata entries (safe to miss fields)."""
+    lut_pre = float(pre_meta.get("lut_pre", 0.0))
+    dsp_pre = float(pre_meta.get("dsp_pre", 0.0))
+    logic_lut = float(logic_meta.get("logic_lut", 0.0))
+    # area: LUTs + logic LUTs + (DSPs * 32) as rough LUT-equivalent; tweak multiplier if necessary
+    area = lut_pre + logic_lut + (dsp_pre * 32.0)
+    latency = float(pre_meta.get("latency_pre", 0.0)) + float(logic_meta.get("logic_latency", 0.0))
+    return area, latency
+
+def fitness_check(preproc, logic, area_limit, latency_limit, dsp_scale=32):
+    """
+    Compute total area and latency for a (preproc, logicnet) combo.
+    Returns (is_valid, total_area, total_latency, breakdown_dict)
+    
+    Arguments:
+        preproc: dict with sig_start, sig_length, num_filter, filt_type, n, shift
+        logic: dict with layers, beta_i, beta, beta_o, gamma_i, gamma, gamma_o
+        area_limit, latency_limit: thresholds to validate against
+        dsp_scale: LUT equivalent weight for DSPs
+    """
+    # ----------------------------
+    # Preproc resource estimation
+    # ----------------------------
+    M = max(2, int(math.ceil(preproc["sig_length"] / preproc["num_filter"])))
+    W = max(1, int(max(1, 14 - int(preproc["shift"]))))
+    res_pre = predict_resources_integrator(M, W)
+    N_weights = max(1, preproc["n"])
+    num_windows = preproc["num_filter"]
+    lut_pre = float(res_pre["LUTs"]) * (2 * num_windows)
+    dsp_pre = float(res_pre.get("DSPs", 0.0)) * (2 * num_windows)
+    latency_pre = int(res_pre.get("latency_cycles", 0))
+
+    # ----------------------------
+    # Logic resource estimation
+    # ----------------------------
+    layers = tuple(logic["layers"])
+    beta_i, beta, beta_o = int(logic["beta_i"]), int(logic["beta"]), int(logic["beta_o"])
+    gamma_i, gamma, gamma_o = int(logic["gamma_i"]), int(logic["gamma"]), int(logic["gamma_o"])
+
+    # Constraint checks (same as your logic_task)
+    if not (5 < gamma < 17 and 5 < beta * gamma < 17):
+        return False, None, None, {"reason": "invalid beta/gamma combo"}
+    if not (5 < gamma_i < 17 and 5 < beta_i * gamma_i < 17):
+        return False, None, None, {"reason": "invalid beta_i/gamma_i combo"}
+    if not (5 < gamma_o < 17 and 5 < beta_o * gamma_o < 17):
+        return False, None, None, {"reason": "invalid beta_o/gamma_o combo"}
+
+    total_raw, _ = raw_LUTs_from_spec(
+        layers,
+        feature_input_bw=beta_i, in_fanin=gamma_i,
+        hid_bw=beta, hid_fanin=gamma,
+        out_bw=beta_o, out_fanin=gamma_o
+    )
+    lut_logic = luts_logicnet_proxy(total_raw)
+    latency_logic = len(layers)
+
+    # ----------------------------
+    # Combine area and latency
+    # ----------------------------
+    total_area = lut_pre + dsp_pre * dsp_scale + lut_logic
+    total_latency = latency_pre + latency_logic
+
+    # ----------------------------
+    # Decision and output
+    # ----------------------------
+    is_valid = (total_area <= area_limit) and (total_latency <= latency_limit)
+    breakdown = {
+        "lut_pre": lut_pre,
+        "dsp_pre": dsp_pre,
+        "lut_logic": lut_logic,
+        "area": total_area,
+        "latency": total_latency,
+        "pre_latency": latency_pre,
+        "logic_latency": latency_logic,
+    }
+    return is_valid, total_area, total_latency, breakdown
+
+
+
+def is_valid_pair(preproc, logic_spec, area_threshold=AREA_THRESHOLD, latency_threshold=LATENCY_THRESHOLD):
+    """
+    Return True if:
+      - both preproc and logic entries exist in the 'good' lists (if those lists loaded),
+      - AND their combined area/latency are <= thresholds (if thresholds set).
+    If good-lists are not loaded, this function returns True (no enforcement).
+    """
+    
+    is_valid, _, _, b = fitness_check(preproc, logic_spec, area_limit=area_threshold, latency_limit=latency_threshold)
+    #if(is_valid):
+    #    print(b)
+    return is_valid
+# ---------------------------------------------------------
+
 
 
 def worker_init():
@@ -352,6 +526,7 @@ def extract_features_mf(X, start, flen, weight_I, weight_Q, n, shift, num_filter
                 feats.append(np.concatenate([f_I, f_Q]))
                 labels.append(state)
     return np.array(feats, dtype=np.int32), np.array(labels, dtype=np.int32)
+
 
 
 def extract_features_int(X, start, flen, n, shift, num_filter):
@@ -675,41 +850,41 @@ def _hash_config(preproc, logic_spec):
     return (pre_hash, logic_hash)
 
 
-def clamp_and_fix(vec):
-    v = vec.copy()
-    v[0] = 1
-    v[2] = int(max(min(v[2], 6), 0))
-    v[3] = int(np.clip(v[3], min(SIG_START_RANGE), max(SIG_START_RANGE)))
-    v[4] = int(np.clip(v[4], min(SHIFT_RANGE), max(SHIFT_RANGE)))
-    sig_len = max(1, 500 - int(v[3]))
-    v[1] = int(min(max(v[1], 1), sig_len))
-    divisors = [i for i in range(1, min(4, sig_len+1)) if sig_len % i == 0] or [1]
-    if divisors:
-        v[1] = min(divisors, key=lambda d: abs(d - v[1]))
-    v[5] = 3 if v[5] < 4 else 4
-    v[6] = int(min(max(v[6], 25), 145))
-    prev = v[6]
-    for i in range(1, 4):
-        v[6 + i] = int(np.clip(v[6 + i], 5, 45))
-        if v[6 + i] > prev:
-            v[6 + i] = prev
-        prev = v[6 + i]
-    v[9] = 1
-    v[10] = int(np.clip(v[10], min(VALID_BETA), max(VALID_BETA)))
-    v[11] = int(np.clip(v[11], min(VALID_GAMMA_I), max(VALID_GAMMA_I)))
-    v[12] = int(np.clip(v[12], min(VALID_BETA), max(VALID_BETA)))
-    if v[12] == 1:
-        gamma_candidates = list(range(6, 17))
-    else:
-        gamma_candidates = [6, 7, 8]
-    v[13] = int(min(gamma_candidates, key=lambda g: abs(g - v[13])))
-    v[14] = int(np.clip(v[14], min(VALID_BETA), max(VALID_BETA)))
-    if v[14] == 1:
-        gamma_o_candidates = list(range(6, 17))
-    else:
-        gamma_o_candidates = [6, 7, 8]
-    v[15] = int(min(gamma_o_candidates, key=lambda g: abs(g - v[15])))
-    return v
+#def clamp_and_fix(vec):
+#    v = vec.copy()
+#    v[0] = 1
+#    v[2] = int(max(min(v[2], 6), 0))
+#    v[3] = int(np.clip(v[3], min(SIG_START_RANGE), max(SIG_START_RANGE)))
+#   v[4] = int(np.clip(v[4], min(SHIFT_RANGE), max(SHIFT_RANGE)))
+#    sig_len = max(1, 500 - int(v[3]))
+#    v[1] = int(min(max(v[1], 1), sig_len))
+#    divisors = [i for i in range(1, min(4, sig_len+1)) if sig_len % i == 0] or [1]
+#    if divisors:
+#        v[1] = min(divisors, key=lambda d: abs(d - v[1]))
+#    v[5] = 3 if v[5] < 4 else 4
+#   v[6] = int(min(max(v[6], 25), 145))
+#    prev = v[6]
+#   for i in range(1, 4):
+#        v[6 + i] = int(np.clip(v[6 + i], 5, 45))
+#        if v[6 + i] > prev:
+#            v[6 + i] = prev
+#        prev = v[6 + i]
+#    v[9] = 1
+#    v[10] = int(np.clip(v[10], min(VALID_BETA), max(VALID_BETA)))
+#    v[11] = int(np.clip(v[11], min(VALID_GAMMA_I), max(VALID_GAMMA_I)))
+#    v[12] = int(np.clip(v[12], min(VALID_BETA), max(VALID_BETA)))
+#    if v[12] == 1:
+#        gamma_candidates = list(range(6, 17))
+#    else:
+#        gamma_candidates = [6, 7, 8]
+#    v[13] = int(min(gamma_candidates, key=lambda g: abs(g - v[13])))
+#    v[14] = int(np.clip(v[14], min(VALID_BETA), max(VALID_BETA)))
+#    if v[14] == 1:
+#        gamma_o_candidates = list(range(6, 17))
+#    else:
+#        gamma_o_candidates = [6, 7, 8]
+#    v[15] = int(min(gamma_o_candidates, key=lambda g: abs(g - v[15])))
+#    return v
 
 
 def decode_vector(vec):
@@ -798,74 +973,154 @@ def de_crossover(target, mutant, CR=0.9):
 
 def clamp_and_fix(vec):
     """
-    Sanitize a vector `v` to valid ranges and enforce monotonic order on layers.
-    - v[5] => layer_count (3 or 4)
-    - v[6] => input neurons (25..145 step 5)
-    - v[7], v[8], v[9] => hidden layers (5..45 step 5)
-    - Keeps other fields clamped as before.
+    Sanitize `vec` without calling random_individual.
+    - If a numeric field is within allowed bounds -> snap/round to nearest allowed value.
+    - If it's outside allowed bounds -> initialize randomly according to same constraints.
+    - No recursion.
     """
-    v = vec.copy().astype(int)
+    v = vec.copy().astype(float)  # work in float to detect fractional values, convert to int at end
 
-    # basic fixed fields (mostly unchanged from original)
+    # helpers
+    def is_number(x):
+        return isinstance(x, (int, float, np.floating, np.integer))
+
+    def choose_from(seq):
+        return random.choice(list(seq))
+
+    def snap_or_random_to_allowed(val, allowed):
+        """If val is numeric and between min/max(allowed) -> snap to nearest allowed.
+           Else return random choice from allowed.
+        """
+        if not allowed:
+            return None
+        amin, amax = allowed[0], allowed[-1]
+        if is_number(val) and (amin <= float(val) <= amax):
+            return _snap_to_grid(float(val), allowed)
+        else:
+            return choose_from(allowed)
+
+    # --- v[0] fixed ---
     v[0] = 1
-    v[2] = int(max(min(v[2], 6), 0))
-    v[3] = int(np.clip(v[3], min(SIG_START_RANGE), max(SIG_START_RANGE)))
-    v[4] = int(np.clip(v[4], min(SHIFT_RANGE), max(SHIFT_RANGE)))
 
-    # num_filter clamp (keep original behaviour)
+    # --- v[3] sig_start: discrete SIG_START_RANGE ---
+    if is_number(v[3]):
+        v[3] = snap_or_random_to_allowed(v[3], sorted(SIG_START_RANGE))
+    else:
+        v[3] = choose_from(SIG_START_RANGE)
+    v[3] = float(int(v[3]))
+
+    # compute sig_len early (used for num_filter)
     sig_len = max(1, 500 - int(v[3]))
-    v[1] = int(min(max(v[1], 1), sig_len))
+
+    # --- v[1] num_filter: must be a divisor in [1..min(3,sig_len)] (original logic used divisors) ---
     divisors = [i for i in range(1, min(4, sig_len+1)) if sig_len % i == 0] or [1]
-    if divisors:
-        v[1] = min(divisors, key=lambda d: abs(d - v[1]))
+    if is_number(v[1]) and (1 <= float(v[1]) <= sig_len):
+        # snap to nearest divisor
+        # treat allowed as sorted list of ints
+        try:
+            # find nearest divisor by absolute difference
+            v1_val = float(v[1])
+            v[1] = min(divisors, key=lambda d: abs(d - v1_val))
+        except Exception:
+            v[1] = choose_from(divisors)
+    else:
+        v[1] = choose_from(divisors)
+    v[1] = float(int(v[1]))
 
-    # layer_count: force to either 3 or 4
-    v[5] = 3 if v[5] < 4 else 4
-    layer_count = int(v[5])  # 3 or 4
+    # --- v[2] n: allowed N_RANGE (0..6) ---
+    allowed_n = list(N_RANGE)
+    if is_number(v[2]) and (min(allowed_n) <= float(v[2]) <= max(allowed_n)):
+        # nearest integer in range
+        nv = int(round(float(v[2])))
+        nv = int(np.clip(nv, min(allowed_n), max(allowed_n)))
+        v[2] = nv
+    else:
+        v[2] = choose_from(allowed_n)
+    v[2] = float(int(v[2]))
 
-    # Input layer: snap to allowed input neurons (25..145 step 5)
-    v[6] = _snap_to_grid(int(v[6]), _ALLOWED_INPUT_NEURONS)
+    # --- v[4] shift: discrete SHIFT_RANGE ---
+    v[4] = snap_or_random_to_allowed(v[4], sorted(list(SHIFT_RANGE)))
+    v[4] = float(int(v[4]))
 
-    # Hidden layers: ensure each is a valid hidden neuron choice and non-increasing
-    prev = v[6]
-    # number of hidden slots used = layer_count - 1 (since v6 is input)
+    # --- layer_count v[5]: must be 3 or 4 ---
+    if is_number(v[5]) and (3 <= float(v[5]) <= 4):
+        v5 = int(round(float(v[5])))
+        v[5] = 3 if v5 < 4 else 4
+    else:
+        v[5] = choose_from([3, 4])
+    layer_count = int(v[5])
+    v[5] = float(layer_count)
+
+    # --- v[6] input neurons: snap to allowed grid or random ---
+    v[6] = snap_or_random_to_allowed(v[6], _ALLOWED_INPUT_NEURONS)
+    v[6] = float(int(v[6]))
+    prev = int(v[6])
+
+    # --- hidden slots v[7], v[8], v[9] ---
     num_hidden_slots = layer_count - 1
-    for i in range(1, 4):  # indices 7,8,9 correspond to hidden1, hidden2, hidden3
+    for i in range(1, 4):
         idx = 6 + i
         if i <= num_hidden_slots:
-            # candidate snapped to grid, but also cannot exceed prev
-            cand = _snap_to_grid(int(v[idx]), _ALLOWED_HIDDEN_NEURONS)
-            # restrict candidates to <= prev; choose closest allowed <= prev
+            # allowed hidden values that do not exceed prev
             allowed_le_prev = [x for x in _ALLOWED_HIDDEN_NEURONS if x <= prev]
-            if not allowed_le_prev:
-                # if prev is smaller than minimal hidden (rare), fallback to smallest hidden
-                chosen = _ALLOWED_HIDDEN_NEURONS[0]
+            if allowed_le_prev:
+                # if numeric and in range [min_allowed_le_prev, prev], snap to nearest allowed_le_prev
+                if is_number(v[idx]) and (min(allowed_le_prev) <= float(v[idx]) <= prev):
+                    # snap to nearest in allowed_le_prev
+                    try:
+                        v_val = float(v[idx])
+                        # use _snap_to_grid but with allowed_le_prev list
+                        v[idx] = _snap_to_grid(v_val, allowed_le_prev)
+                    except Exception:
+                        v[idx] = choose_from(allowed_le_prev)
+                else:
+                    # out of allowable range -> random from allowed_le_prev
+                    v[idx] = choose_from(allowed_le_prev)
             else:
-                # choose nearest in allowed_le_prev to cand
-                chosen = min(allowed_le_prev, key=lambda x: abs(x - cand))
-            v[idx] = int(chosen)
-            prev = v[idx]
+                # prev is smaller than any hidden neuron; fallback to smallest hidden
+                v[idx] = _ALLOWED_HIDDEN_NEURONS[0]
+            prev = int(v[idx])
+            v[idx] = float(int(v[idx]))
         else:
-            # slot not used — set to a safe default (smallest hidden) but it won't be read
-            v[idx] = _ALLOWED_HIDDEN_NEURONS[0]
+            # unused slot -> set minimal hidden (safe default)
+            v[idx] = float(_ALLOWED_HIDDEN_NEURONS[0])
 
-    # Beta/Gamma clamping (same semantics as before)
-    v[10] = int(np.clip(v[10], min(VALID_BETA), max(VALID_BETA)))
-    v[11] = int(np.clip(v[11], min(VALID_GAMMA_I), max(VALID_GAMMA_I)))
-    v[12] = int(np.clip(v[12], min(VALID_BETA), max(VALID_BETA)))
-    if v[12] == 1:
+    # --- beta / gamma fields ---
+    # v[10] beta_i (VALID_BETA)
+    v[10] = snap_or_random_to_allowed(v[10], sorted(list(VALID_BETA)))
+    v[10] = float(int(v[10]))
+
+    # v[11] gamma_i (VALID_GAMMA_I)
+    v[11] = snap_or_random_to_allowed(v[11], sorted(list(VALID_GAMMA_I)))
+    v[11] = float(int(v[11]))
+
+    # v[12] beta (VALID_BETA)
+    v[12] = snap_or_random_to_allowed(v[12], sorted(list(VALID_BETA)))
+    v[12] = float(int(v[12]))
+
+    # v[13] gamma depends on v[12]
+    if int(v[12]) == 1:
         gamma_candidates = list(range(6, 17))
     else:
         gamma_candidates = [6, 7, 8]
-    v[13] = int(min(gamma_candidates, key=lambda g: abs(g - v[13])))
-    v[14] = int(np.clip(v[14], min(VALID_BETA), max(VALID_BETA)))
-    if v[14] == 1:
+    v[13] = snap_or_random_to_allowed(v[13], gamma_candidates)
+    v[13] = float(int(v[13]))
+
+    # v[14] beta_o
+    v[14] = snap_or_random_to_allowed(v[14], sorted(list(VALID_BETA)))
+    v[14] = float(int(v[14]))
+
+    # v[15] gamma_o depends on v[14]
+    if int(v[14]) == 1:
         gamma_o_candidates = list(range(6, 17))
     else:
         gamma_o_candidates = [6, 7, 8]
-    v[15] = int(min(gamma_o_candidates, key=lambda g: abs(g - v[15])))
+    v[15] = snap_or_random_to_allowed(v[15], gamma_o_candidates)
+    v[15] = float(int(v[15]))
 
-    return v
+    # final conversion to ints (original vectors were ints)
+    return v.astype(int)
+
 
 # ------------------------
 # Population helpers
@@ -929,6 +1184,45 @@ def random_individual(sig_start_range=SIG_START_RANGE):
 
     # final sanitization to make sure everything obeys constraints
     return clamp_and_fix(v)
+
+def random_valid_individual(sig_start_range=SIG_START_RANGE, max_attempts=MAX_INVALID_RETRIES):
+    """Return a random individual that passes is_valid_pair (retries up to max_attempts)."""
+    for attempt in range(max_attempts):
+        v = random_individual(sig_start_range=sig_start_range)
+        # reseed random generators deterministically based on vector contents
+        seed_val = (int(time.time() * 1000) ^ abs(hash(tuple(v)))) & 0xFFFFFFFF
+        random.seed(seed_val)
+        np.random.seed(seed_val)
+
+        pre, logic = decode_vector(v)
+        if is_valid_pair(pre, logic):
+            return v
+
+    # fallback: return last generated (likely invalid) but log warning
+    print(f"[WARN] random_valid_individual: failed to find valid config after {max_attempts} attempts; returning last candidate.")
+    return v
+
+
+    
+def ensure_valid_trial_vector(trial_vec, max_attempts=MAX_INVALID_RETRIES):
+    """
+    Given a trial vector produced by mutation/crossover, verify it.
+    If invalid, replace it with a fresh random_valid_individual (not derived from parents).
+    This keeps the mutation/crossover operators unchanged (only rejects invalid outcome).
+    """
+    pre, logic = decode_vector(trial_vec)
+    if is_valid_pair(pre, logic):
+        return trial_vec
+
+    # replacement loop
+    for attempt in range(max_attempts):
+        new_v = random_valid_individual(max_attempts=50)
+        pre2, logic2 = decode_vector(new_v)
+        if is_valid_pair(pre2, logic2):
+            return new_v
+
+    print(f"[WARN] ensure_valid_trial_vector: failed to replace invalid trial after {max_attempts} attempts; returning original trial.")
+    return trial_vec
     
 # ------------------------
 # Worker evaluation function (no global cache mutation)
@@ -965,7 +1259,7 @@ def evaluate_vector_worker(vec, weights=(0.2,0.6,0.2), debug=False):
 def differential_evolution_discrete(pop_size=20, gens=200, F=0.6, CR=0.9,
                                     weights=(0.2, 0.6, 0.2), parallel_jobs=4,
                                     init_seed=None, resume_cache=None, debug=False,
-                                    skip_md5=True, patience=40):
+                                    skip_md5=True, patience=40, log_fname="./de_log.yaml"):
     """
     Discrete Differential Evolution with safe cache + YAML logging.
     Early-exits if best cost hasn't improved for `patience` generations.
@@ -976,10 +1270,11 @@ def differential_evolution_discrete(pop_size=20, gens=200, F=0.6, CR=0.9,
 
     # Validate files once in parent
     load_and_verify_data()
+    #load_good_configs(PREPROC_GOOD_FNAME, LOGIC_GOOD_FNAME)
 
     cache = resume_cache if resume_cache is not None else {}
-    log_fname = "./de_log.yaml"
-
+    log_fname = log_fname
+    
     header = {
         "run_start_utc": datetime.datetime.utcnow().isoformat() + "Z",
         "pop_size": int(pop_size),
@@ -1000,7 +1295,7 @@ def differential_evolution_discrete(pop_size=20, gens=200, F=0.6, CR=0.9,
     # -------------------------------
     # 1. Initialize population
     # -------------------------------
-    pop = [random_individual() for _ in range(pop_size)]
+    pop = [random_valid_individual() for _ in range(pop_size)]
     print(f"[DE] Evaluating initial population (n={pop_size}) with {parallel_jobs} workers...")
 
     tasks = Parallel(n_jobs=parallel_jobs, backend="loky", prefer="processes")(
@@ -1060,6 +1355,8 @@ def differential_evolution_discrete(pop_size=20, gens=200, F=0.6, CR=0.9,
             mutant = de_mutation(a, b, c, F=F)
             trial = de_crossover(pop[i], mutant, CR=CR)
             trial = clamp_and_fix(trial)
+            # Ensure trial is not a bad combination (replace with fresh random valid if needed)
+            trial = ensure_valid_trial_vector(trial)
             trials.append(trial)
 
         # Evaluate trials in parallel
@@ -1136,23 +1433,46 @@ def differential_evolution_discrete(pop_size=20, gens=200, F=0.6, CR=0.9,
 # If run as script: quick example
 # ------------------------
 if __name__ == '__main__':
+    import argparse
 
-    # create many random individuals and ensure properties hold
-    for _ in range(100):
-        v = random_individual()
-        preproc, logic = decode_vector(v)
-        layers = logic['layers']
-        # layers length should be 3 or 4
-        assert len(layers) in (3,4)
-        # input layer in allowed range
-        assert layers[0] in _ALLOWED_INPUT_NEURONS
-        # hidden layers multiples of 5 and <= prev
-        prev = layers[0]
-        for h in layers[1:]:
-            assert h in _ALLOWED_HIDDEN_NEURONS
-            assert h <= prev
-            prev = h
-    print("random_individual smoke-test passed.")
+    parser = argparse.ArgumentParser(description="Discrete DE optimization driver")
+    parser.add_argument("--pop_size", type=int, default=20, help="Population size")
+    parser.add_argument("--gens", type=int, default=100, help="Number of generations")
+    parser.add_argument("--F", type=float, default=0.6, help="Differential weight")
+    parser.add_argument("--CR", type=float, default=0.8, help="Crossover rate")
+    parser.add_argument("--parallel_jobs", type=int, default=24, help="Number of parallel jobs")
+    parser.add_argument("--init_seed", type=int, default=42, help="Random seed for reproducibility")
+    parser.add_argument("--weights", type=str, default="0.2,0.6,0.2",
+                        help="Comma-separated weights for compute_cost, e.g. '0.2,0.6,0.2'")
+    parser.add_argument("--log_fname", type=str, default="./de_log.yaml",
+                        help="YAML log filename")
+    parser.add_argument("--debug", action="store_true", help="Enable debug mode")
 
-    res = differential_evolution_discrete(pop_size=20, gens=100, F=0.6, CR=0.8, parallel_jobs=24, init_seed=42, skip_md5=True)
-    print('BEST', res['best_cost'], res['best_preproc'], res['best_logic_spec'])
+    args = parser.parse_args()
+
+    # Parse weights string into tuple of floats
+    try:
+        weights = tuple(float(x) for x in args.weights.split(","))
+        if len(weights) != 3:
+            raise ValueError
+    except ValueError:
+        raise ValueError("Invalid --weights format. Must be like '0.2,0.6,0.2'")
+
+    #load_good_configs()
+    valids = sum(1 for _ in range(1000) if is_valid_pair(*decode_vector(random_individual())))
+    print(f"Out of 1000 random individuals, {valids} passed is_valid_pair.")
+
+    res = differential_evolution_discrete(
+        pop_size=args.pop_size,
+        gens=args.gens,
+        F=args.F,
+        CR=args.CR,
+        parallel_jobs=args.parallel_jobs,
+        init_seed=args.init_seed,
+        weights=weights,
+        log_fname=args.log_fname,
+        debug=args.debug,
+        skip_md5=True
+    )
+
+    print("BEST", res["best_cost"], res["best_preproc"], res["best_logic_spec"])
