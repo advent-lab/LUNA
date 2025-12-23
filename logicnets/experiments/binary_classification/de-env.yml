@@ -10,7 +10,7 @@ dependencies:
   - scipy=1.5.3
   - scikit-learn=0.24.2
   - protobuf=3.18.3
-  - pyyaml=0.2.5
+  - pyyaml=5.4.1
 
   # System / runtime
   - libstdcxx-ng
