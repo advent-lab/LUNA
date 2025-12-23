@@ -237,7 +237,7 @@ module nn_classifier_wrapper #(
 endmodule
 
 // =========================================================================
-// NN ACCELERATOR MODULE (Fleshed Out)
+// NN ACCELERATOR MODULE
 // This module implements the data partitioning, adder trees, interleaving,
 // and the LogicNet IP interface.
 // =========================================================================
