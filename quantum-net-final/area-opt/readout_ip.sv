@@ -140,9 +140,6 @@ module nn_classifier_wrapper #(
                         
                         // Q value storage (shifted)
                         // Q data occupies [17:4]. Shifted slice is [17 : 4 + SHIFT_M] = [17:13] (5 bits)
-                        // NOTE: User requested Q to be [13 : SHIFT_M] previously, but based on the 32-bit input bus 
-                        // [31:18] I, [17:4] Q, [3:0] Padding, Q is [17:4].
-                        // Recalculating Q based on the stated bus structure: [17 : 4 + 9] = [17:13].
                         q_memory[load_count] <= in_TDATA[17 : 4 + SHIFT_M];
                         
                         load_count <= load_count + 1;
@@ -313,8 +310,6 @@ module nn_accelerator #(
         .sum(sum_raw_q0)
     );
     
-    // Note: sum_signed_i1 and sum_signed_q1 are removed
-
     // --- 3. Post-Accumulation Shift (SHIFT_N) and Interleaving ---
     
     // Apply SHIFT_N truncation (1 LSB dropped). Result is 13 bits wide.
