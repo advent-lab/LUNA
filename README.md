@@ -10,5 +10,5 @@ LUNA is a fast and efficient superconducting qubit readout accelerator that comb
 `preprocessor` contains the adder tree templates
 
 ### The final designs
-`quantum-net-final` contains final designs. 
+`quantum-net-final` contains final designs. Top level verilog file in each directory is `readout_ip.sv`. Vivado project files are also present, but designs were compiled using the `run.tcl` scripts
 
