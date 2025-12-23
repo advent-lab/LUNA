@@ -10,15 +10,15 @@
 
 | Argument          | Description                                                                                                                       |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `--pop_size`      | Number of candidate solutions in the Differential Evolution population.                                                           |
-| `--gens`          | Number of evolutionary generations to run.                                                                                        |
-| `--F`             | Differential weight controlling mutation magnitude.                                                                               |
-| `--CR`            | Crossover rate determining how often mutated parameters are inherited.                                                            |
-| `--parallel_jobs` | Number of parallel worker processes used for evaluation.                                                                          |
-| `--init_seed`     | Random seed for reproducible runs.                                                                                                |
-| `--weights`       | Comma-separated weights for the cost function components (`compute_cost`), e.g. `0.2,0.6,0.2`. Must contain exactly three values. First weights fidelity, second weights area, third weights latency |
-| `--log_fname`     | Path to the YAML file where logs are written.                                                                        |
-| `--debug`         | Enable debug mode with additional logging and checks.                                                                             |
+| `--pop_size`       | Number of candidate solutions in the Differential Evolution population.                                                           |
+| `--gens`           | Number of evolutionary generations to run.                                                                                        |
+| `--F`              | Differential weight controlling mutation magnitude.                                                                               |
+| `--CR`             | Crossover rate determining how often mutated parameters are inherited.                                                            |
+| `--parallel_jobs`  | Number of parallel worker processes used for evaluation.                                                                          |
+| `--init_seed`      | Random seed for reproducible runs.                                                                                                |
+| `--weights`        | Comma-separated weights for the cost function components (`compute_cost`), e.g. `0.2,0.6,0.2`. Must contain exactly three values. First weights fidelity, second weights area, third weights latency |
+| `--log_fname`      | Path to the YAML file where logs are written.                                                                        |
+| `--debug`          | Enable debug mode with additional logging and checks.                                                                             |
 
 
 # Setup for LogicNets
