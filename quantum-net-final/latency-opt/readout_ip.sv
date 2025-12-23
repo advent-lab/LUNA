@@ -143,11 +143,6 @@ module nn_classifier_wrapper #(
                         i_memory[load_count] <= in_TDATA[31 : 18 + SHIFT_M]; 
                         
                         // Q value storage (shifted)
-                        // Q is [17:4]. Shifted slice is [17 : 4 + SHIFT_M].
-                        // Since IQ_WIDTH_IN is 14, the Q data goes from bit 17 down to 4.
-                        // The user specified the Q slice as [13 : SHIFT_M] in the previous request, 
-                        // which doesn't align with the 32-bit word definition [17:4]. 
-                        // Using the standard Q slice [17 : 4 + SHIFT_M] = [17 : 13] (5 bits)
                         q_memory[load_count] <= in_TDATA[17 : 4 + SHIFT_M];
                         
                         load_count <= load_count + 1;
@@ -236,7 +231,7 @@ module nn_classifier_wrapper #(
 endmodule
 
 // =========================================================================
-// NN ACCELERATOR MODULE (Fleshed Out)
+// NN ACCELERATOR MODULE 
 // This module implements the data partitioning, adder trees, interleaving,
 // and the LogicNet IP interface.
 // =========================================================================
