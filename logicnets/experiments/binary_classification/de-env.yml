@@ -21,5 +21,4 @@ dependencies:
       - tensorboard==2.6.0
       - torch==1.5.1+cpu
       - torchvision==0.6.1+cpu
-      - git+https://github.com/Xilinx/brevitas.git@67be9b58c1c63d3923cac430ade2552d0db67ba5
       - --find-links https://download.pytorch.org/whl/torch_stable.html
