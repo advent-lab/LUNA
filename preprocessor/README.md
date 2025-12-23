@@ -1,0 +1,2 @@
+- `integrator` contains mako file and Vivado runs for adder-tree template runs
+- `dot-product` contains parallel deprecated matched-filter/weighted envelope analysis
