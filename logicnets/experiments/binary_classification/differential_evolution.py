@@ -233,8 +233,8 @@ def fitness_check(preproc, logic, area_limit, latency_limit, dsp_scale=32):
     # Preproc resource estimation
     # ----------------------------
     N = int(math.ceil(preproc["sig_length"])
-    PRE = int(preproc["shift"])
-    WINDOWS = max(1, int(preproc["n"]))
+    PRE = int(preproc["n"])
+    WINDOWS = max(1, int(preproc["num_filter"]))
     res_pre = predict_resources_integrator(N, WINDOWS, PRE)
     N_weights = max(1, preproc["n"])
     num_windows = preproc["num_filter"]
@@ -825,8 +825,8 @@ def run_experiment(preproc, logic_spec, debug=False):
 
         # estimate resources
         N = int(math.ceil(preproc["sig_length"]
-        PRE = int(preproc["shift"])
-        WINDOWS = max(1, int(preproc["n"]))
+        PRE = int(preproc["n"])
+        WINDOWS = max(1, int(preproc["num_filter"]))
 
         if preproc["filt_type"] == 2:
             res_ext = predict_resources_dp(N, WINDOWS, (14 - PRE))
