@@ -238,8 +238,8 @@ def fitness_check(preproc, logic, area_limit, latency_limit, dsp_scale=32):
     res_pre = predict_resources_integrator(N, WINDOWS, PRE)
     N_weights = max(1, preproc["n"])
     num_windows = preproc["num_filter"]
-    lut_pre = float(res_pre["LUTs"]) * (2 * num_windows)
-    dsp_pre = float(res_pre.get("DSPs", 0.0)) * (2 * num_windows)
+    lut_pre = float(res_pre["LUTs"])
+    dsp_pre = float(res_pre.get("DSPs", 0.0))
     latency_pre = int(res_pre.get("latency_cycles", 0))
 
     # ----------------------------
