@@ -232,9 +232,10 @@ def fitness_check(preproc, logic, area_limit, latency_limit, dsp_scale=32):
     # ----------------------------
     # Preproc resource estimation
     # ----------------------------
-    M = max(2, int(math.ceil(preproc["sig_length"] / preproc["num_filter"])))
-    W = max(1, int(max(1, 14 - int(preproc["shift"]))))
-    res_pre = predict_resources_integrator(M, W)
+    N = int(math.ceil(preproc["sig_length"]
+    PRE = int(preproc["shift"])
+    WINDOWS = max(1, int(preproc["n"]))
+    res_pre = predict_resources_integrator(N, WINDOWS, PRE)
     N_weights = max(1, preproc["n"])
     num_windows = preproc["num_filter"]
     lut_pre = float(res_pre["LUTs"]) * (2 * num_windows)
@@ -586,16 +587,59 @@ def predict_resources_dp(M, W, N, fmax=0.66):
     return {"LUTs": luts, "DSPs": dsps, "latency_cycles": latency_cycles, "latency_ns": latency_ns, "type": "dp"}
 
 
-def predict_resources_integrator(M, W, fmax=0.66):
-    lut_intercept = 99.550142
-    lut_coef = np.array([3.135467, 2.061605, 0.159635])
-    features = np.array([M, W, M*W])
-    luts = float(lut_intercept + lut_coef @ features)
+def predict_resources_integrator(N, WINDOWS, PRE, fmax=0.66):
+    """
+    Predict resource usage for time_muxed accumulator.
+    
+    Polynomial Regression Model Coefficients (3rd Degree):
+    Intercept: 57.4158
+    WINDOWS: 39.7877
+    PRE: -11.0033
+    N^2: -0.0001
+    N WINDOWS: -0.0150
+    N PRE: 0.0397
+    WINDOWS^2: 23.7416
+    WINDOWS PRE: -1.2945
+    PRE^2: 0.0165
+    N WINDOWS^2: 0.0017
+    WINDOWS^3: -3.3611
+    WINDOWS^2 PRE: -0.3315
+    WINDOWS PRE^2: -0.1806
+    PRE^3: 0.0185
+    """
+    
+    luts = 57.4158
+    luts += 39.7877 * WINDOWS
+    luts += -11.0033 * PRE
+    luts += -0.0001 * (N**2)
+    luts += -0.0150 * (N * WINDOWS)
+    luts += 0.0397 * (N * PRE)
+    luts += 23.7416 * (WINDOWS**2)
+    luts += -1.2945 * (WINDOWS * PRE)
+    luts += 0.0165 * (PRE**2)
+    luts += 0.0017 * (N * (WINDOWS**2))
+    luts += -3.3611 * (WINDOWS**3)
+    luts += -0.3315 * ((WINDOWS**2) * PRE)
+    luts += -0.1806 * (WINDOWS * (PRE**2))
+    luts += 0.0185 * (PRE**3)
+    
     luts = max(luts, 0.0)
-    latency_cycles = math.ceil(math.log2(max(2, M)))
-    clk_ns = 1e3 / (fmax * 1e3)
+    
+    # Latency for time_muxed is N cycles (1 sample processed per cycle, N samples total)
+    latency_cycles = N
+    
+    # clk_ns derived from fmax (GHz) -> 1/fmax ns
+    # Example: fmax=0.66 GHz -> 1.515 ns period
+    clk_ns = 1.0 / fmax 
     latency_ns = latency_cycles * clk_ns
-    return {"LUTs": luts, "DSPs": 0.0, "latency_cycles": latency_cycles, "latency_ns": latency_ns, "type": "integrator"}
+    
+    return {
+        "LUTs": luts,
+        "DSPs": 0.0,
+        "latency_cycles": latency_cycles,
+        "latency_ns": latency_ns,
+        "type": "integrator"
+    }
 
 s_lut_default = 0.0916561
 A_default = 6705.366569019219
@@ -780,18 +824,18 @@ def run_experiment(preproc, logic_spec, debug=False):
         fidelity = test_quiet(ln_model, DataLoader(dataset["test"], batch_size=train_cfg['batch_size']), options_cfg["cuda"])
 
         # estimate resources
-        M = max(2, int(math.ceil(preproc["sig_length"] / max(1, preproc["num_filter"]))));
-        W = max(1, int(max(1, 14 - int(preproc["shift"]))))
-        N = max(1, int(preproc["n"]))
+        N = int(math.ceil(preproc["sig_length"]
+        PRE = int(preproc["shift"])
+        WINDOWS = max(1, int(preproc["n"]))
 
         if preproc["filt_type"] == 2:
-            res_ext = predict_resources_dp(M, W, N)
+            res_ext = predict_resources_dp(N, WINDOWS, (14 - PRE))
             extractor_type = "dp"
         else:
-            res_ext = predict_resources_integrator(M, W)
+            res_ext = predict_resources_integrator(N, WINDOWS, PRE)
             extractor_type = "integrator"
 
-        res_ext_scaled = {"LUTs": res_ext["LUTs"] * (2 * N), "DSPs": res_ext["DSPs"] * (2 * N),
+        res_ext_scaled = {"LUTs": res_ext["LUTs"] , "DSPs": res_ext["DSPs"],
                           "latency_cycles": res_ext["latency_cycles"], "latency_ns": res_ext["latency_ns"]}
 
         total_raw, max_raw = raw_LUTs_from_spec(logic_spec["layers"], logic_spec["beta_i"], logic_spec["gamma_i"],
