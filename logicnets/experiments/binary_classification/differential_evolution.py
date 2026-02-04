@@ -232,7 +232,7 @@ def fitness_check(preproc, logic, area_limit, latency_limit, dsp_scale=32):
     # ----------------------------
     # Preproc resource estimation
     # ----------------------------
-    N = int(math.ceil(preproc["sig_length"]
+    N = int(math.ceil(preproc["sig_length"])
     PRE = int(preproc["shift"])
     WINDOWS = max(1, int(preproc["n"]))
     res_pre = predict_resources_integrator(N, WINDOWS, PRE)
