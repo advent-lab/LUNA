@@ -1,0 +1,10 @@
++====================+===================+============================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                        |
++====================+===================+============================================================+
+| ap_clk             | ap_clk            | u_nn_accelerator/u_sum_signed_i0/reduce_layer1167_reg[2]/D |
+| ap_clk             | ap_clk            | u_nn_accelerator/u_sum_signed_i0/reduce_layer293_reg[4]/D  |
+| ap_clk             | ap_clk            | u_nn_accelerator/u_sum_signed_i0/reduce_layer293_reg[5]/D  |
+| ap_clk             | ap_clk            | u_nn_accelerator/u_sum_signed_i0/reduce_layer293_reg[6]/D  |
+| ap_clk             | ap_clk            | u_nn_accelerator/u_sum_signed_i0/reduce_layer1167_reg[1]/D |
+| ap_clk             | ap_clk            | u_nn_accelerator/u_sum_signed_i0/reduce_layer293_reg[3]/D  |
++--------------------+-------------------+------------------------------------------------------------+

@@ -1,0 +1,137 @@
+# -----------------------------------------------------------------------------
+# Makefile.cocotb — cocotb runner for both testbenches
+#
+# Layout expected:
+#   ./rtl/readout_ip.sv
+#   ./rtl/sum_signed.sv
+#   ./rtl/logicnet.v
+#   ./rtl/logicnets/*.v
+#   ./cocotb_tb/ref_model.py
+#   ./cocotb_tb/cocotb_sim/test_full_ip.py
+#   ./cocotb_tb/cocotb_sim/test_logicnets_core.py
+#   ./cocotb_tb/Makefile.cocotb         <-- this file
+#   ./qick_data/0528_*_0_770.npy
+#
+# Usage (from cocotb_tb/ directory):
+#
+#   make -f Makefile.cocotb TEST=full_ip  DATA_DIR=/scratch/qick_data
+#   make -f Makefile.cocotb TEST=core     DATA_DIR=/scratch/qick_data
+#   make -f Makefile.cocotb TEST=core     DATA_DIR=/scratch/qick_data FEATURE_ORDER=training
+#   make -f Makefile.cocotb TEST=full_ip  DATA_DIR=/scratch/qick_data CONFIG=area N_SAMPLES=512
+#
+# Required:
+#   DATA_DIR     path to the directory containing 0528_X_test_0_770.npy and
+#                0528_y_test_0_770.npy. Accepts relative or absolute paths;
+#                will be resolved to absolute before the simulator starts.
+#
+# Optional:
+#   RTL_DIR      path to RTL sources                            [../rtl]
+#   CONFIG       fidelity | area | latency                      [fidelity]
+#   N_SAMPLES    how many test samples to simulate              [256]
+#   TEST         full_ip | core                                 [full_ip]
+#   FEATURE_ORDER (core only) training | rtl | both             [both]
+#   SIM          verilator | icarus | questa | xcelium | vcs    [verilator]
+#
+# Verilator is recommended for speed.
+#
+# Quick pure-python fidelity sanity check (no simulator, no RTL):
+#   python3 run_python_only.py --data-dir /scratch/qick_data --config fidelity
+# -----------------------------------------------------------------------------
+
+TEST           ?= full_ip
+SIM            ?= xsim
+CONFIG         ?= fidelity
+N_SAMPLES      ?= 256
+FEATURE_ORDER  ?= both
+DATA_DIR       ?=
+RTL_DIR        ?= ./rtl
+VIVADO_BIN     ?= /mnt/vault1/kmhatre/Software/AMD/VIvado/2022.2/bin
+
+# Add Vivado to PATH for xsim
+export PATH := $(VIVADO_BIN):$(PATH)
+
+# ---- validate DATA_DIR ----
+ifeq ($(strip $(DATA_DIR)),)
+  $(error DATA_DIR is required. Example: make -f Makefile.cocotb DATA_DIR=/scratch/qick_data)
+endif
+
+# Resolve to absolute — the simulator runs in a build subdir, so a relative
+# path like "../qick_data" would break.
+DATA_DIR_ABS := $(abspath $(DATA_DIR))
+
+# Fail fast if the files aren't there. Cheaper than discovering it after
+# cocotb has already elaborated a 300-layer logicnet.
+ifeq ($(wildcard $(DATA_DIR_ABS)/0528_X_test_0_770.npy),)
+  $(error Cannot find 0528_X_test_0_770.npy in '$(DATA_DIR_ABS)')
+endif
+ifeq ($(wildcard $(DATA_DIR_ABS)/0528_y_test_0_770.npy),)
+  $(error Cannot find 0528_y_test_0_770.npy in '$(DATA_DIR_ABS)')
+endif
+
+# Pass resolved values through to the python tests
+export CONFIG
+export N_SAMPLES
+export FEATURE_ORDER
+export DATA_DIR := $(DATA_DIR_ABS)
+
+# -------------- sources --------------
+# RTL_DIR for `core` test points at the directory containing logicnet.v;
+# logicnets/*.v are the sub-neuron files one level deeper.
+CORE_SRCS      := $(RTL_DIR)/logicnet.v $(wildcard $(RTL_DIR)/logicnets/*.v)
+FULL_SRCS      := $(RTL_DIR)/readout_ip.sv $(RTL_DIR)/sum_signed.sv $(CORE_SRCS)
+
+# For xsim we need a `timescale.v` stub (no `timescale in the generated Verilog)
+TIMESCALE_SV   := $(shell pwd)/timescale.v
+$(shell echo '`timescale 1ns/1ps' > $(TIMESCALE_SV))
+
+# -------------- cocotb ---------------
+TOPLEVEL_LANG  := verilog
+MODULE_PATH    := .
+
+ifeq ($(TEST),full_ip)
+  VERILOG_SOURCES := $(TIMESCALE_SV) $(FULL_SRCS)
+  TOPLEVEL        := nn_classifier_wrapper
+  MODULE          := test_full_ip
+endif
+
+ifeq ($(TEST),core)
+  VERILOG_SOURCES := $(TIMESCALE_SV) $(CORE_SRCS)
+  TOPLEVEL        := logicnet
+  MODULE          := test_logicnets_core
+endif
+
+# Tell Python where the module lives
+export PYTHONPATH := $(shell pwd):$(PYTHONPATH)
+
+# -------------- simulator flags --------------
+ifeq ($(SIM),verilator)
+  EXTRA_ARGS += -Wno-WIDTH -Wno-UNUSED -Wno-PINMISSING -Wno-WIDTHTRUNC -Wno-WIDTHEXPAND
+  EXTRA_ARGS += --trace --trace-structs
+  EXTRA_ARGS += --timing -sv
+endif
+
+ifeq ($(SIM),icarus)
+  COMPILE_ARGS += -g2012
+endif
+
+# xsim needs nothing extra — cocotb drives xvlog/xelab/xsim via PATH
+ifeq ($(SIM),xsim)
+endif
+
+include $(shell cocotb-config --makefiles)/Makefile.sim
+
+# -------------- convenience targets --------------
+.PHONY: full core sweep
+full:
+	$(MAKE) -f Makefile.cocotb TEST=full_ip \
+	        DATA_DIR=$(DATA_DIR_ABS) CONFIG=$(CONFIG) N_SAMPLES=$(N_SAMPLES)
+
+core:
+	$(MAKE) -f Makefile.cocotb TEST=core \
+	        DATA_DIR=$(DATA_DIR_ABS) CONFIG=$(CONFIG) N_SAMPLES=$(N_SAMPLES) \
+	        FEATURE_ORDER=$(FEATURE_ORDER)
+
+sweep:
+	$(MAKE) -f Makefile.cocotb TEST=full_ip DATA_DIR=$(DATA_DIR_ABS) CONFIG=fidelity
+	$(MAKE) -f Makefile.cocotb TEST=full_ip DATA_DIR=$(DATA_DIR_ABS) CONFIG=area
+	$(MAKE) -f Makefile.cocotb TEST=full_ip DATA_DIR=$(DATA_DIR_ABS) CONFIG=latency

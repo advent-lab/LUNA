@@ -1,0 +1,17 @@
+
+****** xsim v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/tb_readout_ip_sim/xsim_script.tcl
+# xsim {tb_readout_ip_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+WARNING: Too many words specified in data file labels.hex
+Starting Top-Level Classifier Simulation...
+Running test 0...
+ERROR: Timeout waiting for out_WE! Test 0 failed.
+$finish called at time : 14115 ns : File "/mnt/vault1/mfaroo19/quantum-net-final/latency-opt/tb_readout_ip.sv" Line 101
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Apr 23 14:57:31 2026...

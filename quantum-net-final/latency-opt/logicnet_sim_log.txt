@@ -1,0 +1,30 @@
+
+****** xsim v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/tb_logicnet_sim/xsim_script.tcl
+# xsim {tb_logicnet_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Starting LogicNet Simulation...
+Test 0: Expected=0, M4=00 (0:0, 1:0)
+Test 1: Expected=0, M4=00 (0:0, 1:0)
+Test 2: Expected=0, M4=00 (0:0, 1:0)
+Test 3: Expected=0, M4=00 (0:0, 1:0)
+Test 4: Expected=0, M4=10 (0:0, 1:1)
+Test 5: Expected=0, M4=00 (0:0, 1:0)
+Test 6: Expected=0, M4=00 (0:0, 1:0)
+Test 7: Expected=0, M4=00 (0:0, 1:0)
+Test 8: Expected=0, M4=00 (0:0, 1:0)
+Test 9: Expected=0, M4=00 (0:0, 1:0)
+----------------------------------------
+Simulation Complete. Encountered 48766 errors out of 100000 tests.
+P(0|1) [FN Rate] : 96.456000 %
+P(1|0) [FP Rate] : 1.076000 %
+Fidelity         : 51.234000 %
+----------------------------------------
+$finish called at time : 6000100 ns : File "/mnt/vault1/mfaroo19/quantum-net-final/latency-opt/tb_logicnet.sv" Line 113
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Apr 23 15:02:42 2026...
