@@ -2,13 +2,13 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Wed Nov 12 14:06:04 2025
-# Process ID: 2848876
-# Current directory: /mnt/vault1/mfaroo19/quantum-net-final/fid-opt/fid-opt-classifer/fid-opt-classifier.runs/synth_1
+# Start of session at: Tue May 12 13:43:18 2026
+# Process ID: 3908676
+# Current directory: /mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/fid-opt-classifer/fid-opt-classifier.runs/synth_1
 # Command line: vivado -log nn_classifier_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nn_classifier_wrapper.tcl
-# Log file: /mnt/vault1/mfaroo19/quantum-net-final/fid-opt/fid-opt-classifer/fid-opt-classifier.runs/synth_1/nn_classifier_wrapper.vds
-# Journal file: /mnt/vault1/mfaroo19/quantum-net-final/fid-opt/fid-opt-classifer/fid-opt-classifier.runs/synth_1/vivado.jou
-# Running On: en4228283l, OS: Linux, CPU Frequency: 2999.993 MHz, CPU Physical cores: 32, Host memory: 269992 MB
+# Log file: /mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/fid-opt-classifer/fid-opt-classifier.runs/synth_1/nn_classifier_wrapper.vds
+# Journal file: /mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/fid-opt-classifer/fid-opt-classifier.runs/synth_1/vivado.jou
+# Running On: en4228283l, OS: Linux, CPU Frequency: 3699.814 MHz, CPU Physical cores: 32, Host memory: 269992 MB
 #-----------------------------------------------------------
 source nn_classifier_wrapper.tcl -notrace
 Command: synth_design -top nn_classifier_wrapper -part xczu49dr-ffvf1760-2-e
@@ -19,328 +19,328 @@ INFO: [Common 17-1540] The version limit for your license is '2024.12' and has e
 INFO: [Device 21-403] Loading part xczu49dr-ffvf1760-2-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2848951
+INFO: [Synth 8-7075] Helper process launched with PID 3909350
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/mnt/vault1/kmhatre/Software/AMD/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
-CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'sum_signed' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/sum_signed.sv:1633]
-INFO: [Synth 8-9937] previous definition of design element 'sum_signed' is here [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/sum_signed.sv:1633]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'sum_signed' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/sum_signed.sv:1633]
+INFO: [Synth 8-9937] previous definition of design element 'sum_signed' is here [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/sum_signed.sv:1633]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3160.695 ; gain = 451.770 ; free physical = 57671 ; free virtual = 211078
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2488.662; parent = 2319.704; children = 168.958
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 4157.586; parent = 3184.512; children = 973.074
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3160.645 ; gain = 451.770 ; free physical = 103618 ; free virtual = 229466
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2580.349; parent = 2380.073; children = 200.275
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4157.555; parent = 3184.461; children = 973.094
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'nn_classifier_wrapper' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:6]
-INFO: [Synth 8-6157] synthesizing module 'nn_accelerator' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:245]
+INFO: [Synth 8-6157] synthesizing module 'nn_classifier_wrapper' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'nn_accelerator' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:247]
 	Parameter WINDOW_SIZE bound to: 400 - type: integer 
 	Parameter NUM_WINDOWS bound to: 2 - type: integer 
 	Parameter IQ_WIDTH_OUT bound to: 7 - type: integer 
 	Parameter PRED_BITS bound to: 2 - type: integer 
 	Parameter SHIFT_N bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'sum_signed' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/sum_signed.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'sum_signed' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/sum_signed.sv:7]
 	Parameter M bound to: 200 - type: integer 
 	Parameter W bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'sum_signed' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/sum_signed.sv:7]
-INFO: [Synth 8-6157] synthesizing module 'logicnet' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/logicnet.v:1]
-INFO: [Synth 8-6157] synthesizing module 'myreg' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/myreg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sum_signed' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/sum_signed.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'logicnet' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/logicnet.v:1]
+INFO: [Synth 8-6157] synthesizing module 'myreg' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/myreg.v:1]
 	Parameter DataWidth bound to: 56 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'myreg' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/myreg.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N0' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N0.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N0' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N0.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N1' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N1.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N1' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N1.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N2' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N2.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N2' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N2.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N3' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N3.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N3' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N3.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N4' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N4.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N4' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N4.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N5' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N5.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N5' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N5.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N6' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N6.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N6' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N6.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N7' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N7.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N7' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N7.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N8' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N8.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N8' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N8.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N9' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N9.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N9' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N9.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N10' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N10.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N10' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N10.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N11' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N11.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N11' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N11.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N12' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N12.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N12' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N12.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N13' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N13.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N13' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N13.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N14' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N14.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N14' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N14.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N15' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N15.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N15' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N15.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N16' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N16.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N16' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N16.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N17' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N17.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N17' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N17.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N18' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N18.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N18' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N18.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N19' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N19.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N19' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N19.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N20' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N20.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N20' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N20.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N21' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N21.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N21' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N21.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N22' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N22.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N22' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N22.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N23' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N23.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N23' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N23.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N24' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N24.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N24' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N24.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N25' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N25.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N25' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N25.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N26' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N26.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N26' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N26.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N27' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N27.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N27' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N27.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N28' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N28.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N28' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N28.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N29' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N29.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N29' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N29.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N30' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N30.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N30' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N30.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N31' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N31.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N31' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N31.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N32' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N32.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N32' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N32.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N33' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N33.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N33' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N33.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N34' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N34.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N34' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N34.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N35' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N35.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N35' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N35.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N36' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N36.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N36' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N36.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N37' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N37.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N37' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N37.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N38' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N38.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N38' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N38.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N39' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N39.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N39' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N39.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N40' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N40.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N40' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N40.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N41' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N41.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N41' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N41.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N42' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N42.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N42' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N42.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N43' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N43.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N43' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N43.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N44' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N44.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N44' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N44.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N45' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N45.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N45' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N45.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N46' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N46.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N46' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N46.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N47' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N47.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N47' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N47.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N48' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N48.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N48' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N48.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N49' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N49.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N49' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N49.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N50' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N50.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N50' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N50.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N51' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N51.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N51' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N51.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N52' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N52.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N52' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N52.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N53' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N53.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N53' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N53.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N54' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N54.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N54' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N54.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N55' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N55.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N55' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N55.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N56' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N56.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N56' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N56.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N57' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N57.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N57' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N57.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N58' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N58.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N58' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N58.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N59' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N59.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N59' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N59.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N60' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N60.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N60' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N60.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N61' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N61.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N61' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N61.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N62' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N62.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N62' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N62.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N63' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N63.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N63' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N63.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N64' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N64.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N64' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N64.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N65' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N65.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N65' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N65.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N66' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N66.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N66' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N66.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N67' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N67.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N67' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N67.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N68' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N68.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N68' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N68.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N69' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N69.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N69' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N69.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N70' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N70.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N70' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N70.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N71' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N71.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N71' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N71.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N72' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N72.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N72' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N72.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N73' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N73.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N73' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N73.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N74' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N74.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N74' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N74.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N75' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N75.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N75' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N75.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N76' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N76.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N76' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N76.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N77' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N77.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N77' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N77.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N78' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N78.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N78' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N78.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N79' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N79.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N79' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N79.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N80' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N80.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N80' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N80.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N81' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N81.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N81' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N81.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N82' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N82.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N82' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N82.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N83' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N83.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N83' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N83.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N84' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N84.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N84' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N84.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N85' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N85.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N85' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N85.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N86' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N86.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N86' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N86.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N87' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N87.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N87' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N87.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N88' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N88.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N88' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N88.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N89' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N89.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N89' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N89.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N90' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N90.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N90' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N90.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N91' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N91.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N91' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N91.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N92' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N92.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N92' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N92.v:1]
-INFO: [Synth 8-6157] synthesizing module 'layer0_N93' [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N93.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'myreg' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/myreg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N0' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N0.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N0' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N0.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N1' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N1.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N1' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N1.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N2' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N2' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N2.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N3' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N3.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N3' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N3.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N4' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N4' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N5' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N5.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N5' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N5.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N6' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N6.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N6' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N6.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N7' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N7.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N7' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N7.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N8' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N8' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N8.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N9' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N9.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N9' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N9.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N10' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N10.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N10' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N10.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N11' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N11.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N11' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N11.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N12' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N12.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N12' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N12.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N13' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N13.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N13' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N13.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N14' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N14.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N14' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N14.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N15' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N15.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N15' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N15.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N16' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N16.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N16' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N16.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N17' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N17.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N17' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N17.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N18' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N18.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N18' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N18.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N19' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N19.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N19' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N19.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N20' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N20.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N20' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N20.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N21' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N21.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N21' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N21.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N22' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N22.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N22' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N22.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N23' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N23.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N23' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N23.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N24' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N24.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N24' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N24.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N25' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N25.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N25' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N25.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N26' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N26.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N26' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N26.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N27' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N27.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N27' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N27.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N28' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N28.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N28' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N28.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N29' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N29.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N29' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N29.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N30' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N30.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N30' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N30.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N31' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N31.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N31' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N31.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N32' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N32' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N33' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N33.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N33' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N33.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N34' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N34.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N34' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N34.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N35' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N35.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N35' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N35.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N36' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N36.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N36' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N36.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N37' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N37.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N37' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N37.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N38' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N38.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N38' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N38.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N39' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N39.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N39' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N39.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N40' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N40.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N40' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N40.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N41' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N41.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N41' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N41.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N42' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N42.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N42' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N42.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N43' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N43.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N43' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N43.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N44' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N44.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N44' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N44.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N45' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N45.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N45' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N45.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N46' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N46.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N46' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N46.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N47' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N47.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N47' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N47.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N48' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N48.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N48' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N48.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N49' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N49.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N49' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N49.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N50' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N50.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N50' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N50.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N51' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N51.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N51' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N51.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N52' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N52.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N52' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N52.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N53' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N53.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N53' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N53.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N54' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N54.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N54' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N54.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N55' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N55.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N55' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N55.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N56' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N56.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N56' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N56.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N57' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N57.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N57' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N57.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N58' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N58.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N58' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N58.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N59' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N59.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N59' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N59.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N60' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N60.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N60' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N60.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N61' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N61.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N61' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N61.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N62' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N62.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N62' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N62.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N63' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N63.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N63' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N63.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N64' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N64.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N64' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N64.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N65' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N65.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N65' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N65.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N66' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N66.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N66' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N66.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N67' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N67.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N67' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N67.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N68' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N68.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N68' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N68.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N69' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N69.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N69' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N69.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N70' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N70.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N70' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N70.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N71' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N71.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N71' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N71.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N72' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N72.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N72' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N72.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N73' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N73.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N73' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N73.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N74' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N74.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N74' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N74.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N75' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N75.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N75' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N75.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N76' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N76.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N76' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N76.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N77' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N77.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N77' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N77.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N78' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N78.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N78' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N78.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N79' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N79.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N79' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N79.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N80' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N80.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N80' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N80.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N81' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N81.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N81' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N81.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N82' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N82.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N82' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N82.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N83' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N83.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N83' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N83.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N84' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N84.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N84' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N84.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N85' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N85.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N85' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N85.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N86' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N86.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N86' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N86.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N87' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N87.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N87' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N87.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N88' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N88.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N88' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N88.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N89' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N89.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N89' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N89.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N90' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N90.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N90' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N90.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N91' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N91.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N91' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N91.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N92' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N92.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N92' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N92.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N93' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N93.v:1]
 INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N93' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N93.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N94' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N94.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N95' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N95.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N96' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N96.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'layer0_N97' (0#1) [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/logicnets/layer0_N97.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N93' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N93.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N94' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N94.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N95' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N95.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N96' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N96.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N97' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/logicnets/layer0_N97.v:1]
 INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter DataWidth bound to: 290 - type: integer 
 	Parameter DataWidth bound to: 80 - type: integer 
 	Parameter DataWidth bound to: 30 - type: integer 
-WARNING: [Synth 8-7137] Register i_memory_reg[0] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[1] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[2] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[3] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[4] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[5] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[6] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[7] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[8] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[9] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[10] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[11] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[12] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[13] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[14] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[15] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[16] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[17] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[18] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[19] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[20] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[21] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[22] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[23] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[24] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[25] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[26] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[27] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[28] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[29] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[30] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[31] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[32] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[33] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[34] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[35] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[36] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[37] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[38] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[39] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[40] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[41] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[42] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[43] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[44] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[45] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[46] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[47] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[48] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[49] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[50] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[51] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[52] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[53] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[54] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[55] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[56] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[57] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[58] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[59] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[60] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[61] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[62] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[63] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[64] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[65] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[66] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[67] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[68] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[69] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[70] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[71] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[72] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[73] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[74] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[75] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[76] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[77] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[78] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[79] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[80] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[81] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[82] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[83] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[84] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[85] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[86] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[87] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[88] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[89] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[90] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[91] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[92] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[93] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[94] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[95] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[96] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[97] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[98] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
-WARNING: [Synth 8-7137] Register i_memory_reg[99] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/readout_ip.sv:147]
+WARNING: [Synth 8-7137] Register i_memory_reg[0] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[1] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[2] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[3] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[4] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[5] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[6] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[7] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[8] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[9] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[10] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[11] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[12] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[13] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[14] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[15] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[16] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[17] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[18] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[19] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[20] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[21] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[22] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[23] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[24] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[25] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[26] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[27] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[28] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[29] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[30] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[31] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[32] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[33] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[34] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[35] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[36] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[37] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[38] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[39] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[40] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[41] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[42] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[43] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[44] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[45] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[46] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[47] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[48] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[49] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[50] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[51] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[52] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[53] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[54] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[55] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[56] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[57] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[58] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[59] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[60] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[61] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[62] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[63] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[64] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[65] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[66] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[67] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[68] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[69] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[70] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[71] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[72] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[73] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[74] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[75] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[76] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[77] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[78] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[79] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[80] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[81] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[82] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[83] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[84] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[85] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[86] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[87] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[88] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[89] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[90] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[91] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[92] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[93] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[94] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[95] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[96] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[97] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[98] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
+WARNING: [Synth 8-7137] Register i_memory_reg[99] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/rtl/readout_ip.sv:149]
 INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3917] design nn_classifier_wrapper has port config_AWREADY driven by constant 0
 WARNING: [Synth 8-7129] Port M0[29] in module layer3 is either unconnected or has no load
@@ -443,42 +443,42 @@ WARNING: [Synth 8-7129] Port in_TDATA[2] in module nn_classifier_wrapper is eith
 WARNING: [Synth 8-7129] Port in_TDATA[1] in module nn_classifier_wrapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port in_TDATA[0] in module nn_classifier_wrapper is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 3883.648 ; gain = 1174.723 ; free physical = 56899 ; free virtual = 210320
-Synthesis current peak Physical Memory [PSS] (MB): peak = 3053.119; parent = 2884.161; children = 168.958
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 4856.727; parent = 3883.652; children = 973.074
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 3883.598 ; gain = 1174.723 ; free physical = 103329 ; free virtual = 229191
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3147.701; parent = 2947.426; children = 200.275
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4856.695; parent = 3883.602; children = 973.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 3883.648 ; gain = 1174.723 ; free physical = 56905 ; free virtual = 210326
-Synthesis current peak Physical Memory [PSS] (MB): peak = 3053.119; parent = 2884.161; children = 168.958
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 4856.727; parent = 3883.652; children = 973.074
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 3883.598 ; gain = 1174.723 ; free physical = 103334 ; free virtual = 229195
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3147.701; parent = 2947.426; children = 200.275
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4856.695; parent = 3883.602; children = 973.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 3883.648 ; gain = 1174.723 ; free physical = 56895 ; free virtual = 210316
-Synthesis current peak Physical Memory [PSS] (MB): peak = 3053.119; parent = 2884.161; children = 168.958
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 4856.727; parent = 3883.652; children = 973.074
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 3883.598 ; gain = 1174.723 ; free physical = 103338 ; free virtual = 229199
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3147.701; parent = 2947.426; children = 200.275
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4856.695; parent = 3883.602; children = 973.094
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.1 . Memory (MB): peak = 3883.648 ; gain = 0.000 ; free physical = 56822 ; free virtual = 210243
+Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.1 . Memory (MB): peak = 3883.598 ; gain = 0.000 ; free physical = 103352 ; free virtual = 229213
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/constraints.xdc]
-Finished Parsing XDC File [/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/constraints.xdc]
+Parsing XDC File [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/constraints.xdc]
+Finished Parsing XDC File [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/constraints.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3999.492 ; gain = 0.000 ; free physical = 56327 ; free virtual = 209759
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3998.441 ; gain = 0.000 ; free physical = 103419 ; free virtual = 229280
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3999.492 ; gain = 0.000 ; free physical = 56312 ; free virtual = 209744
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3998.441 ; gain = 0.000 ; free physical = 103422 ; free virtual = 229283
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/mnt/vault1/kmhatre/Software/AMD/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 3999.492 ; gain = 1290.566 ; free physical = 55723 ; free virtual = 209156
-Synthesis current peak Physical Memory [PSS] (MB): peak = 3053.119; parent = 2884.161; children = 168.958
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 4972.570; parent = 3999.496; children = 973.074
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 3998.441 ; gain = 1289.566 ; free physical = 103552 ; free virtual = 229414
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3147.701; parent = 2947.426; children = 200.275
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4971.539; parent = 3998.445; children = 973.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -486,17 +486,17 @@ Start Loading Part and Timing Information
 Loading part: xczu49dr-ffvf1760-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 3999.492 ; gain = 1290.566 ; free physical = 55707 ; free virtual = 209140
-Synthesis current peak Physical Memory [PSS] (MB): peak = 3053.119; parent = 2884.161; children = 168.958
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 4972.570; parent = 3999.496; children = 981.078
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 3998.441 ; gain = 1289.566 ; free physical = 103547 ; free virtual = 229409
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3147.701; parent = 2947.426; children = 200.275
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4971.539; parent = 3998.445; children = 981.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 3999.492 ; gain = 1290.566 ; free physical = 55689 ; free virtual = 209122
-Synthesis current peak Physical Memory [PSS] (MB): peak = 3053.119; parent = 2884.161; children = 169.471
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 4972.570; parent = 3999.496; children = 1000.840
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 3998.441 ; gain = 1289.566 ; free physical = 103543 ; free virtual = 229405
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3147.701; parent = 2947.426; children = 200.642
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4971.539; parent = 3998.445; children = 1000.996
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'nn_classifier_wrapper'
 ---------------------------------------------------------------------------------------------------
@@ -509,9 +509,9 @@ INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in modul
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'nn_classifier_wrapper'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:41 ; elapsed = 00:00:51 . Memory (MB): peak = 3999.492 ; gain = 1290.566 ; free physical = 47114 ; free virtual = 200560
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11218.622; parent = 2884.161; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17177.355; parent = 3999.496; children = 13209.875
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:52 . Memory (MB): peak = 3998.441 ; gain = 1289.566 ; free physical = 95006 ; free virtual = 220882
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11404.179; parent = 2947.426; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17177.297; parent = 3998.445; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -580,9 +580,9 @@ WARNING: [Synth 8-3917] design nn_classifier_wrapper has port config_AWREADY dri
 WARNING: [Synth 8-7129] Port config_AWADDR[3] in module nn_classifier_wrapper is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:53 ; elapsed = 00:03:13 . Memory (MB): peak = 3999.492 ; gain = 1290.566 ; free physical = 37636 ; free virtual = 191076
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11218.622; parent = 2884.161; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17177.355; parent = 3999.496; children = 13209.875
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:53 ; elapsed = 00:03:14 . Memory (MB): peak = 3998.441 ; gain = 1289.566 ; free physical = 95495 ; free virtual = 221443
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11404.179; parent = 2947.426; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17177.297; parent = 3998.445; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1003,25 +1003,25 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:58 ; elapsed = 00:03:23 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 36120 ; free virtual = 189663
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11502.061; parent = 2884.161; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:59 ; elapsed = 00:03:23 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95154 ; free virtual = 221103
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11578.682; parent = 2947.426; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:03 ; elapsed = 00:03:28 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 34534 ; free virtual = 188078
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11527.986; parent = 2907.418; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished Timing Optimization : Time (s): cpu = 00:03:03 ; elapsed = 00:03:28 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95017 ; free virtual = 220966
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11698.953; parent = 3022.941; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:06 ; elapsed = 00:03:31 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 33639 ; free virtual = 187184
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11527.986; parent = 2907.418; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished Technology Mapping : Time (s): cpu = 00:03:06 ; elapsed = 00:03:32 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95060 ; free virtual = 221008
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11698.953; parent = 3022.941; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1039,49 +1039,49 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:09 ; elapsed = 00:03:34 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 34668 ; free virtual = 188217
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11527.986; parent = 2907.418; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished IO Insertion : Time (s): cpu = 00:03:09 ; elapsed = 00:03:35 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95075 ; free virtual = 221023
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11698.953; parent = 3022.941; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:09 ; elapsed = 00:03:35 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 34739 ; free virtual = 188288
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11527.986; parent = 2907.418; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:09 ; elapsed = 00:03:35 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95075 ; free virtual = 221024
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11698.953; parent = 3022.941; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:10 ; elapsed = 00:03:36 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 34644 ; free virtual = 188193
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11527.986; parent = 2907.418; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:10 ; elapsed = 00:03:37 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95081 ; free virtual = 221030
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11698.953; parent = 3022.941; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:10 ; elapsed = 00:03:37 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 34613 ; free virtual = 188162
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11527.986; parent = 2907.418; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:11 ; elapsed = 00:03:37 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95086 ; free virtual = 221035
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11698.953; parent = 3022.941; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:10 ; elapsed = 00:03:37 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 34569 ; free virtual = 188118
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11527.986; parent = 2907.418; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:11 ; elapsed = 00:03:38 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95087 ; free virtual = 221036
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11698.953; parent = 3022.941; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:11 ; elapsed = 00:03:37 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 34547 ; free virtual = 188096
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11527.986; parent = 2907.418; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:11 ; elapsed = 00:03:38 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95094 ; free virtual = 221043
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11698.953; parent = 3022.941; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1117,45 +1117,45 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY8 |  1194|
 |3     |LUT1   |   799|
-|4     |LUT2   |  6429|
-|5     |LUT3   |   145|
-|6     |LUT4   |   130|
-|7     |LUT5   |   845|
-|8     |LUT6   |  3061|
+|4     |LUT2   |  6426|
+|5     |LUT3   |   149|
+|6     |LUT4   |   129|
+|7     |LUT5   |   886|
+|8     |LUT6   |  3021|
 |9     |MUXF7  |   481|
 |10    |MUXF8  |    73|
 |11    |SRL16E |    40|
-|12    |FDCE   |    41|
-|13    |FDRE   | 13146|
+|12    |FDCE   |    45|
+|13    |FDRE   | 13141|
 |14    |IBUF   |    18|
 |15    |OBUF   |    18|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:11 ; elapsed = 00:03:38 . Memory (MB): peak = 4013.773 ; gain = 1304.848 ; free physical = 34527 ; free virtual = 188076
-Synthesis current peak Physical Memory [PSS] (MB): peak = 11527.986; parent = 2907.418; children = 8620.607
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.652; parent = 4013.777; children = 13209.875
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:11 ; elapsed = 00:03:39 . Memory (MB): peak = 4012.723 ; gain = 1303.848 ; free physical = 95103 ; free virtual = 221052
+Synthesis current peak Physical Memory [PSS] (MB): peak = 11698.953; parent = 3022.941; children = 8676.031
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 17223.594; parent = 4012.727; children = 13210.867
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:07 ; elapsed = 00:03:34 . Memory (MB): peak = 4017.684 ; gain = 1192.914 ; free physical = 42494 ; free virtual = 196042
-Synthesis Optimization Complete : Time (s): cpu = 00:03:13 ; elapsed = 00:03:40 . Memory (MB): peak = 4017.684 ; gain = 1308.758 ; free physical = 42486 ; free virtual = 196034
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:07 ; elapsed = 00:03:35 . Memory (MB): peak = 4016.633 ; gain = 1192.914 ; free physical = 103371 ; free virtual = 229320
+Synthesis Optimization Complete : Time (s): cpu = 00:03:13 ; elapsed = 00:03:40 . Memory (MB): peak = 4016.633 ; gain = 1307.758 ; free physical = 103373 ; free virtual = 229322
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.15 . Memory (MB): peak = 4017.684 ; gain = 0.000 ; free physical = 42482 ; free virtual = 196030
+Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 4016.633 ; gain = 0.000 ; free physical = 103377 ; free virtual = 229326
 INFO: [Netlist 29-17] Analyzing 1767 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4045.789 ; gain = 0.000 ; free physical = 42416 ; free virtual = 195965
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4044.738 ; gain = 0.000 ; free physical = 103401 ; free virtual = 229350
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 19 instances were transformed.
   BUFG => BUFGCE: 1 instance 
   IBUF => IBUF (IBUFCTRL, INBUF): 18 instances
 
-Synth Design complete, checksum: 326b5ad9
+Synth Design complete, checksum: bfc0e0dc
 INFO: [Common 17-83] Releasing license: Synthesis
 225 Infos, 203 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:20 ; elapsed = 00:03:50 . Memory (MB): peak = 4045.789 ; gain = 2342.242 ; free physical = 42581 ; free virtual = 196130
+synth_design: Time (s): cpu = 00:03:21 ; elapsed = 00:03:50 . Memory (MB): peak = 4044.738 ; gain = 2341.242 ; free physical = 103589 ; free virtual = 229538
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint '/mnt/vault1/mfaroo19/quantum-net-final/fid-opt/fid-opt-classifer/fid-opt-classifier.runs/synth_1/nn_classifier_wrapper.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/mnt/vault1/mfaroo19/LUNA/quantum-net-final/fid-opt/fid-opt-classifer/fid-opt-classifier.runs/synth_1/nn_classifier_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file nn_classifier_wrapper_utilization_synth.rpt -pb nn_classifier_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 12 14:10:02 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue May 12 13:47:16 2026...

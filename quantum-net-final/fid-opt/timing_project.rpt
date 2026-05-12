@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date              : Wed Nov 12 14:14:13 2025
+| Date              : Tue May 12 13:51:41 2026
 | Host              : en4228283l running 64-bit Ubuntu 22.04.5 LTS
 | Command           : report_timing_summary -file ./timing_project.rpt
 | Design            : nn_classifier_wrapper
@@ -137,7 +137,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     -0.751    -2946.553                   6807                13288        0.000        0.000                      0                13288       -0.290       -2.850                      41                 13247  
+     -0.679    -2298.960                   6937                13274        0.010        0.000                      0                13274       -0.290       -2.850                      41                 13234  
 
 
 Timing constraints are not met.
@@ -160,7 +160,7 @@ ap_clk  {0.000 0.500}        1.000           1000.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-ap_clk             -0.751    -2946.553                   6807                13288        0.000        0.000                      0                13288       -0.290       -2.850                      41                 13247  
+ap_clk             -0.679    -2298.960                   6937                13274        0.010        0.000                      0                13274       -0.290       -2.850                      41                 13234  
 
 
 ------------------------------------------------------------------------------------------------
@@ -191,35 +191,35 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  ap_clk
   To Clock:  ap_clk
 
-Setup :         6807  Failing Endpoints,  Worst Slack       -0.751ns,  Total Violation    -2946.553ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.000ns,  Total Violation        0.000ns
+Setup :         6937  Failing Endpoints,  Worst Slack       -0.679ns,  Total Violation    -2298.960ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.010ns,  Total Violation        0.000ns
 PW    :           41  Failing Endpoints,  Worst Slack       -0.290ns,  Total Violation       -2.850ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (VIOLATED) :        -0.751ns  (required time - arrival time)
-  Source:                 u_nn_accelerator/u_logicnet/layer1_reg/data_out_reg[198]/C
+Slack (VIOLATED) :        -0.679ns  (required time - arrival time)
+  Source:                 u_nn_accelerator/u_logicnet/layer3_reg/data_out_reg[25]/C
                             (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@0.500ns period=1.000ns})
-  Destination:            u_nn_accelerator/u_logicnet/layer2_reg/data_out_reg[69]/D
-                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@0.500ns period=1.000ns})
+  Destination:            out_DATA_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by ap_clk  {rise@0.000ns fall@0.500ns period=1.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            1.000ns  (ap_clk rise@1.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        1.612ns  (logic 0.629ns (39.029%)  route 0.983ns (60.971%))
-  Logic Levels:           6  (LUT5=3 LUT6=1 MUXF7=2)
-  Clock Path Skew:        -0.129ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.004ns = ( 3.004 - 1.000 ) 
-    Source Clock Delay      (SCD):    2.765ns
-    Clock Pessimism Removal (CPR):    0.632ns
+  Data Path Delay:        1.603ns  (logic 0.704ns (43.914%)  route 0.899ns (56.086%))
+  Logic Levels:           7  (LUT5=1 LUT6=4 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.065ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.248ns = ( 3.248 - 1.000 ) 
+    Source Clock Delay      (SCD):    2.974ns
+    Clock Pessimism Removal (CPR):    0.661ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      1.452ns (routing 0.385ns, distribution 1.067ns)
-  Clock Net Delay (Destination): 1.237ns (routing 0.351ns, distribution 0.886ns)
+  Clock Net Delay (Source):      1.661ns (routing 0.760ns, distribution 0.901ns)
+  Clock Net Delay (Destination): 1.481ns (routing 0.691ns, distribution 0.790ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -234,31 +234,34 @@ Slack (VIOLATED) :        -0.751ns  (required time - arrival time)
                          net (fo=1, routed)           0.204     1.285    ap_clk_IBUF
     BUFGCE_HDIO_X0Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.313 r  ap_clk_IBUF_BUFG_inst/O
-    X4Y5 (CLOCK_ROOT)    net (fo=13246, routed)       1.452     2.765    u_nn_accelerator/u_logicnet/layer1_reg/ap_clk_IBUF_BUFG
-    SLICE_X98Y340        FDRE                                         r  u_nn_accelerator/u_logicnet/layer1_reg/data_out_reg[198]/C
+    X4Y4 (CLOCK_ROOT)    net (fo=13233, routed)       1.661     2.974    u_nn_accelerator/u_logicnet/layer3_reg/ap_clk_IBUF_BUFG
+    SLICE_X100Y341       FDRE                                         r  u_nn_accelerator/u_logicnet/layer3_reg/data_out_reg[25]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X98Y340        FDRE (Prop_EFF_SLICEL_C_Q)
-                                                      0.079     2.844 r  u_nn_accelerator/u_logicnet/layer1_reg/data_out_reg[198]/Q
-                         net (fo=165, routed)         0.589     3.433    u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/M1w[6]
-    SLICE_X84Y338        LUT5 (Prop_F6LUT_SLICEL_I0_O)
-                                                      0.035     3.468 r  u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out[69]_i_40/O
-                         net (fo=1, routed)           0.058     3.526    u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out[69]_i_40_n_0
-    SLICE_X84Y338        LUT5 (Prop_B6LUT_SLICEL_I2_O)
-                                                      0.148     3.674 r  u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out[69]_i_17/O
-                         net (fo=2, routed)           0.090     3.764    u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out[69]_i_17_n_0
-    SLICE_X84Y339        LUT5 (Prop_B6LUT_SLICEL_I0_O)
-                                                      0.090     3.854 r  u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out[69]_i_14/O
-                         net (fo=1, routed)           0.009     3.863    u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out[69]_i_14_n_0
-    SLICE_X84Y339        MUXF7 (Prop_F7MUX_AB_SLICEL_I0_O)
-                                                      0.063     3.926 r  u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out_reg[69]_i_5/O
-                         net (fo=1, routed)           0.180     4.106    u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out_reg[69]_i_5_n_0
-    SLICE_X83Y338        LUT6 (Prop_D6LUT_SLICEM_I1_O)
-                                                      0.145     4.251 r  u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out[69]_i_2/O
-                         net (fo=1, routed)           0.025     4.276    u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out[69]_i_2_n_0
-    SLICE_X83Y338        MUXF7 (Prop_F7MUX_CD_SLICEM_I0_O)
-                                                      0.069     4.345 r  u_nn_accelerator/u_logicnet/layer1_inst/layer1_N34_inst/data_out_reg[69]_i_1/O
-                         net (fo=1, routed)           0.032     4.377    u_nn_accelerator/u_logicnet/layer2_reg/M2[53]
-    SLICE_X83Y338        FDRE                                         r  u_nn_accelerator/u_logicnet/layer2_reg/data_out_reg[69]/D
+    SLICE_X100Y341       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     3.053 r  u_nn_accelerator/u_logicnet/layer3_reg/data_out_reg[25]/Q
+                         net (fo=122, routed)         0.303     3.356    u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/M3w[15]
+    SLICE_X101Y346       LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.097     3.453 r  u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_195/O
+                         net (fo=7, routed)           0.212     3.666    u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_195_n_0
+    SLICE_X102Y347       LUT5 (Prop_A6LUT_SLICEL_I4_O)
+                                                      0.050     3.716 r  u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_98/O
+                         net (fo=5, routed)           0.105     3.821    u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_98_n_0
+    SLICE_X101Y347       LUT6 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.149     3.970 r  u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_31/O
+                         net (fo=2, routed)           0.142     4.111    u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_31_n_0
+    SLICE_X100Y348       LUT6 (Prop_D6LUT_SLICEL_I0_O)
+                                                      0.122     4.233 r  u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_10/O
+                         net (fo=2, routed)           0.094     4.327    u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_10_n_0
+    SLICE_X101Y348       LUT6 (Prop_A6LUT_SLICEL_I3_O)
+                                                      0.124     4.451 r  u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_7/O
+                         net (fo=1, routed)           0.009     4.460    u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA[0]_i_7_n_0
+    SLICE_X101Y348       MUXF7 (Prop_F7MUX_AB_SLICEL_I1_O)
+                                                      0.057     4.517 r  u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA_reg[0]_i_3/O
+                         net (fo=1, routed)           0.000     4.517    u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA_reg[0]_i_3_n_0
+    SLICE_X101Y348       MUXF8 (Prop_F8MUX_BOT_SLICEL_I1_O)
+                                                      0.026     4.543 r  u_nn_accelerator/u_logicnet/layer3_inst/layer3_N0_inst/out_DATA_reg[0]_i_1/O
+                         net (fo=1, routed)           0.034     4.577    nn_prediction_out[0]
+    SLICE_X101Y348       FDCE                                         r  out_DATA_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)     1.000     1.000 r  
@@ -272,17 +275,17 @@ Slack (VIOLATED) :        -0.751ns  (required time - arrival time)
                          net (fo=1, routed)           0.169     1.743    ap_clk_IBUF
     BUFGCE_HDIO_X0Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     1.767 r  ap_clk_IBUF_BUFG_inst/O
-    X4Y5 (CLOCK_ROOT)    net (fo=13246, routed)       1.237     3.004    u_nn_accelerator/u_logicnet/layer2_reg/ap_clk_IBUF_BUFG
-    SLICE_X83Y338        FDRE                                         r  u_nn_accelerator/u_logicnet/layer2_reg/data_out_reg[69]/C
-                         clock pessimism              0.632     3.636    
-                         clock uncertainty           -0.035     3.601    
-    SLICE_X83Y338        FDRE (Setup_DFF_SLICEM_C_D)
-                                                      0.025     3.626    u_nn_accelerator/u_logicnet/layer2_reg/data_out_reg[69]
+    X4Y4 (CLOCK_ROOT)    net (fo=13233, routed)       1.481     3.248    ap_clk_IBUF_BUFG
+    SLICE_X101Y348       FDCE                                         r  out_DATA_reg[0]/C
+                         clock pessimism              0.661     3.909    
+                         clock uncertainty           -0.035     3.873    
+    SLICE_X101Y348       FDCE (Setup_CFF_SLICEL_C_D)
+                                                      0.025     3.898    out_DATA_reg[0]
   -------------------------------------------------------------------
-                         required time                          3.626    
-                         arrival time                          -4.377    
+                         required time                          3.898    
+                         arrival time                          -4.577    
   -------------------------------------------------------------------
-                         slack                                 -0.751    
+                         slack                                 -0.679    
 
 
 
@@ -290,22 +293,22 @@ Slack (VIOLATED) :        -0.751ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.000ns  (arrival time - required time)
-  Source:                 i_memory_reg[265][2]/C
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 u_nn_accelerator/u_sum_signed_q1/reduce_layer143_reg[4]/C
                             (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@0.500ns period=1.000ns})
-  Destination:            u_nn_accelerator/u_sum_signed_i1/reduce_layer132_reg[2]/D
+  Destination:            u_nn_accelerator/u_sum_signed_q1/reduce_layer221_reg[4]/D
                             (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@0.500ns period=1.000ns})
   Path Group:             ap_clk
   Path Type:              Hold (Min at Slow Process Corner)
   Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        0.197ns  (logic 0.110ns (55.838%)  route 0.087ns (44.162%))
+  Data Path Delay:        0.256ns  (logic 0.121ns (47.266%)  route 0.135ns (52.734%))
   Logic Levels:           2  (CARRY8=1 LUT2=1)
-  Clock Path Skew:        0.137ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.750ns
-    Source Clock Delay      (SCD):    1.983ns
-    Clock Pessimism Removal (CPR):    0.630ns
-  Clock Net Delay (Source):      1.216ns (routing 0.351ns, distribution 0.865ns)
-  Clock Net Delay (Destination): 1.436ns (routing 0.385ns, distribution 1.051ns)
+  Clock Path Skew:        0.186ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.958ns
+    Source Clock Delay      (SCD):    2.156ns
+    Clock Pessimism Removal (CPR):    0.616ns
+  Clock Net Delay (Source):      1.390ns (routing 0.691ns, distribution 0.699ns)
+  Clock Net Delay (Destination): 1.645ns (routing 0.760ns, distribution 0.885ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -320,19 +323,19 @@ Slack (MET) :             0.000ns  (arrival time - required time)
                          net (fo=1, routed)           0.169     0.743    ap_clk_IBUF
     BUFGCE_HDIO_X0Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     0.767 r  ap_clk_IBUF_BUFG_inst/O
-    X4Y5 (CLOCK_ROOT)    net (fo=13246, routed)       1.216     1.983    ap_clk_IBUF_BUFG
-    SLICE_X95Y303        FDRE                                         r  i_memory_reg[265][2]/C
+    X4Y4 (CLOCK_ROOT)    net (fo=13233, routed)       1.390     2.156    u_nn_accelerator/u_sum_signed_q1/ap_clk_IBUF_BUFG
+    SLICE_X94Y299        FDRE                                         r  u_nn_accelerator/u_sum_signed_q1/reduce_layer143_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X95Y303        FDRE (Prop_BFF_SLICEL_C_Q)
-                                                      0.059     2.042 r  i_memory_reg[265][2]/Q
-                         net (fo=1, routed)           0.058     2.100    u_nn_accelerator/u_sum_signed_i1/reduce_layer132_reg[7]_1[2]
-    SLICE_X96Y303        LUT2 (Prop_C6LUT_SLICEM_I1_O)
-                                                      0.022     2.122 r  u_nn_accelerator/u_sum_signed_i1/reduce_layer132[7]_i_6__1/O
-                         net (fo=1, routed)           0.019     2.141    u_nn_accelerator/u_sum_signed_i1/reduce_layer132[7]_i_6__1_n_0
-    SLICE_X96Y303        CARRY8 (Prop_CARRY8_SLICEM_S[2]_O[2])
-                                                      0.029     2.170 r  u_nn_accelerator/u_sum_signed_i1/reduce_layer132_reg[7]_i_1__1/O[2]
-                         net (fo=1, routed)           0.010     2.180    u_nn_accelerator/u_sum_signed_i1/w_reduce_layer132[2]
-    SLICE_X96Y303        FDRE                                         r  u_nn_accelerator/u_sum_signed_i1/reduce_layer132_reg[2]/D
+    SLICE_X94Y299        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.058     2.214 r  u_nn_accelerator/u_sum_signed_q1/reduce_layer143_reg[4]/Q
+                         net (fo=1, routed)           0.113     2.327    u_nn_accelerator/u_sum_signed_q1/reduce_layer143[4]
+    SLICE_X94Y305        LUT2 (Prop_E6LUT_SLICEM_I1_O)
+                                                      0.035     2.362 r  u_nn_accelerator/u_sum_signed_q1/reduce_layer221[7]_i_5__2/O
+                         net (fo=1, routed)           0.013     2.375    u_nn_accelerator/u_sum_signed_q1/reduce_layer221[7]_i_5__2_n_0
+    SLICE_X94Y305        CARRY8 (Prop_CARRY8_SLICEM_S[4]_O[4])
+                                                      0.028     2.403 r  u_nn_accelerator/u_sum_signed_q1/reduce_layer221_reg[7]_i_1__2/O[4]
+                         net (fo=1, routed)           0.009     2.412    u_nn_accelerator/u_sum_signed_q1/w_reduce_layer221[4]
+    SLICE_X94Y305        FDRE                                         r  u_nn_accelerator/u_sum_signed_q1/reduce_layer221_reg[4]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)     0.000     0.000 r  
@@ -346,16 +349,16 @@ Slack (MET) :             0.000ns  (arrival time - required time)
                          net (fo=1, routed)           0.204     1.285    ap_clk_IBUF
     BUFGCE_HDIO_X0Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.313 r  ap_clk_IBUF_BUFG_inst/O
-    X4Y5 (CLOCK_ROOT)    net (fo=13246, routed)       1.436     2.750    u_nn_accelerator/u_sum_signed_i1/ap_clk_IBUF_BUFG
-    SLICE_X96Y303        FDRE                                         r  u_nn_accelerator/u_sum_signed_i1/reduce_layer132_reg[2]/C
-                         clock pessimism             -0.630     2.120    
-    SLICE_X96Y303        FDRE (Hold_CFF_SLICEM_C_D)
-                                                      0.060     2.180    u_nn_accelerator/u_sum_signed_i1/reduce_layer132_reg[2]
+    X4Y4 (CLOCK_ROOT)    net (fo=13233, routed)       1.645     2.958    u_nn_accelerator/u_sum_signed_q1/ap_clk_IBUF_BUFG
+    SLICE_X94Y305        FDRE                                         r  u_nn_accelerator/u_sum_signed_q1/reduce_layer221_reg[4]/C
+                         clock pessimism             -0.616     2.343    
+    SLICE_X94Y305        FDRE (Hold_EFF_SLICEM_C_D)
+                                                      0.060     2.403    u_nn_accelerator/u_sum_signed_q1/reduce_layer221_reg[4]
   -------------------------------------------------------------------
-                         required time                         -2.180    
-                         arrival time                           2.180    
+                         required time                         -2.403    
+                         arrival time                           2.412    
   -------------------------------------------------------------------
-                         slack                                  0.000    
+                         slack                                  0.010    
 
 
 
@@ -370,8 +373,8 @@ Sources:            { ap_clk }
 
 Check Type        Corner  Lib Pin     Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location          Pin
 Min Period        n/a     BUFGCE/I    n/a            1.290         1.000       -0.290     BUFGCE_HDIO_X0Y6  ap_clk_IBUF_BUFG_inst/I
-Low Pulse Width   Slow    SRL16E/CLK  n/a            0.532         0.500       -0.032     SLICE_X104Y304    u_nn_accelerator/u_sum_signed_i0/reduce_layer412_reg[0]_srl2___u_nn_accelerator_u_sum_signed_i0_reduce_layer412_reg_r/CLK
-High Pulse Width  Fast    SRL16E/CLK  n/a            0.532         0.500       -0.032     SLICE_X104Y304    u_nn_accelerator/u_sum_signed_i0/reduce_layer412_reg[1]_srl2___u_nn_accelerator_u_sum_signed_i0_reduce_layer412_reg_r/CLK
+Low Pulse Width   Slow    SRL16E/CLK  n/a            0.532         0.500       -0.032     SLICE_X99Y283     u_nn_accelerator/u_sum_signed_i0/reduce_layer412_reg[0]_srl2___u_nn_accelerator_u_sum_signed_i0_reduce_layer412_reg_r/CLK
+High Pulse Width  Slow    SRL16E/CLK  n/a            0.532         0.500       -0.032     SLICE_X99Y284     u_nn_accelerator/u_sum_signed_q0/reduce_layer412_reg[0]_srl2___u_nn_accelerator_u_sum_signed_i0_reduce_layer412_reg_r/CLK
 
 
 

@@ -8,12 +8,12 @@ create_project area-opt-classifier ./area-opt-classifer -part  xczu49dr-ffvf1760
 
 # 2. ADD SOURCES
 # Read Verilog/SystemVerilog files and set them as Design Sources
-add_files -fileset sources_1 -norecurse ./readout_ip.sv ./sum_signed.sv
+add_files -fileset sources_1 -norecurse ./rtl/readout_ip.sv ./rtl/sum_signed.sv
 
 # Read the LogicNets directory as a source (assuming it contains modules/includes)
-add_files -fileset sources_1 -norecurse "./logicnets"
+add_files -fileset sources_1 -norecurse "./rtl/logicnets"
 # Add the directory to the global include path for synthesis
-set_property include_dirs "logicnets/" [current_fileset]
+set_property include_dirs "rtl/logicnets/" [current_fileset]
 
 # Read the XDC file and set it as a Constraints Source
 read_xdc ./constraints.xdc

@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/mnt/vault1/mfaroo19/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/synth_1'
+HD_PWD='/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

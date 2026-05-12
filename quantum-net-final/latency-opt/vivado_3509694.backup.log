@@ -1,0 +1,2080 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue May 12 12:57:06 2026
+# Process ID: 3509694
+# Current directory: /mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt
+# Command line: vivado -mode batch -source run.tcl
+# Log file: /mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/vivado.log
+# Journal file: /mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/vivado.jou
+# Running On: en4228283l, OS: Linux, CPU Frequency: 2999.995 MHz, CPU Physical cores: 32, Host memory: 269992 MB
+#-----------------------------------------------------------
+source run.tcl
+# create_project lat-opt-classifier ./lat-opt-classifer -part xczu49dr-ffvf1760-2-e -force
+# add_files -fileset sources_1 -norecurse ./rtl/readout_ip.sv ./rtl/sum_signed.sv
+# add_files -fileset sources_1 -norecurse "./rtl/logicnets"
+# set_property include_dirs "rtl/logicnets/" [current_fileset]
+# read_xdc ./constraints.xdc
+# set_property top nn_classifier_wrapper [current_fileset]
+# launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Tue May 12 12:57:14 2026] Launched synth_1...
+Run output will be captured here: /mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Tue May 12 12:57:14 2026] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log nn_classifier_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source nn_classifier_wrapper.tcl
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source nn_classifier_wrapper.tcl -notrace
+Command: synth_design -top nn_classifier_wrapper -part xczu49dr-ffvf1760-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu49dr'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu49dr'
+INFO: [Common 17-1540] The version limit for your license is '2024.12' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [Device 21-403] Loading part xczu49dr-ffvf1760-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3510122
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/mnt/vault1/kmhatre/Software/AMD/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 3036.645 ; gain = 327.801 ; free physical = 106372 ; free virtual = 230907
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2439.979; parent = 2239.726; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4018.648; parent = 3045.555; children = 973.094
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'nn_classifier_wrapper' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'nn_accelerator' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:246]
+	Parameter WINDOW_SIZE bound to: 400 - type: integer 
+	Parameter NUM_WINDOWS bound to: 2 - type: integer 
+	Parameter IQ_WIDTH_OUT bound to: 5 - type: integer 
+	Parameter PRED_BITS bound to: 2 - type: integer 
+	Parameter SHIFT_N bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sum_signed' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/sum_signed.sv:7]
+	Parameter M bound to: 200 - type: integer 
+	Parameter W bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sum_signed' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/sum_signed.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'logicnet' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/logicnet.v:1]
+INFO: [Synth 8-6157] synthesizing module 'myreg' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/myreg.v:1]
+	Parameter DataWidth bound to: 48 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'myreg' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/myreg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N0' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N0.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N0' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N0.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N1' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N1.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N1' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N1.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N2' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N2' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N2.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N3' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N3.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N3' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N3.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N4' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N4' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N5' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N5.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N5' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N5.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N6' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N6.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N6' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N6.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N7' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N7.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N7' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N7.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N8' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N8' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N8.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N9' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N9.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N9' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N9.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N10' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N10.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N10' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N10.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N11' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N11.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N11' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N11.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N12' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N12.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N12' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N12.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N13' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N13.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N13' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N13.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N14' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N14.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N14' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N14.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N15' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N15.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N15' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N15.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N16' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N16.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N16' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N16.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N17' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N17.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N17' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N17.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N18' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N18.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N18' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N18.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N19' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N19.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N19' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N19.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N20' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N20.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N20' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N20.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N21' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N21.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N21' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N21.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N22' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N22.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N22' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N22.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N23' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N23.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N23' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N23.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N24' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N24.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N24' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N24.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N25' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N25.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N25' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N25.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N26' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N26.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N26' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N26.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N27' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N27.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N27' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N27.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N28' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N28.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N28' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N28.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N29' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N29.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N29' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N29.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N30' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N30.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N30' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N30.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N31' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N31.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N31' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N31.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N32' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N32' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N33' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N33.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N33' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N33.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N34' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N34.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N34' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N34.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N35' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N35.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N35' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N35.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N36' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N36.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N36' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N36.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N37' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N37.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N37' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N37.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N38' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N38.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N38' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N38.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N39' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N39.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N39' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N39.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N40' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N40.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N40' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N40.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N41' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N41.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N41' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N41.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N42' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N42.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N42' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N42.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N43' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N43.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N43' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N43.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N44' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N44.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N44' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N44.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N45' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N45.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N45' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N45.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N46' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N46.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N46' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N46.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N47' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N47.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N47' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N47.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N48' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N48.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N48' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N48.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N49' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N49.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N49' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N49.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N50' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N50.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N50' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N50.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N51' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N51.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N51' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N51.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N52' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N52.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N52' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N52.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N53' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N53.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N53' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N53.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N54' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N54.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N54' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N54.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N55' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N55.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N55' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N55.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N56' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N56.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N56' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N56.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N57' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N57.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N57' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N57.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N58' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N58.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N58' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N58.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N59' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N59.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N59' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N59.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N60' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N60.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N60' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N60.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N61' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N61.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N61' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N61.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N62' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N62.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N62' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N62.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N63' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N63.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N63' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N63.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N64' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N64.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N64' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N64.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N65' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N65.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N65' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N65.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N66' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N66.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N66' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N66.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N67' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N67.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N67' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N67.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N68' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N68.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N68' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N68.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N69' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N69.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N69' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N69.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N70' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N70.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N70' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N70.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N71' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N71.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N71' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N71.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N72' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N72.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N72' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N72.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N73' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N73.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N73' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N73.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N74' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N74.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N74' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N74.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N75' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N75.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N75' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N75.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N76' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N76.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N76' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N76.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N77' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N77.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N77' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N77.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N78' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N78.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N78' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N78.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N79' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N79.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N79' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N79.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N80' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N80.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N80' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N80.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N81' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N81.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N81' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N81.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N82' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N82.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N82' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N82.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N83' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N83.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N83' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N83.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N84' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N84.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N84' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N84.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N85' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N85.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N85' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N85.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N86' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N86.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N86' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N86.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N87' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N87.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N87' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N87.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N88' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N88.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N88' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N88.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N89' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N89.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N89' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N89.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N90' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N90.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N90' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N90.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N91' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N91.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N91' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N91.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N92' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N92.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N92' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N92.v:1]
+INFO: [Synth 8-6157] synthesizing module 'layer0_N93' [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N93.v:1]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N93' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N93.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N94' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N94.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N95' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N95.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N96' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N96.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'layer0_N97' (0#1) [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/layer0_N97.v:1]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter DataWidth bound to: 145 - type: integer 
+	Parameter DataWidth bound to: 35 - type: integer 
+	Parameter DataWidth bound to: 15 - type: integer 
+WARNING: [Synth 8-7137] Register i_memory_reg[0] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[1] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[2] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[3] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[4] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[5] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[6] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[7] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[8] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[9] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[10] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[11] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[12] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[13] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[14] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[15] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[16] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[17] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[18] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[19] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[20] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[21] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[22] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[23] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[24] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[25] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[26] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[27] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[28] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[29] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[30] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[31] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[32] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[33] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[34] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[35] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[36] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[37] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[38] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[39] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[40] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[41] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[42] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[43] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[44] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[45] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[46] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[47] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[48] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[49] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[50] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[51] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[52] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[53] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[54] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[55] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[56] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[57] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[58] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[59] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[60] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[61] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[62] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[63] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[64] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[65] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[66] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[67] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[68] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[69] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[70] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[71] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[72] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[73] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[74] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[75] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[76] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[77] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[78] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[79] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[80] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[81] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[82] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[83] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[84] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[85] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[86] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[87] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[88] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[89] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[90] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[91] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[92] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[93] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[94] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[95] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[96] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[97] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[98] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+WARNING: [Synth 8-7137] Register i_memory_reg[99] in module nn_classifier_wrapper has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/readout_ip.sv:145]
+INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3917] design nn_classifier_wrapper has port config_AWREADY driven by constant 0
+WARNING: [Synth 8-7129] Port M0[14] in module layer3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[12] in module layer3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[11] in module layer3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[10] in module layer3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[9] in module layer3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[8] in module layer3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[7] in module layer3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[4] in module layer3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[15] in module layer2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[14] in module layer2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[144] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[142] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[139] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[134] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[120] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[113] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[110] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[109] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[108] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[105] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[93] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[90] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[85] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[84] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[82] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[81] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[80] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[78] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[76] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[75] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[68] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[67] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[60] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[51] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[44] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[35] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[31] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[28] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[24] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[21] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[10] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[3] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M0[0] in module layer1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port config_AWADDR[3] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port config_AWADDR[2] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port config_AWADDR[1] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port config_AWADDR[0] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port config_AWVALID in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[26] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[25] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[24] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[23] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[22] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[21] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[20] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[19] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[18] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[12] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[11] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[10] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[9] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[8] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[7] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[6] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[5] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[4] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[3] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[2] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[1] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[0] in module nn_classifier_wrapper is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 3210.090 ; gain = 501.246 ; free physical = 106206 ; free virtual = 230744
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2472.566; parent = 2272.312; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4183.188; parent = 3210.094; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 3224.934 ; gain = 516.090 ; free physical = 106214 ; free virtual = 230751
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2473.667; parent = 2273.413; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4198.031; parent = 3224.938; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 3224.934 ; gain = 516.090 ; free physical = 106217 ; free virtual = 230754
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2473.667; parent = 2273.413; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4198.031; parent = 3224.938; children = 973.094
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3224.934 ; gain = 0.000 ; free physical = 106215 ; free virtual = 230753
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/constraints.xdc]
+Finished Parsing XDC File [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/constraints.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3404.590 ; gain = 0.000 ; free physical = 106277 ; free virtual = 230815
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3404.590 ; gain = 0.000 ; free physical = 106279 ; free virtual = 230817
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/mnt/vault1/kmhatre/Software/AMD/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 3404.590 ; gain = 695.746 ; free physical = 106389 ; free virtual = 230926
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2589.203; parent = 2388.949; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4377.688; parent = 3404.594; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu49dr-ffvf1760-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 3404.590 ; gain = 695.746 ; free physical = 106389 ; free virtual = 230926
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2589.203; parent = 2388.949; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4377.688; parent = 3404.594; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 3404.590 ; gain = 695.746 ; free physical = 106389 ; free virtual = 230926
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2589.203; parent = 2388.949; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4377.688; parent = 3404.594; children = 973.094
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'nn_classifier_wrapper'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                               00 |                              000
+                  S_LOAD |                               01 |                              001
+               S_COMPUTE |                               10 |                              010
+                 S_STORE |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'nn_classifier_wrapper'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 3404.590 ; gain = 695.746 ; free physical = 106505 ; free virtual = 231045
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2589.203; parent = 2388.949; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4377.688; parent = 3404.594; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 4     
+	   2 Input   12 Bit       Adders := 8     
+	   2 Input   11 Bit       Adders := 12    
+	   2 Input   10 Bit       Adders := 25    
+	   2 Input    9 Bit       Adders := 48    
+	   2 Input    8 Bit       Adders := 100   
+	   2 Input    7 Bit       Adders := 200   
+	   2 Input    6 Bit       Adders := 400   
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	              145 Bit    Registers := 1     
+	               48 Bit    Registers := 1     
+	               35 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	               13 Bit    Registers := 4     
+	               12 Bit    Registers := 8     
+	               11 Bit    Registers := 12    
+	               10 Bit    Registers := 24    
+	                9 Bit    Registers := 48    
+	                8 Bit    Registers := 112   
+	                7 Bit    Registers := 200   
+	                6 Bit    Registers := 400   
+	                5 Bit    Registers := 800   
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 33    
++---Muxes : 
+	   2 Input  145 Bit        Muxes := 1     
+	   2 Input   48 Bit        Muxes := 1     
+	   2 Input   35 Bit        Muxes := 1     
+	   2 Input   15 Bit        Muxes := 1     
+	   4 Input   10 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 6     
+	   4 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 16    
+	   4 Input    1 Bit        Muxes := 402   
+	   3 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 4272 (col length:192)
+BRAMs: 2160 (col length: RAMB18 192 RAMB36 96)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_logicnet/layer1_reg/data_out_reg' and it is trimmed from '145' to '144' bits. [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/myreg.v:9]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_logicnet/layer3_reg/data_out_reg' and it is trimmed from '15' to '14' bits. [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/rtl/logicnets/myreg.v:9]
+WARNING: [Synth 8-3917] design nn_classifier_wrapper has port config_AWREADY driven by constant 0
+WARNING: [Synth 8-7129] Port config_AWADDR[3] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port config_AWADDR[2] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port config_AWADDR[1] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port config_AWADDR[0] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port config_AWVALID in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[26] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[25] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[24] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[23] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[22] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[21] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[20] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[19] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[18] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[12] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[11] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[10] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[9] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[8] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[7] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[6] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[5] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[4] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[3] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[2] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[1] in module nn_classifier_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_TDATA[0] in module nn_classifier_wrapper is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:01 . Memory (MB): peak = 3404.590 ; gain = 695.746 ; free physical = 106551 ; free virtual = 231107
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2589.203; parent = 2388.949; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4377.688; parent = 3404.594; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++---------------+---------------------------------------------+---------------+----------------+
+|Module Name    | RTL Object                                  | Depth x Width | Implemented As | 
++---------------+---------------------------------------------+---------------+----------------+
+|layer0_N0      | M1r                                         | 64x1          | LUT            | 
+|layer0_N1      | M1r                                         | 64x1          | LUT            | 
+|layer0_N2      | M1r                                         | 64x1          | LUT            | 
+|layer0_N3      | M1r                                         | 64x1          | LUT            | 
+|layer0_N4      | M1r                                         | 64x1          | LUT            | 
+|layer0_N5      | M1r                                         | 64x1          | LUT            | 
+|layer0_N6      | M1r                                         | 64x1          | LUT            | 
+|layer0_N7      | M1r                                         | 64x1          | LUT            | 
+|layer0_N8      | M1r                                         | 64x1          | LUT            | 
+|layer0_N9      | M1r                                         | 64x1          | LUT            | 
+|layer0_N10     | M1r                                         | 64x1          | LUT            | 
+|layer0_N11     | M1r                                         | 64x1          | LUT            | 
+|layer0_N12     | M1r                                         | 64x1          | LUT            | 
+|layer0_N13     | M1r                                         | 64x1          | LUT            | 
+|layer0_N14     | M1r                                         | 64x1          | LUT            | 
+|layer0_N15     | M1r                                         | 64x1          | LUT            | 
+|layer0_N16     | M1r                                         | 64x1          | LUT            | 
+|layer0_N17     | M1r                                         | 64x1          | LUT            | 
+|layer0_N18     | M1r                                         | 64x1          | LUT            | 
+|layer0_N19     | M1r                                         | 64x1          | LUT            | 
+|layer0_N20     | M1r                                         | 64x1          | LUT            | 
+|layer0_N21     | M1r                                         | 64x1          | LUT            | 
+|layer0_N22     | M1r                                         | 64x1          | LUT            | 
+|layer0_N23     | M1r                                         | 64x1          | LUT            | 
+|layer0_N24     | M1r                                         | 64x1          | LUT            | 
+|layer0_N25     | M1r                                         | 64x1          | LUT            | 
+|layer0_N26     | M1r                                         | 64x1          | LUT            | 
+|layer0_N27     | M1r                                         | 64x1          | LUT            | 
+|layer0_N28     | M1r                                         | 64x1          | LUT            | 
+|layer0_N29     | M1r                                         | 64x1          | LUT            | 
+|layer0_N30     | M1r                                         | 64x1          | LUT            | 
+|layer0_N31     | M1r                                         | 64x1          | LUT            | 
+|layer0_N32     | M1r                                         | 64x1          | LUT            | 
+|layer0_N33     | M1r                                         | 64x1          | LUT            | 
+|layer0_N34     | M1r                                         | 64x1          | LUT            | 
+|layer0_N35     | M1r                                         | 64x1          | LUT            | 
+|layer0_N36     | M1r                                         | 64x1          | LUT            | 
+|layer0_N37     | M1r                                         | 64x1          | LUT            | 
+|layer0_N38     | M1r                                         | 64x1          | LUT            | 
+|layer0_N39     | M1r                                         | 64x1          | LUT            | 
+|layer0_N40     | M1r                                         | 64x1          | LUT            | 
+|layer0_N41     | M1r                                         | 64x1          | LUT            | 
+|layer0_N42     | M1r                                         | 64x1          | LUT            | 
+|layer0_N43     | M1r                                         | 64x1          | LUT            | 
+|layer0_N44     | M1r                                         | 64x1          | LUT            | 
+|layer0_N45     | M1r                                         | 64x1          | LUT            | 
+|layer0_N46     | M1r                                         | 64x1          | LUT            | 
+|layer0_N47     | M1r                                         | 64x1          | LUT            | 
+|layer0_N48     | M1r                                         | 64x1          | LUT            | 
+|layer0_N49     | M1r                                         | 64x1          | LUT            | 
+|layer0_N50     | M1r                                         | 64x1          | LUT            | 
+|layer0_N51     | M1r                                         | 64x1          | LUT            | 
+|layer0_N52     | M1r                                         | 64x1          | LUT            | 
+|layer0_N53     | M1r                                         | 64x1          | LUT            | 
+|layer0_N54     | M1r                                         | 64x1          | LUT            | 
+|layer0_N55     | M1r                                         | 64x1          | LUT            | 
+|layer0_N56     | M1r                                         | 64x1          | LUT            | 
+|layer0_N57     | M1r                                         | 64x1          | LUT            | 
+|layer0_N58     | M1r                                         | 64x1          | LUT            | 
+|layer0_N59     | M1r                                         | 64x1          | LUT            | 
+|layer0_N60     | M1r                                         | 64x1          | LUT            | 
+|layer0_N61     | M1r                                         | 64x1          | LUT            | 
+|layer0_N62     | M1r                                         | 64x1          | LUT            | 
+|layer0_N63     | M1r                                         | 64x1          | LUT            | 
+|layer0_N64     | M1r                                         | 64x1          | LUT            | 
+|layer0_N65     | M1r                                         | 64x1          | LUT            | 
+|layer0_N66     | M1r                                         | 64x1          | LUT            | 
+|layer0_N67     | M1r                                         | 64x1          | LUT            | 
+|layer0_N68     | M1r                                         | 64x1          | LUT            | 
+|layer0_N69     | M1r                                         | 64x1          | LUT            | 
+|layer0_N70     | M1r                                         | 64x1          | LUT            | 
+|layer0_N71     | M1r                                         | 64x1          | LUT            | 
+|layer0_N72     | M1r                                         | 64x1          | LUT            | 
+|layer0_N73     | M1r                                         | 64x1          | LUT            | 
+|layer0_N74     | M1r                                         | 64x1          | LUT            | 
+|layer0_N75     | M1r                                         | 64x1          | LUT            | 
+|layer0_N76     | M1r                                         | 64x1          | LUT            | 
+|layer0_N77     | M1r                                         | 64x1          | LUT            | 
+|layer0_N78     | M1r                                         | 64x1          | LUT            | 
+|layer0_N79     | M1r                                         | 64x1          | LUT            | 
+|layer0_N80     | M1r                                         | 64x1          | LUT            | 
+|layer0_N81     | M1r                                         | 64x1          | LUT            | 
+|layer0_N82     | M1r                                         | 64x1          | LUT            | 
+|layer0_N83     | M1r                                         | 64x1          | LUT            | 
+|layer0_N84     | M1r                                         | 64x1          | LUT            | 
+|layer0_N85     | M1r                                         | 64x1          | LUT            | 
+|layer0_N86     | M1r                                         | 64x1          | LUT            | 
+|layer0_N87     | M1r                                         | 64x1          | LUT            | 
+|layer0_N88     | M1r                                         | 64x1          | LUT            | 
+|layer0_N89     | M1r                                         | 64x1          | LUT            | 
+|layer0_N90     | M1r                                         | 64x1          | LUT            | 
+|layer0_N91     | M1r                                         | 64x1          | LUT            | 
+|layer0_N92     | M1r                                         | 64x1          | LUT            | 
+|layer0_N93     | M1r                                         | 64x1          | LUT            | 
+|layer0_N94     | M1r                                         | 64x1          | LUT            | 
+|layer0_N95     | M1r                                         | 64x1          | LUT            | 
+|layer0_N96     | M1r                                         | 64x1          | LUT            | 
+|layer0_N97     | M1r                                         | 64x1          | LUT            | 
+|layer0_N98     | M1r                                         | 64x1          | LUT            | 
+|layer0_N99     | M1r                                         | 64x1          | LUT            | 
+|layer0_N100    | M1r                                         | 64x1          | LUT            | 
+|layer0_N101    | M1r                                         | 64x1          | LUT            | 
+|layer0_N102    | M1r                                         | 64x1          | LUT            | 
+|layer0_N103    | M1r                                         | 64x1          | LUT            | 
+|layer0_N104    | M1r                                         | 64x1          | LUT            | 
+|layer0_N105    | M1r                                         | 64x1          | LUT            | 
+|layer0_N106    | M1r                                         | 64x1          | LUT            | 
+|layer0_N107    | M1r                                         | 64x1          | LUT            | 
+|layer0_N108    | M1r                                         | 64x1          | LUT            | 
+|layer0_N109    | M1r                                         | 64x1          | LUT            | 
+|layer0_N110    | M1r                                         | 64x1          | LUT            | 
+|layer0_N111    | M1r                                         | 64x1          | LUT            | 
+|layer0_N112    | M1r                                         | 64x1          | LUT            | 
+|layer0_N113    | M1r                                         | 64x1          | LUT            | 
+|layer0_N114    | M1r                                         | 64x1          | LUT            | 
+|layer0_N115    | M1r                                         | 64x1          | LUT            | 
+|layer0_N116    | M1r                                         | 64x1          | LUT            | 
+|layer0_N117    | M1r                                         | 64x1          | LUT            | 
+|layer0_N118    | M1r                                         | 64x1          | LUT            | 
+|layer0_N119    | M1r                                         | 64x1          | LUT            | 
+|layer0_N120    | M1r                                         | 64x1          | LUT            | 
+|layer0_N121    | M1r                                         | 64x1          | LUT            | 
+|layer0_N122    | M1r                                         | 64x1          | LUT            | 
+|layer0_N123    | M1r                                         | 64x1          | LUT            | 
+|layer0_N124    | M1r                                         | 64x1          | LUT            | 
+|layer0_N125    | M1r                                         | 64x1          | LUT            | 
+|layer0_N126    | M1r                                         | 64x1          | LUT            | 
+|layer0_N127    | M1r                                         | 64x1          | LUT            | 
+|layer0_N128    | M1r                                         | 64x1          | LUT            | 
+|layer0_N129    | M1r                                         | 64x1          | LUT            | 
+|layer0_N130    | M1r                                         | 64x1          | LUT            | 
+|layer0_N131    | M1r                                         | 64x1          | LUT            | 
+|layer0_N132    | M1r                                         | 64x1          | LUT            | 
+|layer0_N133    | M1r                                         | 64x1          | LUT            | 
+|layer0_N134    | M1r                                         | 64x1          | LUT            | 
+|layer0_N135    | M1r                                         | 64x1          | LUT            | 
+|layer0_N136    | M1r                                         | 64x1          | LUT            | 
+|layer0_N137    | M1r                                         | 64x1          | LUT            | 
+|layer0_N138    | M1r                                         | 64x1          | LUT            | 
+|layer0_N139    | M1r                                         | 64x1          | LUT            | 
+|layer0_N140    | M1r                                         | 64x1          | LUT            | 
+|layer0_N141    | M1r                                         | 64x1          | LUT            | 
+|layer0_N142    | M1r                                         | 64x1          | LUT            | 
+|layer0_N143    | M1r                                         | 64x1          | LUT            | 
+|layer0_N144    | M1r                                         | 64x1          | LUT            | 
+|layer1_N0      | M1r                                         | 64x1          | LUT            | 
+|layer1_N1      | M1r                                         | 64x1          | LUT            | 
+|layer1_N2      | M1r                                         | 64x1          | LUT            | 
+|layer1_N3      | M1r                                         | 64x1          | LUT            | 
+|layer1_N4      | M1r                                         | 64x1          | LUT            | 
+|layer1_N5      | M1r                                         | 64x1          | LUT            | 
+|layer1_N6      | M1r                                         | 64x1          | LUT            | 
+|layer1_N7      | M1r                                         | 64x1          | LUT            | 
+|layer1_N8      | M1r                                         | 64x1          | LUT            | 
+|layer1_N9      | M1r                                         | 64x1          | LUT            | 
+|layer1_N10     | M1r                                         | 64x1          | LUT            | 
+|layer1_N11     | M1r                                         | 64x1          | LUT            | 
+|layer1_N12     | M1r                                         | 64x1          | LUT            | 
+|layer1_N13     | M1r                                         | 64x1          | LUT            | 
+|layer1_N14     | M1r                                         | 64x1          | LUT            | 
+|layer1_N15     | M1r                                         | 64x1          | LUT            | 
+|layer1_N16     | M1r                                         | 64x1          | LUT            | 
+|layer1_N17     | M1r                                         | 64x1          | LUT            | 
+|layer1_N18     | M1r                                         | 64x1          | LUT            | 
+|layer1_N19     | M1r                                         | 64x1          | LUT            | 
+|layer1_N20     | M1r                                         | 64x1          | LUT            | 
+|layer1_N21     | M1r                                         | 64x1          | LUT            | 
+|layer1_N22     | M1r                                         | 64x1          | LUT            | 
+|layer1_N23     | M1r                                         | 64x1          | LUT            | 
+|layer1_N24     | M1r                                         | 64x1          | LUT            | 
+|layer1_N25     | M1r                                         | 64x1          | LUT            | 
+|layer1_N26     | M1r                                         | 64x1          | LUT            | 
+|layer1_N27     | M1r                                         | 64x1          | LUT            | 
+|layer1_N28     | M1r                                         | 64x1          | LUT            | 
+|layer1_N29     | M1r                                         | 64x1          | LUT            | 
+|layer1_N30     | M1r                                         | 64x1          | LUT            | 
+|layer1_N31     | M1r                                         | 64x1          | LUT            | 
+|layer1_N32     | M1r                                         | 64x1          | LUT            | 
+|layer1_N33     | M1r                                         | 64x1          | LUT            | 
+|layer1_N34     | M1r                                         | 64x1          | LUT            | 
+|layer2_N0      | M1r                                         | 64x1          | LUT            | 
+|layer2_N1      | M1r                                         | 64x1          | LUT            | 
+|layer2_N2      | M1r                                         | 64x1          | LUT            | 
+|layer2_N3      | M1r                                         | 64x1          | LUT            | 
+|layer2_N4      | M1r                                         | 64x1          | LUT            | 
+|layer2_N5      | M1r                                         | 64x1          | LUT            | 
+|layer2_N6      | M1r                                         | 64x1          | LUT            | 
+|layer2_N7      | M1r                                         | 64x1          | LUT            | 
+|layer2_N8      | M1r                                         | 64x1          | LUT            | 
+|layer2_N9      | M1r                                         | 64x1          | LUT            | 
+|layer2_N10     | M1r                                         | 64x1          | LUT            | 
+|layer2_N11     | M1r                                         | 64x1          | LUT            | 
+|layer2_N12     | M1r                                         | 64x1          | LUT            | 
+|layer2_N13     | M1r                                         | 64x1          | LUT            | 
+|layer2_N14     | M1r                                         | 64x1          | LUT            | 
+|layer3_N0      | M1r                                         | 128x2         | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N94_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N95_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N96_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N97_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N98_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N99_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N100_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N101_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N102_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N103_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N104_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N105_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N106_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N107_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N108_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N109_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N110_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N111_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N112_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N113_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N114_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N115_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N116_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N117_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N118_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N119_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N120_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N121_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N122_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N123_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N124_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N125_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N126_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N127_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N128_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N129_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N130_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N131_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N132_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N133_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N134_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N135_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N136_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N137_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N138_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N139_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N140_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N141_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N142_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N143_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer0_inst/layer0_N144_inst/M1r | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N0_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N1_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N2_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N3_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N4_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N5_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N6_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N7_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N8_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N9_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N10_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N11_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N12_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N13_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N14_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N15_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N16_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N17_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N18_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N19_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N20_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N21_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N22_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N23_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N24_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N25_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N26_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N27_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N28_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N29_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N30_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N31_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N32_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N33_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer1_inst/layer1_N34_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N0_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N1_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N2_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N3_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N4_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N5_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N6_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N7_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N8_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N9_inst/M1r   | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N10_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N11_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N12_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N13_inst/M1r  | 64x1          | LUT            | 
+|nn_accelerator | u_logicnet/layer2_inst/layer2_N14_inst/M1r  | 64x1          | LUT            | 
++---------------+---------------------------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:01:10 . Memory (MB): peak = 3606.457 ; gain = 897.613 ; free physical = 106143 ; free virtual = 230698
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2977.463; parent = 2777.240; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4579.555; parent = 3606.461; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:01:11 . Memory (MB): peak = 3634.457 ; gain = 925.613 ; free physical = 106114 ; free virtual = 230670
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3004.436; parent = 2804.213; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4607.555; parent = 3634.461; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:01:14 . Memory (MB): peak = 3703.496 ; gain = 994.652 ; free physical = 106041 ; free virtual = 230597
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3012.947; parent = 2812.725; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4676.594; parent = 3703.500; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:52 ; elapsed = 00:01:17 . Memory (MB): peak = 3715.371 ; gain = 1006.527 ; free physical = 106044 ; free virtual = 230599
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3013.428; parent = 2813.205; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4688.469; parent = 3715.375; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:52 ; elapsed = 00:01:17 . Memory (MB): peak = 3715.371 ; gain = 1006.527 ; free physical = 106043 ; free virtual = 230599
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3013.443; parent = 2813.221; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4688.469; parent = 3715.375; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 3715.371 ; gain = 1006.527 ; free physical = 106049 ; free virtual = 230605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3014.558; parent = 2814.342; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4688.469; parent = 3715.375; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 3715.371 ; gain = 1006.527 ; free physical = 106049 ; free virtual = 230605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3014.620; parent = 2814.404; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4688.469; parent = 3715.375; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 3715.371 ; gain = 1006.527 ; free physical = 106049 ; free virtual = 230605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3014.620; parent = 2814.404; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4688.469; parent = 3715.375; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 3715.371 ; gain = 1006.527 ; free physical = 106049 ; free virtual = 230605
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3014.620; parent = 2814.404; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4688.469; parent = 3715.375; children = 973.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++----------------------+--------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name           | RTL Name                                               | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++----------------------+--------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|nn_classifier_wrapper | u_nn_accelerator/u_sum_signed_i0/reduce_layer63_reg[7] | 4      | 8     | YES          | NO                 | YES               | 8      | 0       | 
+|nn_classifier_wrapper | u_nn_accelerator/u_sum_signed_q0/reduce_layer63_reg[7] | 4      | 8     | YES          | NO                 | YES               | 8      | 0       | 
+|nn_classifier_wrapper | u_nn_accelerator/u_sum_signed_i1/reduce_layer63_reg[7] | 4      | 8     | YES          | NO                 | YES               | 8      | 0       | 
+|nn_classifier_wrapper | u_nn_accelerator/u_sum_signed_q1/reduce_layer63_reg[7] | 4      | 8     | YES          | NO                 | YES               | 8      | 0       | 
++----------------------+--------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY8 |   494|
+|3     |LUT1   |   399|
+|4     |LUT2   |  3206|
+|5     |LUT3   |   425|
+|6     |LUT4   |   432|
+|7     |LUT5   |   948|
+|8     |LUT6   |  1175|
+|9     |MUXF7  |     2|
+|10    |SRL16E |    32|
+|11    |FDCE   |    44|
+|12    |FDRE   |  9752|
+|13    |IBUF   |    14|
+|14    |OBUF   |    18|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 3715.371 ; gain = 1006.527 ; free physical = 106041 ; free virtual = 230597
+Synthesis current peak Physical Memory [PSS] (MB): peak = 3014.620; parent = 2814.404; children = 200.254
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4688.469; parent = 3715.375; children = 973.094
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:48 ; elapsed = 00:01:13 . Memory (MB): peak = 3715.371 ; gain = 826.871 ; free physical = 106060 ; free virtual = 230616
+Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:01:19 . Memory (MB): peak = 3715.379 ; gain = 1006.527 ; free physical = 106061 ; free virtual = 230617
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3726.340 ; gain = 0.000 ; free physical = 106182 ; free virtual = 230738
+INFO: [Netlist 29-17] Analyzing 511 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3735.246 ; gain = 0.000 ; free physical = 106175 ; free virtual = 230731
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 15 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 14 instances
+
+Synth Design complete, checksum: 3d7b3edb
+INFO: [Common 17-83] Releasing license: Synthesis
+223 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:01:27 . Memory (MB): peak = 3735.246 ; gain = 2031.781 ; free physical = 106290 ; free virtual = 230846
+INFO: [Common 17-1381] The checkpoint '/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/synth_1/nn_classifier_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file nn_classifier_wrapper_utilization_synth.rpt -pb nn_classifier_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue May 12 12:58:50 2026...
+[Tue May 12 12:58:55 2026] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:01:10 ; elapsed = 00:01:41 . Memory (MB): peak = 1728.484 ; gain = 0.000 ; free physical = 108749 ; free virtual = 233286
+# launch_runs impl_1 -jobs 4
+[Tue May 12 12:58:55 2026] Launched impl_1...
+Run output will be captured here: /mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/impl_1/runme.log
+# wait_on_run impl_1
+[Tue May 12 12:58:55 2026] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log nn_classifier_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source nn_classifier_wrapper.tcl -notrace
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source nn_classifier_wrapper.tcl -notrace
+Command: link_design -top nn_classifier_wrapper -part xczu49dr-ffvf1760-2-e
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xczu49dr-ffvf1760-2-e
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2704.469 ; gain = 0.000 ; free physical = 106966 ; free virtual = 231504
+INFO: [Netlist 29-17] Analyzing 510 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/constraints.xdc]
+Finished Parsing XDC File [/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2845.562 ; gain = 0.000 ; free physical = 106892 ; free virtual = 231430
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 14 instances
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2845.562 ; gain = 1138.039 ; free physical = 106892 ; free virtual = 231430
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu49dr'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu49dr'
+INFO: [Common 17-1540] The version limit for your license is '2024.12' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.99 . Memory (MB): peak = 2944.348 ; gain = 90.781 ; free physical = 106860 ; free virtual = 231398
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 125602002
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3283.816 ; gain = 339.469 ; free physical = 106650 ; free virtual = 231187
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 5764 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1811995c4
+
+Time (s): cpu = 00:00:00.96 ; elapsed = 00:00:00.63 . Memory (MB): peak = 3561.707 ; gain = 0.000 ; free physical = 106405 ; free virtual = 230943
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 1 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1811995c4
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.69 . Memory (MB): peak = 3561.707 ; gain = 0.000 ; free physical = 106391 ; free virtual = 230929
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 19d692522
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.8 . Memory (MB): peak = 3561.707 ; gain = 0.000 ; free physical = 106396 ; free virtual = 230934
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 4 BUFG optimization | Checksum: 19d692522
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.9 . Memory (MB): peak = 3593.723 ; gain = 32.016 ; free physical = 106395 ; free virtual = 230933
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 19d692522
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.91 . Memory (MB): peak = 3593.723 ; gain = 32.016 ; free physical = 106395 ; free virtual = 230933
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 19d692522
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.93 . Memory (MB): peak = 3593.723 ; gain = 32.016 ; free physical = 106395 ; free virtual = 230933
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               1  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3593.723 ; gain = 0.000 ; free physical = 106401 ; free virtual = 230939
+Ending Logic Optimization Task | Checksum: 12d1e6dae
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3593.723 ; gain = 32.016 ; free physical = 106401 ; free virtual = 230939
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 12d1e6dae
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3593.723 ; gain = 0.000 ; free physical = 106402 ; free virtual = 230940
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 12d1e6dae
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3593.723 ; gain = 0.000 ; free physical = 106402 ; free virtual = 230940
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3593.723 ; gain = 0.000 ; free physical = 106402 ; free virtual = 230940
+Ending Netlist Obfuscation Task | Checksum: 12d1e6dae
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3593.723 ; gain = 0.000 ; free physical = 106402 ; free virtual = 230940
+INFO: [Common 17-83] Releasing license: Implementation
+26 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3593.723 ; gain = 748.160 ; free physical = 106402 ; free virtual = 230940
+INFO: [Timing 38-480] Writing timing data to binary archive.
+INFO: [Common 17-1381] The checkpoint '/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/impl_1/nn_classifier_wrapper_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file nn_classifier_wrapper_drc_opted.rpt -pb nn_classifier_wrapper_drc_opted.pb -rpx nn_classifier_wrapper_drc_opted.rpx
+Command: report_drc -file nn_classifier_wrapper_drc_opted.rpt -pb nn_classifier_wrapper_drc_opted.pb -rpx nn_classifier_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/mnt/vault1/kmhatre/Software/AMD/Vivado/2022.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/impl_1/nn_classifier_wrapper_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu49dr'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu49dr'
+INFO: [Common 17-1540] The version limit for your license is '2024.12' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3746.500 ; gain = 0.000 ; free physical = 106200 ; free virtual = 230750
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: a5a7b16b
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3746.500 ; gain = 0.000 ; free physical = 106200 ; free virtual = 230750
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3746.500 ; gain = 0.000 ; free physical = 106200 ; free virtual = 230750
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 6733969c
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 4904.164 ; gain = 1157.664 ; free physical = 105195 ; free virtual = 229905
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 13ffbd572
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 4943.207 ; gain = 1196.707 ; free physical = 104942 ; free virtual = 229654
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 13ffbd572
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 4943.207 ; gain = 1196.707 ; free physical = 104942 ; free virtual = 229654
+Phase 1 Placer Initialization | Checksum: 13ffbd572
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 4943.207 ; gain = 1196.707 ; free physical = 104942 ; free virtual = 229654
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: f18418f2
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 4943.207 ; gain = 1196.707 ; free physical = 105133 ; free virtual = 229846
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: f18418f2
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 4943.207 ; gain = 1196.707 ; free physical = 105070 ; free virtual = 229784
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: f18418f2
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 4989.570 ; gain = 1243.070 ; free physical = 104709 ; free virtual = 229475
+
+Phase 2.1.1.4 PBP: UpdateTiming
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 8ee09f57
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 5019.586 ; gain = 1273.086 ; free physical = 104709 ; free virtual = 229475
+
+Phase 2.1.1.5 PBP: Add part constraints
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: 8ee09f57
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 5019.586 ; gain = 1273.086 ; free physical = 104709 ; free virtual = 229475
+Phase 2.1.1 Partition Driven Placement | Checksum: 8ee09f57
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 5019.586 ; gain = 1273.086 ; free physical = 104709 ; free virtual = 229475
+Phase 2.1 Floorplanning | Checksum: d612a88a
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 5019.586 ; gain = 1273.086 ; free physical = 104709 ; free virtual = 229475
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: d612a88a
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 5019.586 ; gain = 1273.086 ; free physical = 104709 ; free virtual = 229475
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 14476a9ed
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 5019.586 ; gain = 1273.086 ; free physical = 104709 ; free virtual = 229475
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: f91b59f9
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:39 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104575 ; free virtual = 229341
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 4 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 0 net or LUT. Breaked 0 LUT, combined 0 existing LUT and moved 0 existing LUT
+INFO: [Physopt 32-1030] Pass 1. Identified 4 candidate driver sets for equivalent driver rewiring.
+INFO: [Physopt 32-661] Optimized 2 nets.  Re-placed 7 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 2 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 7 existing cells
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5153.723 ; gain = 0.000 ; free physical = 104574 ; free virtual = 229343
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 5153.723 ; gain = 0.000 ; free physical = 104574 ; free virtual = 229343
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Equivalent Driver Rewiring                       |            0  |              0  |                     2  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |              0  |                     2  |           0  |          10  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 150d6aead
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:39 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104591 ; free virtual = 229360
+Phase 2.4 Global Placement Core | Checksum: f04969ab
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:42 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104327 ; free virtual = 229096
+Phase 2 Global Placement | Checksum: f04969ab
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:42 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104334 ; free virtual = 229103
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: cc90bb33
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:43 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104330 ; free virtual = 229099
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1030c1faf
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:43 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104342 ; free virtual = 229111
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 7265b844
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:45 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104381 ; free virtual = 229150
+
+Phase 3.3.2 Flow Legalize Slice Clusters
+Phase 3.3.2 Flow Legalize Slice Clusters | Checksum: 7e65e1dc
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:45 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104381 ; free virtual = 229150
+
+Phase 3.3.3 Slice Area Swap
+
+Phase 3.3.3.1 Slice Area Swap Initial
+Phase 3.3.3.1 Slice Area Swap Initial | Checksum: 126a0ffff
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:46 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104385 ; free virtual = 229154
+Phase 3.3.3 Slice Area Swap | Checksum: 126a0ffff
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:47 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104315 ; free virtual = 229084
+Phase 3.3 Small Shape DP | Checksum: d4828bcb
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:47 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104356 ; free virtual = 229126
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: eca21f80
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:47 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104366 ; free virtual = 229135
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: fe2a6228
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:48 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104366 ; free virtual = 229135
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 130087e6a
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:58 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104490 ; free virtual = 229260
+Phase 3 Detail Placement | Checksum: 130087e6a
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:58 . Memory (MB): peak = 5153.723 ; gain = 1407.223 ; free physical = 104490 ; free virtual = 229260
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 18fee7640
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.405 | TNS=-802.111 |
+Phase 1 Physical Synthesis Initialization | Checksum: 11024bdaf
+
+Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.11 . Memory (MB): peak = 5207.863 ; gain = 0.000 ; free physical = 104243 ; free virtual = 229012
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 183232398
+
+Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.17 . Memory (MB): peak = 5207.863 ; gain = 0.000 ; free physical = 104243 ; free virtual = 229012
+Phase 4.1.1.1 BUFG Insertion | Checksum: 18fee7640
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:00 . Memory (MB): peak = 5207.863 ; gain = 1461.363 ; free physical = 104247 ; free virtual = 229017
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.323. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 2072a6a94
+
+Time (s): cpu = 00:02:45 ; elapsed = 00:02:21 . Memory (MB): peak = 5207.863 ; gain = 1461.363 ; free physical = 105048 ; free virtual = 229817
+
+Time (s): cpu = 00:02:45 ; elapsed = 00:02:21 . Memory (MB): peak = 5207.863 ; gain = 1461.363 ; free physical = 105048 ; free virtual = 229817
+Phase 4.1 Post Commit Optimization | Checksum: 2072a6a94
+
+Time (s): cpu = 00:02:45 ; elapsed = 00:02:22 . Memory (MB): peak = 5207.863 ; gain = 1461.363 ; free physical = 105048 ; free virtual = 229817
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104735 ; free virtual = 229505
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 2aa4d7610
+
+Time (s): cpu = 00:02:54 ; elapsed = 00:02:30 . Memory (MB): peak = 5275.238 ; gain = 1528.738 ; free physical = 104751 ; free virtual = 229521
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 2aa4d7610
+
+Time (s): cpu = 00:02:54 ; elapsed = 00:02:30 . Memory (MB): peak = 5275.238 ; gain = 1528.738 ; free physical = 104751 ; free virtual = 229521
+Phase 4.3 Placer Reporting | Checksum: 2aa4d7610
+
+Time (s): cpu = 00:02:54 ; elapsed = 00:02:30 . Memory (MB): peak = 5275.238 ; gain = 1528.738 ; free physical = 104751 ; free virtual = 229521
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104751 ; free virtual = 229521
+
+Time (s): cpu = 00:02:54 ; elapsed = 00:02:30 . Memory (MB): peak = 5275.238 ; gain = 1528.738 ; free physical = 104751 ; free virtual = 229521
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 266021f90
+
+Time (s): cpu = 00:02:54 ; elapsed = 00:02:30 . Memory (MB): peak = 5275.238 ; gain = 1528.738 ; free physical = 104751 ; free virtual = 229521
+Ending Placer Task | Checksum: 22fee9f75
+
+Time (s): cpu = 00:02:54 ; elapsed = 00:02:30 . Memory (MB): peak = 5275.238 ; gain = 1528.738 ; free physical = 104753 ; free virtual = 229522
+INFO: [Common 17-83] Releasing license: Implementation
+72 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:02:57 ; elapsed = 00:02:31 . Memory (MB): peak = 5275.238 ; gain = 1537.645 ; free physical = 104970 ; free virtual = 229740
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.45 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104971 ; free virtual = 229755
+INFO: [Common 17-1381] The checkpoint '/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/impl_1/nn_classifier_wrapper_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file nn_classifier_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.45 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104923 ; free virtual = 229697
+INFO: [runtcl-4] Executing : report_utilization -file nn_classifier_wrapper_utilization_placed.rpt -pb nn_classifier_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file nn_classifier_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.25 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104891 ; free virtual = 229665
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu49dr'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu49dr'
+INFO: [Common 17-1540] The version limit for your license is '2024.12' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.78 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104890 ; free virtual = 229664
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 2.65s |  WALL: 0.84s
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104890 ; free virtual = 229664
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.319 | TNS=-742.639 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1b305c93a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104595 ; free virtual = 229370
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.319 | TNS=-742.639 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 1b305c93a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104595 ; free virtual = 229370
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.319 | TNS=-742.639 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[158][1].  Re-placed instance q_memory_reg[158][1]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[158][1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.319 | TNS=-742.589 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[158][3].  Re-placed instance q_memory_reg[158][3]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[158][3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.317 | TNS=-742.539 |
+INFO: [Physopt 32-663] Processed net i_memory_reg_n_0_[158][4].  Re-placed instance i_memory_reg[158][4]
+INFO: [Physopt 32-735] Processed net i_memory_reg_n_0_[158][4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.317 | TNS=-742.491 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[158][0].  Re-placed instance q_memory_reg[158][0]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[158][0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.317 | TNS=-742.443 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[158][2].  Re-placed instance q_memory_reg[158][2]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[158][2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.317 | TNS=-742.433 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[158][4].  Re-placed instance q_memory_reg[158][4]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[158][4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.316 | TNS=-742.422 |
+INFO: [Physopt 32-702] Processed net q_memory_reg_n_0_[361][1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net load_count[4]. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net load_count[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.311 | TNS=-711.790 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[24][3].  Re-placed instance q_memory_reg[24][3]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[24][3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.307 | TNS=-711.741 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[158][2].  Re-placed instance q_memory_reg[158][2]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[158][2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.307 | TNS=-711.737 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[158][4].  Re-placed instance q_memory_reg[158][4]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[158][4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.307 | TNS=-711.724 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[177][2].  Re-placed instance q_memory_reg[177][2]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[177][2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.307 | TNS=-711.675 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[177][3].  Re-placed instance q_memory_reg[177][3]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[177][3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.306 | TNS=-711.626 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[148][0].  Re-placed instance q_memory_reg[148][0]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[148][0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.305 | TNS=-711.624 |
+INFO: [Physopt 32-663] Processed net i_memory_reg_n_0_[86][3].  Re-placed instance i_memory_reg[86][3]
+INFO: [Physopt 32-735] Processed net i_memory_reg_n_0_[86][3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.305 | TNS=-711.526 |
+INFO: [Physopt 32-663] Processed net i_memory_reg_n_0_[86][4].  Re-placed instance i_memory_reg[86][4]
+INFO: [Physopt 32-735] Processed net i_memory_reg_n_0_[86][4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.305 | TNS=-711.428 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[86][0].  Re-placed instance q_memory_reg[86][0]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[86][0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.305 | TNS=-711.330 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[86][1].  Re-placed instance q_memory_reg[86][1]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[86][1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.304 | TNS=-711.232 |
+INFO: [Physopt 32-702] Processed net i_memory_reg_n_0_[148][4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net load_count[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 60 pins.
+INFO: [Physopt 32-735] Processed net i_memory[0][4]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.303 | TNS=-710.837 |
+INFO: [Physopt 32-663] Processed net i_memory_reg_n_0_[157][0].  Re-placed instance i_memory_reg[157][0]
+INFO: [Physopt 32-735] Processed net i_memory_reg_n_0_[157][0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.303 | TNS=-710.791 |
+INFO: [Physopt 32-663] Processed net i_memory_reg_n_0_[157][2].  Re-placed instance i_memory_reg[157][2]
+INFO: [Physopt 32-735] Processed net i_memory_reg_n_0_[157][2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.303 | TNS=-710.745 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.303 | TNS=-710.745 |
+Phase 3 Critical Path Optimization | Checksum: 2072739de
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104627 ; free virtual = 229402
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.303 | TNS=-710.745 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[157][0].  Re-placed instance q_memory_reg[157][0]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[157][0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.303 | TNS=-710.699 |
+INFO: [Physopt 32-663] Processed net q_memory_reg_n_0_[157][2].  Re-placed instance q_memory_reg[157][2]
+INFO: [Physopt 32-735] Processed net q_memory_reg_n_0_[157][2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.302 | TNS=-710.653 |
+INFO: [Physopt 32-702] Processed net q_memory_reg_n_0_[207][0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net load_count[8]. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net load_count[8]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.301 | TNS=-686.481 |
+INFO: [Physopt 32-702] Processed net i_memory_reg_n_0_[148][4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net load_count[6]. Replicated 4 times.
+INFO: [Physopt 32-735] Processed net load_count[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.299 | TNS=-680.853 |
+INFO: [Physopt 32-663] Processed net i_memory_reg_n_0_[8][4].  Re-placed instance i_memory_reg[8][4]
+INFO: [Physopt 32-735] Processed net i_memory_reg_n_0_[8][4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.299 | TNS=-680.816 |
+INFO: [Physopt 32-702] Processed net q_memory_reg_n_0_[8][3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net load_count[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_memory[0][4]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_memory[8][4]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ap_clk_IBUF_inst/OUT. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ap_clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net q_memory_reg_n_0_[8][3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net load_count[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_memory[0][4]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net i_memory[8][4]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ap_clk_IBUF_inst/OUT. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ap_clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.299 | TNS=-680.816 |
+Phase 4 Critical Path Optimization | Checksum: 2072739de
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:13 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104727 ; free virtual = 229502
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104727 ; free virtual = 229502
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104688 ; free virtual = 229463
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-0.299 | TNS=-680.816 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.020  |         61.823  |           16  |              0  |                    25  |           0  |           2  |  00:00:11  |
+|  Total          |          0.020  |         61.823  |           16  |              0  |                    25  |           0  |           3  |  00:00:11  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104690 ; free virtual = 229465
+Ending Physical Synthesis Task | Checksum: 352b3f26d
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:13 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104690 ; free virtual = 229465
+INFO: [Common 17-83] Releasing license: Implementation
+183 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:14 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104761 ; free virtual = 229536
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.49 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104768 ; free virtual = 229557
+INFO: [Common 17-1381] The checkpoint '/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/impl_1/nn_classifier_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu49dr'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu49dr'
+INFO: [Common 17-1540] The version limit for your license is '2024.12' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: c1ed40ac ConstDB: 0 ShapeSum: f31cea9f RouteDB: c0c6c08d
+Nodegraph reading from file.  Time (s): cpu = 00:00:00.8 ; elapsed = 00:00:00.96 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104494 ; free virtual = 229279
+Post Restoration Checksum: NetGraph: a5cf14d2 NumContArr: 2a40c8df Constraints: eb6b4344 Timing: 0
+Phase 1 Build RT Design | Checksum: 1bb7b20f5
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104644 ; free virtual = 229431
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 1bb7b20f5
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104566 ; free virtual = 229353
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 1bb7b20f5
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 5275.238 ; gain = 0.000 ; free physical = 104566 ; free virtual = 229354
+
+Phase 2.3 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.3 Global Clock Net Routing | Checksum: 24058e521
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 5395.242 ; gain = 120.004 ; free physical = 104316 ; free virtual = 229104
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 372381c7a
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 5395.242 ; gain = 120.004 ; free physical = 104321 ; free virtual = 229109
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.205 | TNS=-146.971| WHS=-0.043 | THS=-0.082 |
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 10812
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 9973
+  Number of Partially Routed Nets     = 839
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 3acb53b04
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 5404.922 ; gain = 129.684 ; free physical = 104177 ; free virtual = 228965
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 3acb53b04
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 5404.922 ; gain = 129.684 ; free physical = 104185 ; free virtual = 228974
+Phase 3 Initial Routing | Checksum: 262b0f548
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 5404.922 ; gain = 129.684 ; free physical = 104168 ; free virtual = 228957
+INFO: [Route 35-580] Design has 1 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+===================+===========================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                       |
++====================+===================+===========================================================+
+| ap_clk             | ap_clk            | u_nn_accelerator/u_sum_signed_i1/reduce_layer184_reg[5]/D |
++--------------------+-------------------+-----------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 2271
+ Number of Nodes with overlaps = 443
+ Number of Nodes with overlaps = 125
+ Number of Nodes with overlaps = 44
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.460 | TNS=-862.966| WHS=0.009  | THS=0.000  |
+
+Phase 4.1 Global Iteration 0 | Checksum: 26af8c3d3
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:27 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104397 ; free virtual = 229185
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 416
+ Number of Nodes with overlaps = 102
+ Number of Nodes with overlaps = 36
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.379 | TNS=-860.549| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 27b67d3ce
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:39 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104505 ; free virtual = 229293
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 358
+ Number of Nodes with overlaps = 53
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.386 | TNS=-833.763| WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 1ea4b56d1
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:44 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104539 ; free virtual = 229328
+Phase 4 Rip-up And Reroute | Checksum: 1ea4b56d1
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:44 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104540 ; free virtual = 229328
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 231912ee5
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:45 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104565 ; free virtual = 229353
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.379 | TNS=-860.549| WHS=0.009  | THS=0.000  |
+
+
+Phase 5.1.2 Update Timing
+Phase 5.1.2 Update Timing | Checksum: 2af8b8632
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:45 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104552 ; free virtual = 229341
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.379 | TNS=-860.549| WHS=0.009  | THS=0.000  |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 21dc14327
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:45 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104547 ; free virtual = 229335
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 21dc14327
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:45 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104547 ; free virtual = 229335
+Phase 5 Delay and Skew Optimization | Checksum: 21dc14327
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:45 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104547 ; free virtual = 229335
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1b6a7cb70
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:46 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104551 ; free virtual = 229339
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.379 | TNS=-858.935| WHS=0.009  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1b6a7cb70
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:46 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104547 ; free virtual = 229335
+Phase 6 Post Hold Fix | Checksum: 1b6a7cb70
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:46 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104542 ; free virtual = 229330
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.364165 %
+  Global Horizontal Routing Utilization  = 0.35636 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 83.5681%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 85.3081%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_X65Y338 -> INT_X65Y338
+East Dir 1x1 Area, Max Cong = 81.7308%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 88.4615%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_X62Y332 -> INT_X62Y332
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
+
+Phase 7 Route finalize | Checksum: 1c6aac1c8
+
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:46 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104533 ; free virtual = 229321
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1c6aac1c8
+
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:46 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104537 ; free virtual = 229325
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1c6aac1c8
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:47 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104536 ; free virtual = 229324
+
+Phase 10 Resolve XTalk
+Phase 10 Resolve XTalk | Checksum: 1c6aac1c8
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:47 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104535 ; free virtual = 229324
+
+Phase 11 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-0.379 | TNS=-858.935| WHS=0.009  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 11 Post Router Timing | Checksum: 1c6aac1c8
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:47 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104538 ; free virtual = 229326
+Time taken to check if laguna hold fix is required (in secs): 0
+
+Phase 12 Physical Synthesis in Router
+
+Phase 12.1 Physical Synthesis Initialization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.379 | TNS=-857.115 | WHS=0.009 | THS=0.000 |
+Phase 12.1 Physical Synthesis Initialization | Checksum: 1c6aac1c8
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:00:55 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104541 ; free virtual = 229329
+
+Phase 12.2 Critical Path Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.379 | TNS=-857.115 | WHS=0.009 | THS=0.000 |
+INFO: [Physopt 32-952] Improved path group WNS = -0.378. Path group: ap_clk. Processed net: i_memory_reg_n_0_[32][2].
+INFO: [Physopt 32-952] Improved path group WNS = -0.377. Path group: ap_clk. Processed net: q_memory_reg_n_0_[8][3].
+INFO: [Physopt 32-952] Improved path group WNS = -0.373. Path group: ap_clk. Processed net: i_memory_reg_n_0_[113][1].
+INFO: [Physopt 32-952] Improved path group WNS = -0.368. Path group: ap_clk. Processed net: i_memory_reg_n_0_[108][1].
+INFO: [Physopt 32-952] Improved path group WNS = -0.364. Path group: ap_clk. Processed net: i_memory_reg_n_0_[140][3].
+INFO: [Physopt 32-952] Improved path group WNS = -0.361. Path group: ap_clk. Processed net: i_memory_reg_n_0_[8][0].
+INFO: [Physopt 32-952] Improved path group WNS = -0.356. Path group: ap_clk. Processed net: i_memory_reg_n_0_[330][3].
+INFO: [Physopt 32-952] Improved path group WNS = -0.356. Path group: ap_clk. Processed net: i_memory_reg_n_0_[300][3].
+INFO: [Physopt 32-952] Improved path group WNS = -0.356. Path group: ap_clk. Processed net: i_memory_reg_n_0_[300][1].
+INFO: [Physopt 32-952] Improved path group WNS = -0.356. Path group: ap_clk. Processed net: q_memory_reg_n_0_[177][2].
+INFO: [Physopt 32-952] Improved path group WNS = -0.354. Path group: ap_clk. Processed net: i_memory_reg_n_0_[59][1].
+INFO: [Physopt 32-952] Improved path group WNS = -0.349. Path group: ap_clk. Processed net: i_memory_reg_n_0_[140][0].
+INFO: [Physopt 32-952] Improved path group WNS = -0.348. Path group: ap_clk. Processed net: i_memory_reg_n_0_[51][4].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: ap_clk. Processed net: i_memory_reg_n_0_[179][2].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: ap_clk. Processed net: load_count[5].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: ap_clk. Processed net: i_memory[49][4]_i_2_n_0.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.348 | TNS=-819.632 | WHS=0.001 | THS=0.000 |
+Phase 12.2 Critical Path Optimization | Checksum: 1348872a3
+
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:57 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104425 ; free virtual = 229214
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5420.930 ; gain = 0.000 ; free physical = 104434 ; free virtual = 229223
+INFO: [Physopt 32-669] Post Physical Optimization Timing Summary | WNS=-0.348 | TNS=-819.632 | WHS=0.001 | THS=0.000 |
+Phase 12 Physical Synthesis in Router | Checksum: 1348872a3
+
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:57 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104459 ; free virtual = 229248
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:57 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104584 ; free virtual = 229372
+INFO: [Common 17-83] Releasing license: Implementation
+225 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:30 ; elapsed = 00:00:58 . Memory (MB): peak = 5420.930 ; gain = 145.691 ; free physical = 104584 ; free virtual = 229372
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.5 . Memory (MB): peak = 5421.137 ; gain = 0.207 ; free physical = 104572 ; free virtual = 229378
+INFO: [Common 17-1381] The checkpoint '/mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/impl_1/nn_classifier_wrapper_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file nn_classifier_wrapper_drc_routed.rpt -pb nn_classifier_wrapper_drc_routed.pb -rpx nn_classifier_wrapper_drc_routed.rpx
+Command: report_drc -file nn_classifier_wrapper_drc_routed.rpt -pb nn_classifier_wrapper_drc_routed.pb -rpx nn_classifier_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/impl_1/nn_classifier_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file nn_classifier_wrapper_methodology_drc_routed.rpt -pb nn_classifier_wrapper_methodology_drc_routed.pb -rpx nn_classifier_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file nn_classifier_wrapper_methodology_drc_routed.rpt -pb nn_classifier_wrapper_methodology_drc_routed.pb -rpx nn_classifier_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /mnt/vault1/mfaroo19/LUNA/quantum-net-final/latency-opt/lat-opt-classifer/lat-opt-classifier.runs/impl_1/nn_classifier_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file nn_classifier_wrapper_power_routed.rpt -pb nn_classifier_wrapper_power_summary_routed.pb -rpx nn_classifier_wrapper_power_routed.rpx
+Command: report_power -file nn_classifier_wrapper_power_routed.rpt -pb nn_classifier_wrapper_power_summary_routed.pb -rpx nn_classifier_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+237 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file nn_classifier_wrapper_route_status.rpt -pb nn_classifier_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file nn_classifier_wrapper_timing_summary_routed.rpt -pb nn_classifier_wrapper_timing_summary_routed.pb -rpx nn_classifier_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file nn_classifier_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file nn_classifier_wrapper_clock_utilization_routed.rpt
+report_clock_utilization: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 5483.324 ; gain = 0.000 ; free physical = 104528 ; free virtual = 229327
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file nn_classifier_wrapper_bus_skew_routed.rpt -pb nn_classifier_wrapper_bus_skew_routed.pb -rpx nn_classifier_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Common 17-206] Exiting Vivado at Tue May 12 13:03:24 2026...
+[Tue May 12 13:03:29 2026] impl_1 finished
+wait_on_runs: Time (s): cpu = 00:00:00.83 ; elapsed = 00:04:34 . Memory (MB): peak = 1728.484 ; gain = 0.000 ; free physical = 108311 ; free virtual = 233110
+# open_run impl_1
+INFO: [Device 21-403] Loading part xczu49dr-ffvf1760-2-e
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2705.648 ; gain = 0.000 ; free physical = 106531 ; free virtual = 231326
+INFO: [Netlist 29-17] Analyzing 510 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:00.52 . Memory (MB): peak = 3300.930 ; gain = 25.812 ; free physical = 105886 ; free virtual = 230681
+Restored from archive | CPU: 0.530000 secs | Memory: 13.832771 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:00.53 . Memory (MB): peak = 3300.930 ; gain = 25.812 ; free physical = 105886 ; free virtual = 230681
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3525.500 ; gain = 0.000 ; free physical = 105008 ; free virtual = 229804
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 14 instances
+
+open_run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 3525.500 ; gain = 1797.016 ; free physical = 105008 ; free virtual = 229804
+# report_utilization -file ./util_project.rpt
+# report_timing_summary -file ./timing_project.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+# save_project
+ERROR: [Common 17-163] Missing value for option 'name', please type 'save_project_as -help' for usage info.
+INFO: [Common 17-206] Exiting Vivado at Tue May 12 13:03:49 2026...

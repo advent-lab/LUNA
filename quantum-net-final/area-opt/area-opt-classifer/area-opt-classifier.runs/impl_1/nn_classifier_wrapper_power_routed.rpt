@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date             : Wed Nov 12 15:07:00 2025
+| Date             : Tue May 12 13:18:17 2026
 | Host             : en4228283l running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file nn_classifier_wrapper_power_routed.rpt -pb nn_classifier_wrapper_power_summary_routed.pb -rpx nn_classifier_wrapper_power_routed.rpx
 | Design           : nn_classifier_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.444        |
+| Total On-Chip Power (W)  | 1.433        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.282        |
+| Dynamic (W)              | 0.271        |
 | Device Static (W)        | 1.162        |
 | Effective TJA (C/W)      | 0.8          |
 | Max Ambient (C)          | 98.9         |
@@ -52,17 +52,17 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.205 |        3 |       --- |             --- |
-| CLB Logic               |     0.017 |    16719 |       --- |             --- |
-|   LUT as Logic          |     0.013 |     6079 |    425280 |            1.43 |
-|   Register              |     0.002 |     9688 |    850560 |            1.14 |
+| Clocks                  |     0.203 |        3 |       --- |             --- |
+| CLB Logic               |     0.014 |    16712 |       --- |             --- |
+|   LUT as Logic          |     0.011 |     6072 |    425280 |            1.43 |
+|   Register              |     0.002 |     9680 |    850560 |            1.14 |
 |   CARRY8                |     0.001 |      498 |     53160 |            0.94 |
 |   LUT as Shift Register |    <0.001 |       16 |    213600 |           <0.01 |
 |   Others                |     0.000 |       14 |       --- |             --- |
-| Signals                 |     0.049 |    10690 |       --- |             --- |
-| I/O                     |     0.011 |       32 |       408 |            7.84 |
+| Signals                 |     0.043 |    10683 |       --- |             --- |
+| I/O                     |     0.010 |       31 |       408 |            7.60 |
 | Static Power            |     1.162 |          |           |                 |
-| Total                   |     1.444 |          |           |                 |
+| Total                   |     1.433 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,14 +72,14 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint          |       0.850 |     0.594 |       0.319 |      0.276 |       NA    | Unspecified | NA         |
+| Vccint          |       0.850 |     0.583 |       0.307 |      0.276 |       NA    | Unspecified | NA         |
 | Vccint_io       |       0.850 |     0.070 |       0.000 |      0.070 |       NA    | Unspecified | NA         |
 | Vccbram         |       0.850 |     0.030 |       0.000 |      0.030 |       NA    | Unspecified | NA         |
 | Vccaux          |       1.800 |     0.281 |       0.000 |      0.281 |       NA    | Unspecified | NA         |
 | Vccaux_io       |       1.800 |     0.059 |       0.001 |      0.058 |       NA    | Unspecified | NA         |
 | Vcco33          |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25          |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18          |       1.800 |     0.005 |       0.005 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18          |       1.800 |     0.004 |       0.004 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15          |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135         |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12          |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -165,7 +165,7 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| nn_classifier_wrapper    |     0.282 |
+| nn_classifier_wrapper    |     0.271 |
 |   in_TDATA_IBUF[13]_inst |     0.003 |
 |   in_TDATA_IBUF[14]_inst |     0.003 |
 |   in_TDATA_IBUF[15]_inst |     0.003 |
@@ -176,11 +176,11 @@ Table of Contents
 |   in_TDATA_IBUF[29]_inst |     0.003 |
 |   in_TDATA_IBUF[30]_inst |     0.003 |
 |   in_TDATA_IBUF[31]_inst |     0.003 |
-|   u_nn_accelerator       |     0.141 |
+|   u_nn_accelerator       |     0.137 |
 |     u_logicnet           |     0.005 |
 |       layer0_reg         |     0.003 |
-|     u_sum_signed_i0      |     0.068 |
-|     u_sum_signed_q0      |     0.068 |
+|     u_sum_signed_i0      |     0.066 |
+|     u_sum_signed_q0      |     0.066 |
 +--------------------------+-----------+
 
 

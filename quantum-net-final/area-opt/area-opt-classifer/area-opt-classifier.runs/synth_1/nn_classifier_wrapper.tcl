@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/mnt/vault1/mfaroo19/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.runs/synth_1/nn_classifier_wrapper.tcl"
+  variable script "/mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.runs/synth_1/nn_classifier_wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -76,61 +76,61 @@ create_project -in_memory -part xczu49dr-ffvf1760-2-e
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /mnt/vault1/mfaroo19/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.cache/wt [current_project]
-set_property parent.project_path /mnt/vault1/mfaroo19/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.xpr [current_project]
+set_property webtalk.parent_dir /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.cache/wt [current_project]
+set_property parent.project_path /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-set_property include_dirs /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets [current_fileset]
+set_property include_dirs /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets [current_fileset]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/sum_signed.sv
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/readout_ip.sv
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/sum_signed.sv
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/readout_ip.sv
 }
 read_verilog -library xil_defaultlib {
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N0.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N1.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N10.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N11.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N12.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N13.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N14.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N15.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N16.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N17.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N18.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N19.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N2.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N20.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N21.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N22.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N23.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N24.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N3.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N4.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N5.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N6.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N7.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N8.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer0_N9.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer1.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer1_N0.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer1_N1.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer1_N2.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer1_N3.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer1_N4.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer2.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer2_N0.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer2_N1.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer2_N2.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer2_N3.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer2_N4.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer3.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/layer3_N0.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/logicnet.v
-  /mnt/vault1/mfaroo19/quantum-net-final/area-opt/logicnets/myreg.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N0.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N1.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N10.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N11.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N12.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N13.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N14.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N15.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N16.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N17.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N18.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N19.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N2.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N20.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N21.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N22.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N23.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N24.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N3.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N4.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N5.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N6.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N7.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N8.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer0_N9.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer1.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer1_N0.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer1_N1.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer1_N2.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer1_N3.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer1_N4.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer2.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer2_N0.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer2_N1.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer2_N2.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer2_N3.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer2_N4.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer3.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/layer3_N0.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/logicnet.v
+  /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/rtl/logicnets/myreg.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -141,8 +141,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /mnt/vault1/mfaroo19/quantum-net-final/area-opt/constraints.xdc
-set_property used_in_implementation false [get_files /mnt/vault1/mfaroo19/quantum-net-final/area-opt/constraints.xdc]
+read_xdc /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/constraints.xdc
+set_property used_in_implementation false [get_files /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

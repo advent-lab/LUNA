@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date             : Wed Nov 12 15:04:50 2025
+| Date             : Tue May 12 13:24:59 2026
 | Host             : en4228283l running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file nn_classifier_wrapper_power_routed.rpt -pb nn_classifier_wrapper_power_summary_routed.pb -rpx nn_classifier_wrapper_power_routed.rpx
 | Design           : nn_classifier_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.451        |
+| Total On-Chip Power (W)  | 1.432        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.289        |
+| Dynamic (W)              | 0.270        |
 | Device Static (W)        | 1.162        |
 | Effective TJA (C/W)      | 0.8          |
 | Max Ambient (C)          | 98.9         |
@@ -52,18 +52,18 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.204 |        3 |       --- |             --- |
-| CLB Logic               |     0.021 |    16950 |       --- |             --- |
-|   LUT as Logic          |     0.017 |     6173 |    425280 |            1.45 |
-|   Register              |     0.003 |     9809 |    850560 |            1.15 |
-|   CARRY8                |     0.001 |      494 |     53160 |            0.93 |
+| Clocks                  |     0.197 |        3 |       --- |             --- |
+| CLB Logic               |     0.017 |    16944 |       --- |             --- |
+|   LUT as Logic          |     0.014 |     6172 |    425280 |            1.45 |
+|   Register              |     0.002 |     9812 |    850560 |            1.15 |
+|   CARRY8                |    <0.001 |      494 |     53160 |            0.93 |
 |   LUT as Shift Register |    <0.001 |       32 |    213600 |            0.01 |
 |   Others                |     0.000 |       20 |       --- |             --- |
 |   F7/F8 Muxes           |     0.000 |        2 |    425280 |           <0.01 |
-| Signals                 |     0.052 |    10826 |       --- |             --- |
-| I/O                     |     0.011 |       32 |       408 |            7.84 |
+| Signals                 |     0.044 |    10810 |       --- |             --- |
+| I/O                     |     0.012 |       32 |       408 |            7.84 |
 | Static Power            |     1.162 |          |           |                 |
-| Total                   |     1.451 |          |           |                 |
+| Total                   |     1.432 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint          |       0.850 |     0.603 |       0.327 |      0.276 |       NA    | Unspecified | NA         |
+| Vccint          |       0.850 |     0.580 |       0.305 |      0.276 |       NA    | Unspecified | NA         |
 | Vccint_io       |       0.850 |     0.070 |       0.000 |      0.070 |       NA    | Unspecified | NA         |
 | Vccbram         |       0.850 |     0.030 |       0.000 |      0.030 |       NA    | Unspecified | NA         |
 | Vccaux          |       1.800 |     0.281 |       0.000 |      0.281 |       NA    | Unspecified | NA         |
@@ -166,26 +166,26 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| nn_classifier_wrapper    |     0.289 |
-|   in_TDATA_IBUF[13]_inst |     0.003 |
-|   in_TDATA_IBUF[14]_inst |     0.003 |
+| nn_classifier_wrapper    |     0.270 |
+|   in_TDATA_IBUF[13]_inst |     0.002 |
+|   in_TDATA_IBUF[14]_inst |     0.002 |
 |   in_TDATA_IBUF[15]_inst |     0.003 |
-|   in_TDATA_IBUF[16]_inst |     0.003 |
-|   in_TDATA_IBUF[17]_inst |     0.003 |
-|   in_TDATA_IBUF[27]_inst |     0.003 |
-|   in_TDATA_IBUF[28]_inst |     0.003 |
+|   in_TDATA_IBUF[16]_inst |     0.002 |
+|   in_TDATA_IBUF[17]_inst |     0.002 |
+|   in_TDATA_IBUF[27]_inst |     0.002 |
+|   in_TDATA_IBUF[28]_inst |     0.002 |
 |   in_TDATA_IBUF[29]_inst |     0.003 |
 |   in_TDATA_IBUF[30]_inst |     0.003 |
 |   in_TDATA_IBUF[31]_inst |     0.003 |
-|   u_nn_accelerator       |     0.148 |
-|     u_logicnet           |     0.018 |
-|       layer0_reg         |     0.011 |
+|   u_nn_accelerator       |     0.143 |
+|     u_logicnet           |     0.019 |
+|       layer0_reg         |     0.012 |
 |       layer1_reg         |     0.005 |
 |       layer2_reg         |     0.002 |
-|     u_sum_signed_i0      |     0.036 |
-|     u_sum_signed_i1      |     0.030 |
-|     u_sum_signed_q0      |     0.035 |
-|     u_sum_signed_q1      |     0.030 |
+|     u_sum_signed_i0      |     0.034 |
+|     u_sum_signed_i1      |     0.028 |
+|     u_sum_signed_q0      |     0.034 |
+|     u_sum_signed_q1      |     0.028 |
 +--------------------------+-----------+
 
 

@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/mnt/vault1/mfaroo19/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.runs/impl_1/nn_classifier_wrapper.tcl"
+  variable script "/mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.runs/impl_1/nn_classifier_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -129,15 +129,15 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /mnt/vault1/mfaroo19/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.cache/wt [current_project]
-  set_property parent.project_path /mnt/vault1/mfaroo19/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.xpr [current_project]
-  set_property ip_output_repo /mnt/vault1/mfaroo19/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.cache/ip [current_project]
+  set_property webtalk.parent_dir /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.cache/wt [current_project]
+  set_property parent.project_path /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.xpr [current_project]
+  set_property ip_output_repo /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /mnt/vault1/mfaroo19/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.runs/synth_1/nn_classifier_wrapper.dcp
+  add_files -quiet /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/area-opt-classifer/area-opt-classifier.runs/synth_1/nn_classifier_wrapper.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /mnt/vault1/mfaroo19/quantum-net-final/area-opt/constraints.xdc
+  read_xdc /mnt/vault1/mfaroo19/LUNA/quantum-net-final/area-opt/constraints.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
